@@ -1,5 +1,4 @@
-import { getUrl } from "utils";
-import { HeaderType } from "utils";
+import { getUrl, HeaderType } from "utils";
 
 import { Button } from "../Buttons/Button";
 import { Links } from "../Buttons/Link";

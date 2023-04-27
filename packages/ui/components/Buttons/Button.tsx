@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { useRouter } from "next/router";
 import { PropsWithChildren } from "react";
-import { ButtonType } from "types";
+import { ButtonType } from "utils";
 
 const globalClasses: string[] = [
   "rounded-md",
@@ -30,6 +30,7 @@ export function Button({
   className,
   color,
   icon,
+  submit,
   href,
   size,
   children,
@@ -40,9 +41,10 @@ export function Button({
   return (
     <button
       {...props}
-      onClick={() => router.push(href ? href : router.asPath)}
+      onClick={() => !submit && router.push(href ? href : router.asPath)}
       style={{ backgroundColor: color }}
       className={button({ size, className })}
+      type={submit ? "submit" : "button"}
     >
       {children}
       {<span className="z-10 text-24 font-bold"> {icon} </span>}
@@ -53,6 +55,7 @@ export function Button({
 Button.defaultProps = {
   icon: false,
   className: "",
+  submit: false,
 };
 
 interface ButtonProps extends PropsWithChildren<any> {
@@ -61,4 +64,5 @@ interface ButtonProps extends PropsWithChildren<any> {
   size?: "small";
   color: ButtonType["color"];
   href?: ButtonType["link"];
+  submit?: boolean;
 }

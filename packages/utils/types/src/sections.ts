@@ -31,6 +31,7 @@ export interface CardSectionType {
   input: InputType[];
   alert: AlertType;
   button: ButtonType;
+  form: any;
 }
 
 export interface HeroSectionType {

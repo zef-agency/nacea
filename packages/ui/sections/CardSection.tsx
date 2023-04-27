@@ -1,14 +1,13 @@
-import React from "react";
 import { CardSectionType } from "utils";
 
-import { Button, Input, Title } from "../components";
+import { Button, CustomForm, Title } from "../components";
 
 interface CardSectionProps {
   data: CardSectionType;
 }
 
 export function CardSection({ data }: CardSectionProps) {
-  const { button, input, title } = data;
+  const { button, title, form } = data;
 
   return (
     <div className="my-6">
@@ -18,12 +17,10 @@ export function CardSection({ data }: CardSectionProps) {
           {button.label}
         </Button>
       )}
-      <form>
-        {input && input.map((inp, k) => <Input key={k} input={inp} />)}
-        <Button type="submit" color="#128382">
-          Appuyer ici
-        </Button>
-      </form>
+      <CustomForm
+        form={form}
+        callback={(result: any) => console.log("result", result)}
+      />
     </div>
   );
 }

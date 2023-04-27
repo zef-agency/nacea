@@ -27,7 +27,8 @@ export interface AlertType {
 export interface InputType {
   label: string;
   placeholder: string;
-  error: ErrorType;
+  name: string;
+  type: string;
 }
 
 export interface ErrorType {

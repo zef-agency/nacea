@@ -1,44 +1,74 @@
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
+import { Form, Formik } from "formik";
 import { PropsWithChildren } from "react";
+import { InputType } from "utils";
+import * as Yup from "yup";
 
-const globalClasses: string[] = [
-  "flex",
-  "flex-col",
-  "gap-5",
-  "mt-4",
-  "rounded-lg",
-  "text-left",
-];
+import { Button } from "../Buttons/Button";
+import { Input } from "./Input";
 
-const form = cva(globalClasses, {
+const globalClasses: string[] = [];
+
+const formClass = cva(globalClasses, {
   variants: {
     variations: {
-      small: ["w-[300px]"],
-      medium: ["w-[400px]"],
-      large: ["w-[500px]"],
       full: ["w-full"],
+      row: ["flex flex-row gap-4 items-center"],
+      column: ["flex flex-col gap-4 items-start"],
     },
   },
   defaultVariants: {
-    variations: "full",
+    variations: "row",
   },
 });
 
-export function FormWrapper({
+export function CustomForm({
+  form,
+  callback,
   className,
-  children,
   variations,
 }: FormProps & PropsWithChildren<any>) {
-  return <div className={form({ variations, className })}>{children}</div>;
+  function getInitialValues(inputs: InputType[]) {
+    return inputs.reduce((acc: any, { name }) => {
+      acc[name] = "";
+      return acc;
+    }, {});
+  }
+
+  return (
+    <Formik
+      initialValues={getInitialValues(form.inputs)}
+      validationSchema={Yup.object().shape({
+        email: Yup.string().min(2, "L'email est trop court"),
+        password: Yup.string().min(2, "Le MDP est trop court"),
+      })}
+      onSubmit={(values) => {
+        callback(values);
+      }}
+    >
+      {() => (
+        <Form className={formClass({ variations, className })}>
+          {form.inputs?.map((input: InputType, k: number) => (
+            <Input key={k} input={input} />
+          ))}
+          <Button submit color={form.button?.color}>
+            {form.button?.label}
+          </Button>
+        </Form>
+      )}
+    </Formik>
+  );
 }
 
-FormWrapper.defaultProps = {
+CustomForm.defaultProps = {
   variations: "",
   className: "",
 };
 
 export interface FormProps {
+  form: any;
+  callback: () => void;
   className?: ClassValue;
   variations?: "small" | "large" | "medium";
 }
