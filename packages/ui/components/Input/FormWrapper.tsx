@@ -1,8 +1,7 @@
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { Form, Formik } from "formik";
-import { PropsWithChildren } from "react";
-import { InputType } from "utils";
+import { FormType, getInitialValues, InputType } from "utils";
 import * as Yup from "yup";
 
 import { Button } from "../Buttons/Button";
@@ -23,18 +22,8 @@ const formClass = cva(globalClasses, {
   },
 });
 
-export function CustomForm({
-  form,
-  callback,
-  className,
-  variations,
-}: FormProps & PropsWithChildren<any>) {
-  function getInitialValues(inputs: InputType[]) {
-    return inputs.reduce((acc: any, { name }) => {
-      acc[name] = "";
-      return acc;
-    }, {});
-  }
+export function CustomForm(props: FormProps) {
+  const { form, callback, className, variations } = props;
 
   return (
     <Formik
@@ -66,9 +55,9 @@ CustomForm.defaultProps = {
   className: "",
 };
 
-export interface FormProps {
-  form: any;
-  callback: () => void;
+interface FormProps {
+  form: FormType;
+  callback: Function;
   className?: ClassValue;
-  variations?: "small" | "large" | "medium";
+  variations?: "full" | "row" | "column";
 }

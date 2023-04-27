@@ -1,7 +1,7 @@
 module.exports = {
-	reactStrictMode: true,
-	transpilePackages: ["ui", "utils"],
-	images: {
-		domains: ["localhost"],
-	},
+  reactStrictMode: true,
+  transpilePackages: ["ui", "utils"],
+  images: {
+    domains: ["localhost"],
+  },
 };

@@ -1,8 +1,8 @@
 import {
   AlertType,
   ButtonType,
+  FormType,
   ImageType,
-  InputType,
   TagType,
 } from "./components";
 
@@ -28,10 +28,9 @@ export interface CardSectionType {
   id: number;
   section: SectionType;
   title: string;
-  input: InputType[];
   alert: AlertType;
   button: ButtonType;
-  form: any;
+  form: FormType;
 }
 
 export interface HeroSectionType {

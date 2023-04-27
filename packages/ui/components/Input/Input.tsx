@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { ErrorMessage, Field } from "formik";
-import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
+import { InputHTMLAttributes } from "react";
 import { InputType } from "utils";
 
 import { Title } from "../Typo/Title";
@@ -40,9 +40,7 @@ const inputClass = cva(globalClasses, {
 });
 
 export function Input(
-  props: InputProps &
-    InputHTMLAttributes<HTMLInputElement> &
-    TextareaHTMLAttributes<HTMLTextAreaElement>
+  props: InputProps & InputHTMLAttributes<HTMLInputElement>
 ) {
   const { input, className, variations, size, icon } = props;
 

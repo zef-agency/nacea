@@ -19,11 +19,7 @@ export function Header(props: HeaderType) {
           </Links>
         ))}
       </div>
-      <Button
-        onClick={() => console.log("okkk")}
-        href={getUrl(button.link, true)}
-        color={button.color}
-      >
+      <Button href={getUrl(button.link, true)} color={button.color}>
         {button.label}
       </Button>
     </div>

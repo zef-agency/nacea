@@ -17,10 +17,12 @@ export function CardSection({ data }: CardSectionProps) {
           {button.label}
         </Button>
       )}
-      <CustomForm
-        form={form}
-        callback={(result: any) => console.log("result", result)}
-      />
+      {form && (
+        <CustomForm
+          form={form}
+          callback={(result: any) => console.log("result", result)}
+        />
+      )}
     </div>
   );
 }

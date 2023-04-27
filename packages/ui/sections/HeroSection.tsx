@@ -17,9 +17,11 @@ export function HeroSection({ data }: HeroSectionProps) {
       <div className="w-full max-w-[120px]">
         <Image alt="image" src={getUrl(image.url)} />
       </div>
-      <Button color={button?.color} href={button?.link}>
-        {button?.label}
-      </Button>
+      {button && (
+        <Button color={button?.color} href={button?.link}>
+          {button?.label}
+        </Button>
+      )}
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { InputType } from "../../types";
+
 // a function to capitalize the first letter of any string
 export function capitalizeFirstLetter(str: string) {
   if (str === null || str === "") {
@@ -49,4 +51,11 @@ export function checkRegexs(
     }
   }
   return { bool: true, mess: "" };
+}
+
+export function getInitialValues(inputs: InputType[]) {
+  return inputs.reduce((acc: any, { name }) => {
+    acc[name] = "";
+    return acc;
+  }, {});
 }

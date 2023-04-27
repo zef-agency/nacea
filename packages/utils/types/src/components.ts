@@ -31,6 +31,12 @@ export interface InputType {
   type: string;
 }
 
+export interface FormType {
+  errors: {};
+  inputs: InputType[];
+  button: ButtonType;
+}
+
 export interface ErrorType {
   text: string;
   color: string;
