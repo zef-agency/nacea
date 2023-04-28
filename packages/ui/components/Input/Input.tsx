@@ -64,9 +64,9 @@ export function Input(
           as="select"
           className={inputClass({ variations, size, className })}
         >
-          {input.options.map((option, k) => (
-            <option key={k} value={option.label}>
-              {option.label}
+          {input.options?.map((option, k) => (
+            <option key={k} value={option}>
+              {option}
             </option>
           ))}
         </Field>
