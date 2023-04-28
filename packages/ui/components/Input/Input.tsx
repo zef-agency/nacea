@@ -47,12 +47,30 @@ export function Input(
   return (
     <div className="relative">
       <Title> {input.label} </Title>
-      <Field
-        placeholder={input.placeholder}
-        name={input.name}
-        type={input.type}
-        className={inputClass({ variations, size, className })}
-      />
+      {/* Input TEXT, EMAIL, PASSWORD */}
+      {["text", "email", "password"].includes(input.type) && (
+        <Field
+          placeholder={input.placeholder}
+          name={input.name}
+          type={input.type}
+          className={inputClass({ variations, size, className })}
+        />
+      )}
+
+      {/* Input SELECT */}
+      {input.type === "select" && (
+        <Field
+          name={input.name}
+          as="select"
+          className={inputClass({ variations, size, className })}
+        >
+          {input.options.map((option, k) => (
+            <option key={k} value={option.label}>
+              {option.label}
+            </option>
+          ))}
+        </Field>
+      )}
       <ErrorMessage name={input.name} component="div" />
       <span className="absolute flex items-center justify-center text-base text-gray-500 h-full peer-focus:text-gray-800 top-0 left-3">
         {icon}

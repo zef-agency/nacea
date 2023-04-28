@@ -29,6 +29,10 @@ export interface InputType {
   placeholder: string;
   name: string;
   type: string;
+  options: OptionsType[];
+}
+export interface OptionsType {
+  label: string;
 }
 
 export interface FormType {

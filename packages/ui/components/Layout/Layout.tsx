@@ -1,14 +1,12 @@
 import Head from "next/head";
 import React, { PropsWithChildren } from "react";
 
-interface LayoutProps {
+interface LayoutProps extends PropsWithChildren<any> {
   title: string;
+  description: string;
 }
-
-export function Layout({
-  title,
-  children,
-}: LayoutProps & PropsWithChildren<any>) {
+export function Layout(props: LayoutProps) {
+  const { title, children, description } = props;
   // const { isOpen, handleModal } = useModal();
   // const { handleAlert, ...AlertProps } = useAlert();
 
@@ -16,6 +14,8 @@ export function Layout({
     <>
       <Head>
         <title> {title} </title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} key="title" />
       </Head>
       {children}
 
