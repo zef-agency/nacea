@@ -1,6 +1,6 @@
-import NextImage, { ImageProps as NextImageProps } from "next/image";
+import NextImage, { ImageProps as NextImageProps } from "next/legacy/image";
 import React from "react";
-import { ImageType } from "types";
+import { ImageType } from "utils";
 
 export interface ImageProps extends NextImageProps {
   src: ImageType["url"];

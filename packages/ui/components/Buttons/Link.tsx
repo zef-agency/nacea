@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
-import { ButtonType } from "types";
+import { ButtonType } from "utils";
 
 const globalClasses: string[] = ["text-black"];
 
