@@ -1,6 +1,5 @@
 import React from "react";
-import { getUrl } from "utils";
-import { FooterType } from "utils";
+import { FooterType, getUrl } from "utils";
 
 import { Links } from "../Buttons/Link";
 import { Image } from "../Image/Image";
@@ -11,7 +10,7 @@ export function Footer(props: FooterType) {
   return (
     <div className="flex items-center justify-between w-full py-2 px-10">
       <div className="w-full max-w-[200px]">
-        <Image alt="image" src={getUrl(logo.url)} />
+        <Image priority={true} alt="image" src={getUrl(logo.url)} />
       </div>
       <div className="flex items-center justify-between gap-4">
         {links?.map((link, k) => (

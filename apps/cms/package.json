@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "tsconfig": "*",
-    "utils": "*"
+    "utils": "*",
+    "config": "*"
   },
   "author": {
     "name": "A Strapi developer"

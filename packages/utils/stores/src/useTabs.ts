@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface tabState {
@@ -15,8 +15,6 @@ export const useTabs = create<tabState>()(
     }),
     {
       name: "tab-state",
-      serialize: (state) => btoa(JSON.stringify(state)),
-      deserialize: (storedState) => JSON.parse(atob(storedState)),
     }
   )
 );

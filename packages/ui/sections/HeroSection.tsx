@@ -15,7 +15,7 @@ export function HeroSection({ data }: HeroSectionProps) {
       <Title> {title} </Title>
       <Text> {description} </Text>
       <div className="w-full max-w-[120px]">
-        <Image alt="image" src={getUrl(image.url)} />
+        <Image priority={true} alt="image" src={getUrl(image.url)} />
       </div>
       {button && (
         <Button color={button?.color} href={button?.link}>
