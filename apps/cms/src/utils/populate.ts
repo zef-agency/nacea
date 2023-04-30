@@ -13,6 +13,7 @@ export const reorderComponentKeys = (
 ) => {
   Object.entries(entries).forEach(([prop, config]) => {
     const propValue = res[prop];
+
     if (!propValue) {
       return;
     }
@@ -24,6 +25,7 @@ export const reorderComponentKeys = (
           const matchingConfig = config.find((c) =>
             item.__component.match(c.name)
           );
+
           if (matchingConfig) {
             propValue[i] = matchingConfig.reorder(item);
           } else {

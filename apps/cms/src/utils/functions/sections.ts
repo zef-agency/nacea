@@ -1,14 +1,12 @@
 import {
   AlertConfig,
   ButtonConfig,
-  ColorConfig,
-  InputConfig,
-  SectionConfig,
   deleteProps,
-  ImageConfig,
-  TagConfig,
   FormConfig,
+  ImageConfig,
   reorderComponentKeys,
+  SectionConfig,
+  TagConfig,
 } from "../populate";
 
 export function getAllSections(entries: { sections: any[] }) {
@@ -21,7 +19,7 @@ export function getAllSections(entries: { sections: any[] }) {
 
         switch (sectionType.name) {
           case sectionType.name:
-            let [res] = await strapi.entityService.findMany(
+            const [res] = await strapi.entityService.findMany(
               `api::${sectionType.name}.${sectionType.name}`,
               {
                 filters: {

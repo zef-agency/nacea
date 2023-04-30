@@ -3,6 +3,7 @@
  */
 
 import { factories } from "@strapi/strapi";
+
 import { getAllSections, getPage } from "../../../utils/functions";
 
 export default factories.createCoreController(
