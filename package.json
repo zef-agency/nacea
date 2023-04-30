@@ -1,20 +1,30 @@
 {
-	"private": true,
-	"scripts": {
-		"build": "turbo run build",
-		"dev": "turbo run dev",
-		"lint": "turbo run lint",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\""
-	},
-	"devDependencies": {
-		"eslint": "^7.32.0",
-		"prettier": "^2.5.1",
-		"turbo": "latest"
-	},
-	"name": "my-turborepo",
-	"packageManager": "npm@8.19.3",
-	"workspaces": [
-		"apps/*",
-		"packages/*"
-	]
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  },
+  "overrides": {
+    "cms": {
+      "react": "18.2.0",
+      "react-dom": "18.2.0"
+    },
+    "web": {
+      "react": "18.2.0",
+      "react-dom": "18.2.0"
+    }
+  },
+  "name": "my-turborepo",
+  "packageManager": "npm@8.19.3",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

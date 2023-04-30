@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_assets_options",
+  "info": {
+    "displayName": "option"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

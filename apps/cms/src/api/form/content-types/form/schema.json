@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forms",
+  "info": {
+    "singularName": "form",
+    "pluralName": "forms",
+    "displayName": "✍🏻 Forms",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "errors": {
+      "type": "json",
+      "required": true
+    },
+    "inputs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "assets.input",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.button",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "layout_footers",
+  "info": {
+    "singularName": "layout-footer",
+    "pluralName": "layout-footers",
+    "displayName": "📌 Layout : Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "assets.button"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "assets.button"
+    }
+  }
+}
