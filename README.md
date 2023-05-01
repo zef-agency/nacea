@@ -10,6 +10,8 @@ You can clone this repo using :
 git clone https://github.com/fouks5996/turborepo-next-strapi.git
 ```
 
+Delete 'package-lock.json'
+
 And then run :
 
 ```
@@ -17,6 +19,20 @@ npm install
 ```
 
 You must create a local mysql database and plug it into "./apps/cms/config/database.ts"
+
+You must create a .env file on each app inside './apps' :
+
+- `web` .env : NEXT_PUBLIC_STRAPI_TOKEN=generated directly inside Strapi GUI.
+- `cms` .env : All your database sql config :
+  DATABASE_CLIENT=
+  DATABASE_HOST=
+  DATABASE_PORT=
+  DATABASE_NAME=
+  DATABASE_USERNAME=
+  DATABASE_PASSWORD=
+  DATABASE_SSL=false
+  DATABASE_CHARSET=utf8mb4  
+   JWT_SECRET=
 
 ## What's inside?
 
