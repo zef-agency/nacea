@@ -24,17 +24,33 @@ export interface AlertType {
   color: string;
 }
 
+export type OptionType = string;
+
+export type attributesType = SelectType | InputType | CheckedType;
+
 export interface InputType {
   label: string;
   placeholder: string;
   name: string;
   type: string;
-  options: string[];
+}
+export interface SelectType {
+  label: string;
+  name: string;
+  type: string;
+  options: OptionType[];
+}
+
+export interface CheckedType {
+  label: string;
+  defaultChecked: boolean;
+  type: string;
+  name: string;
 }
 
 export interface FormType {
   errors: {};
-  inputs: InputType[];
+  attributes: attributesType[];
   button: ButtonType;
 }
 

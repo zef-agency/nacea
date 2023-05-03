@@ -12,16 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "errors": {
-      "type": "json",
-      "required": true
-    },
-    "inputs": {
-      "type": "component",
-      "repeatable": true,
-      "component": "assets.input",
-      "required": true
-    },
     "button": {
       "type": "component",
       "repeatable": false,
@@ -30,6 +20,14 @@
     },
     "name": {
       "type": "string"
+    },
+    "attributes": {
+      "type": "dynamiczone",
+      "components": [
+        "assets.input",
+        "assets.select",
+        "assets.checkbox"
+      ]
     }
   }
 }

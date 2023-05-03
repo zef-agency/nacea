@@ -19,3 +19,14 @@ export function filterUniqueKeys(input: { key: string; value: string }[]) {
 
   return result;
 }
+
+export const getItemsInArray = (attributes: any) => {
+  const filtered = attributes.filter((item: any) => item.type === "select")[0];
+
+  if (!filtered || filtered.options.length === 0) {
+    return [""];
+  }
+  const sliced = filtered?.options.slice(1);
+
+  return sliced;
+};

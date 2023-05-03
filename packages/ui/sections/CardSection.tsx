@@ -1,4 +1,4 @@
-import { CardSectionType } from "utils";
+import { CardErrors, CardSectionType } from "utils";
 
 import { Button, CustomForm, Title } from "../components";
 
@@ -20,6 +20,7 @@ export function CardSection({ data }: CardSectionProps) {
       {form && (
         <CustomForm
           form={form}
+          errors={CardErrors}
           callback={(result: any) => console.log("result", result)}
         />
       )}

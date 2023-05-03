@@ -2,7 +2,8 @@
   "collectionName": "components_assets_inputs",
   "info": {
     "displayName": "input",
-    "description": ""
+    "description": "",
+    "icon": "columns"
   },
   "options": {},
   "attributes": {
@@ -14,25 +15,15 @@
       "type": "string",
       "required": true
     },
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "type": {
       "type": "enumeration",
       "enum": [
         "text",
         "email",
-        "password",
-        "select"
+        "password"
       ],
       "default": "text",
       "required": true
-    },
-    "options": {
-      "type": "component",
-      "repeatable": true,
-      "component": "assets.option"
     }
   }
 }

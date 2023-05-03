@@ -1,5 +1,5 @@
 // Array
-export { filterUniqueKeys } from "./src/array";
+export { filterUniqueKeys, getItemsInArray } from "./src/array";
 
 // String
 export { capitalizeFirstLetter } from "./src/string";
@@ -13,7 +13,7 @@ export { getInitialValues } from "./src/string";
 export { getRandom, sum } from "./src/number";
 
 // Error
-export { errorMessageValues } from "./src/errors";
+export { CardErrors } from "./src/errors";
 
 // Url
 export { getUrl } from "./src/url";

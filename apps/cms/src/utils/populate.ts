@@ -1,11 +1,27 @@
 import {
   AlertType,
   ButtonType,
+  CheckedType,
   ImageType,
   InputType,
   SectionType,
+  SelectType,
   TagType,
 } from "utils";
+
+const reorderDynamicZone = (propValue, config) => {
+  const res = propValue.map((item, i) => {
+    const matchingConfig = config.find((c) => item.__component.match(c.name));
+
+    if (matchingConfig) {
+      return (propValue[i] = matchingConfig.reorder(item));
+    } else {
+      return null;
+    }
+  });
+
+  return res;
+};
 
 export const reorderComponentKeys = (
   res: Record<string, any>,
@@ -21,17 +37,7 @@ export const reorderComponentKeys = (
     if (Array.isArray(propValue)) {
       if (Array.isArray(config)) {
         // ------------- DYNAMICS ZONES -------------
-        propValue.forEach((item, i) => {
-          const matchingConfig = config.find((c) =>
-            item.__component.match(c.name)
-          );
-
-          if (matchingConfig) {
-            propValue[i] = matchingConfig.reorder(item);
-          } else {
-            return null;
-          }
-        });
+        reorderDynamicZone(propValue, config);
       } else {
         // ------------- REPEATABLE COMPONENTS -------------
         res[prop] = res[prop].map((item: any) => {
@@ -137,11 +143,20 @@ export const AlertConfig = {
   }),
 };
 
+function stringToSlug(str: string) {
+  const slug = str
+    ?.replace(/[^a-zA-Z0-9\s]/g, "")
+    .replace(/\s+/g, "-")
+    .toLowerCase();
+
+  return slug;
+}
+
 // INPUT
 export const InputConfig = {
   name: "input",
   populate: {
-    fields: ["label", "placeholder", "type", "name"],
+    fields: ["label", "placeholder", "type"],
     populate: {
       options: {
         fields: ["label"],
@@ -152,29 +167,68 @@ export const InputConfig = {
   reorder: (res: OriginalInputType): InputType => ({
     label: res.label,
     placeholder: res.placeholder,
-    name: res.name,
+    name: stringToSlug(res.label),
     type: res.type,
-    options:
-      res.type === "select"
-        ? res.options.map((option: any) => option.label)
-        : null,
+  }),
+};
+
+// SELECT
+export const SelectConfig = {
+  name: "select",
+  populate: {
+    fields: ["label"],
+    populate: {
+      options: {
+        fields: ["label"],
+      },
+    },
+  },
+
+  reorder: (res: OriginalSelectType): SelectType => ({
+    label: res.label,
+    name: stringToSlug(res.label),
+    type: "select",
+    options: res.options.map((option: OriginalOptionType) => option.label),
+  }),
+};
+
+// SELECT
+export const CheckboxConfig = {
+  name: "checkbox",
+  populate: {
+    fields: ["label", "defaultChecked"],
+  },
+
+  reorder: (res: OriginalCheckedType): CheckedType => ({
+    label: res.label,
+    type: "checkbox",
+    name: stringToSlug(res.label),
+    defaultChecked: res.defaultChecked,
   }),
 };
 // FORM
 export const FormConfig = {
   name: "form",
   populate: {
-    fields: ["errors"],
     populate: {
-      inputs: InputConfig.populate,
+      attributes: {
+        on: {
+          "assets.input": InputConfig.populate,
+          "assets.select": SelectConfig.populate,
+          "assets.checkbox": CheckboxConfig.populate,
+        },
+      },
       button: ButtonConfig.populate,
     },
   },
 
   reorder: (res: OriginalFormType) => ({
-    errors: res.errors,
-    inputs: res.inputs
-      ? res.inputs.map((input: InputType) => InputConfig.reorder(input))
+    attributes: res.attributes
+      ? reorderDynamicZone(res.attributes, [
+          InputConfig,
+          SelectConfig,
+          CheckboxConfig,
+        ])
       : null,
     button: res.button ? ButtonConfig.reorder(res.button) : null,
   }),
@@ -184,35 +238,51 @@ export const FormConfig = {
 interface OriginalInputType {
   label: string;
   placeholder: string;
-  name: string;
   type: string;
   options?: any;
 }
 
-interface OriginalFormType {
-  errors: object;
-  inputs: OriginalInputType[];
-  button: OriginalButtonType;
+interface OriginalSelectType {
+  label: string;
+  options?: OriginalOptionType[];
 }
+
+interface OriginalOptionType {
+  label: string;
+}
+interface OriginalCheckedType {
+  label: string;
+  defaultChecked: boolean;
+}
+
+interface OriginalFormType {
+  button: OriginalButtonType;
+  attributes: any;
+}
+
 interface OriginalButtonType {
   link: string;
   color: OriginalColorType;
   label: string;
   newWindow: boolean;
 }
+
 interface OriginalTagType {
   label: string;
   color: OriginalColorType;
 }
+
 interface OriginalColorType {
   code: string;
 }
+
 interface OriginalAlertType {
   message: {
     text: string;
     color: OriginalColorType;
   };
 }
+
 interface OriginalImageType {
   url: string;
   formats: {

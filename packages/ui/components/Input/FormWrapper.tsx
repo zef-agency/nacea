@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { Form, Formik } from "formik";
-import { FormType, getInitialValues, InputType } from "utils";
+import { attributesType, FormType, getInitialValues } from "utils";
 import * as Yup from "yup";
 
 import { Button } from "../Buttons/Button";
@@ -23,23 +23,20 @@ const formClass = cva(globalClasses, {
 });
 
 export function CustomForm(props: FormProps) {
-  const { form, callback, className, variations } = props;
+  const { form, callback, className, variations, errors } = props;
 
   return (
     <Formik
-      initialValues={getInitialValues(form.inputs)}
-      validationSchema={Yup.object().shape({
-        email: Yup.string().min(2, "L'email est trop court"),
-        password: Yup.string().min(2, "Le MDP est trop court"),
-      })}
+      initialValues={getInitialValues(form.attributes)}
+      validationSchema={Yup.object().shape(errors(form.attributes))}
       onSubmit={(values) => {
         callback(values);
       }}
     >
       {() => (
         <Form className={formClass({ variations, className })}>
-          {form.inputs?.map((input: InputType, k: number) => (
-            <Input key={k} input={input} />
+          {form.attributes?.map((attribute: attributesType, k: number) => (
+            <Input key={k} attribute={attribute} />
           ))}
           <Button submit color={form.button?.color}>
             {form.button?.label}
@@ -57,6 +54,7 @@ CustomForm.defaultProps = {
 
 interface FormProps {
   form: FormType;
+  errors: any;
   callback: Function;
   className?: ClassValue;
   variations?: "full" | "row" | "column";

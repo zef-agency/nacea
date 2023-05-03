@@ -1,4 +1,4 @@
-import { InputType } from "../../types";
+import { attributesType } from "../../types";
 
 // a function to capitalize the first letter of any string
 export function capitalizeFirstLetter(str: string) {
@@ -53,9 +53,13 @@ export function checkRegexs(
   return { bool: true, mess: "" };
 }
 
-export function getInitialValues(inputs: InputType[]) {
-  return inputs.reduce((acc: any, { name }) => {
-    acc[name] = "";
+export function getInitialValues(inputs: attributesType[]) {
+  return inputs.reduce((acc: any, { name, type, ...rest }: attributesType) => {
+    if (type === "checkbox" && "defaultChecked" in rest) {
+      acc[name] = rest.defaultChecked;
+    } else {
+      acc[name] = "";
+    }
     return acc;
   }, {});
 }

@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { ErrorMessage, Field } from "formik";
 import { InputHTMLAttributes } from "react";
-import { InputType } from "utils";
+import { attributesType, InputType, OptionType, SelectType } from "utils";
 
 import { Title } from "../Typo/Title";
 
@@ -40,38 +40,52 @@ const inputClass = cva(globalClasses, {
 });
 
 export function Input(
-  props: InputProps & InputHTMLAttributes<HTMLInputElement>
+  props: InputProps & InputHTMLAttributes<HTMLInputElement | HTMLSelectElement>
 ) {
-  const { input, className, variations, size, icon } = props;
+  const { attribute, className, variations, size, icon } = props;
 
   return (
     <div className="relative">
-      <Title> {input.label} </Title>
+      <Title> {attribute.label} </Title>
       {/* Input TEXT, EMAIL, PASSWORD */}
-      {["text", "email", "password"].includes(input.type) && (
+      {["text", "email", "password"].includes(attribute.type) && (
         <Field
-          placeholder={input.placeholder}
-          name={input.name}
-          type={input.type}
+          autoComplete="true"
+          placeholder={(attribute as InputType).placeholder}
+          name={attribute.name}
+          type={attribute.type}
           className={inputClass({ variations, size, className })}
         />
       )}
 
       {/* Input SELECT */}
-      {input.type === "select" && (
+      {attribute.type === "select" && (
         <Field
-          name={input.name}
+          autoComplete="true"
+          name={attribute.name}
           as="select"
           className={inputClass({ variations, size, className })}
         >
-          {input.options?.map((option, k) => (
-            <option key={k} value={option}>
-              {option}
-            </option>
-          ))}
+          {(attribute as SelectType).options?.map(
+            (option: OptionType, k: number) => (
+              <option key={k} value={option}>
+                {option}
+              </option>
+            )
+          )}
         </Field>
       )}
-      <ErrorMessage name={input.name} component="div" />
+
+      {attribute.type === "checkbox" && (
+        <label>
+          <Field
+            type="checkbox"
+            name={attribute.name}
+            //defaultChecked={(attribute as CheckedType).defaultChecked}
+          />
+        </label>
+      )}
+      <ErrorMessage name={attribute.name} component="div" />
       <span className="absolute flex items-center justify-center text-base text-gray-500 h-full peer-focus:text-gray-800 top-0 left-3">
         {icon}
       </span>
@@ -80,7 +94,7 @@ export function Input(
 }
 
 export interface InputProps {
-  input: InputType;
+  attribute: attributesType;
   className?: ClassValue;
   variations?: "input" | "textarea";
   size?: "small" | "medium" | "iconOnly";

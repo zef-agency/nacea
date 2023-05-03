@@ -1,1 +1,1 @@
-export { root, fetcher } from "./src/config";
+export { fetcher, root } from "./src/config";

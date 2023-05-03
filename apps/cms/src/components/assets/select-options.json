@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_assets_select_options",
+  "info": {
+    "displayName": "select-options"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

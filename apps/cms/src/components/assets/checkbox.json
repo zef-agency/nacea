@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_assets_checkboxes",
+  "info": {
+    "displayName": "checkbox"
+  },
+  "options": {},
+  "attributes": {
+    "defaultChecked": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
