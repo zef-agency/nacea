@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { Form, Formik } from "formik";
-import { attributesType, FormType, getInitialValues } from "utils";
+import { attributesType, FormType, getInitialValues, yupify } from "utils";
 import * as Yup from "yup";
 
 import { Button } from "../Buttons/Button";
@@ -23,12 +23,12 @@ const formClass = cva(globalClasses, {
 });
 
 export function CustomForm(props: FormProps) {
-  const { form, callback, className, variations, errors } = props;
+  const { form, callback, className, variations } = props;
 
   return (
     <Formik
       initialValues={getInitialValues(form.attributes)}
-      validationSchema={Yup.object().shape(errors(form.attributes))}
+      validationSchema={Yup.object().shape(yupify(JSON.stringify(form.errors)))}
       onSubmit={(values) => {
         callback(values);
       }}

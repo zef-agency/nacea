@@ -24,6 +24,10 @@
       ],
       "default": "text",
       "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
     }
   }
 }

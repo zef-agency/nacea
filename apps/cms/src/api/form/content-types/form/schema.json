@@ -28,6 +28,10 @@
         "assets.select",
         "assets.checkbox"
       ]
+    },
+    "errors": {
+      "type": "json",
+      "required": true
     }
   }
 }

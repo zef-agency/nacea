@@ -16,13 +16,13 @@ const errors = {
 };
 
 export const CardErrors = (attributes: any) => {
-  if (attributes.length === 0) {
-    return { any: errors.any };
-  }
+  console.log(attributes);
 
   return {
-    email: errors.email,
-    password: errors.password,
-    evenements: errors.select(attributes, "event"),
+    // email: errors.email,
+    dsd: errors.email,
+    //password: errors.password,
+    /*  evenements:
+      attributes.length === 0 ? errors.any : errors.select(attributes, "event"), */
   };
 };

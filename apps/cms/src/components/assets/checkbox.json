@@ -1,7 +1,8 @@
 {
   "collectionName": "components_assets_checkboxes",
   "info": {
-    "displayName": "checkbox"
+    "displayName": "checkbox",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,10 @@
       "required": true
     },
     "label": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
       "type": "string",
       "required": true
     }

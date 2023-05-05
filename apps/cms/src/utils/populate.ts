@@ -143,20 +143,11 @@ export const AlertConfig = {
   }),
 };
 
-function stringToSlug(str: string) {
-  const slug = str
-    ?.replace(/[^a-zA-Z0-9\s]/g, "")
-    .replace(/\s+/g, "-")
-    .toLowerCase();
-
-  return slug;
-}
-
 // INPUT
 export const InputConfig = {
   name: "input",
   populate: {
-    fields: ["label", "placeholder", "type"],
+    fields: ["label", "placeholder", "type", "name"],
     populate: {
       options: {
         fields: ["label"],
@@ -167,7 +158,7 @@ export const InputConfig = {
   reorder: (res: OriginalInputType): InputType => ({
     label: res.label,
     placeholder: res.placeholder,
-    name: stringToSlug(res.label),
+    name: res.name,
     type: res.type,
   }),
 };
@@ -176,7 +167,7 @@ export const InputConfig = {
 export const SelectConfig = {
   name: "select",
   populate: {
-    fields: ["label"],
+    fields: ["label", "name"],
     populate: {
       options: {
         fields: ["label"],
@@ -186,7 +177,7 @@ export const SelectConfig = {
 
   reorder: (res: OriginalSelectType): SelectType => ({
     label: res.label,
-    name: stringToSlug(res.label),
+    name: res.name,
     type: "select",
     options: res.options.map((option: OriginalOptionType) => option.label),
   }),
@@ -196,13 +187,13 @@ export const SelectConfig = {
 export const CheckboxConfig = {
   name: "checkbox",
   populate: {
-    fields: ["label", "defaultChecked"],
+    fields: ["label", "defaultChecked", "name"],
   },
 
   reorder: (res: OriginalCheckedType): CheckedType => ({
     label: res.label,
     type: "checkbox",
-    name: stringToSlug(res.label),
+    name: res.name,
     defaultChecked: res.defaultChecked,
   }),
 };
@@ -210,6 +201,8 @@ export const CheckboxConfig = {
 export const FormConfig = {
   name: "form",
   populate: {
+    fields: ["errors"],
+
     populate: {
       attributes: {
         on: {
@@ -218,6 +211,7 @@ export const FormConfig = {
           "assets.checkbox": CheckboxConfig.populate,
         },
       },
+
       button: ButtonConfig.populate,
     },
   },
@@ -230,6 +224,7 @@ export const FormConfig = {
           CheckboxConfig,
         ])
       : null,
+    errors: res.errors,
     button: res.button ? ButtonConfig.reorder(res.button) : null,
   }),
 };
@@ -239,11 +234,13 @@ interface OriginalInputType {
   label: string;
   placeholder: string;
   type: string;
+  name: string;
   options?: any;
 }
 
 interface OriginalSelectType {
   label: string;
+  name: string;
   options?: OriginalOptionType[];
 }
 
@@ -252,12 +249,14 @@ interface OriginalOptionType {
 }
 interface OriginalCheckedType {
   label: string;
+  name: string;
   defaultChecked: boolean;
 }
 
 interface OriginalFormType {
   button: OriginalButtonType;
   attributes: any;
+  errors: any;
 }
 
 interface OriginalButtonType {

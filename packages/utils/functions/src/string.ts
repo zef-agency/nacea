@@ -1,3 +1,5 @@
+import * as Yup from "yup";
+
 import { attributesType } from "../../types";
 
 // a function to capitalize the first letter of any string
@@ -63,3 +65,18 @@ export function getInitialValues(inputs: attributesType[]) {
     return acc;
   }, {});
 }
+
+export const yupify = (jsonString: string) => {
+  const obj: string[] = JSON.parse(jsonString);
+  const transformedObj = {};
+
+  for (const prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      const funcString = obj[prop].replace(/Yup\./g, "Yup.");
+      const func = new Function("Yup", `return ${funcString};`);
+
+      transformedObj[prop] = func(Yup);
+    }
+  }
+  return transformedObj;
+};
