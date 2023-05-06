@@ -75,6 +75,23 @@ export const ButtonConfig = {
     color: res.color ? ColorConfig.reorder(res.color) : null,
   }),
 };
+
+// HERO
+export const HeroMainConfig = {
+  name: "hero",
+  populate: {
+    fields: ["title", "description"],
+    populate: {
+      images: true,
+    },
+  },
+  reorder: (res: any): any => ({
+    title: res.title,
+    description: res.description,
+    images: res.images.map((image: any) => ImageConfig.reorder(image)),
+  }),
+};
+
 // TAG
 export const TagConfig = {
   name: "tag",

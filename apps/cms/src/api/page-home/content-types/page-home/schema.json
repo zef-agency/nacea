@@ -23,12 +23,20 @@
     "sections": {
       "type": "component",
       "repeatable": true,
-      "component": "config.sections"
+      "component": "config.sections",
+      "required": true
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "config.seo"
+      "component": "config.seo",
+      "required": true
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero",
+      "required": true
     }
   }
 }

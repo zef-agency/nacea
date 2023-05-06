@@ -1,6 +1,5 @@
-import { useHasHydrated } from "hooks";
 import React from "react";
-import { useTabs } from "stores";
+import { useHasHydrated, useTabs } from "utils";
 
 interface TabProps {
   tabs: string[];
