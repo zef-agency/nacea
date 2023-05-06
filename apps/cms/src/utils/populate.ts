@@ -59,6 +59,41 @@ export function deleteProps(obj: any, props: string[]) {
   }
 }
 
+// -----------------------------------------
+// --------------- SECTIONS ----------------
+// -----------------------------------------
+
+// HERO
+export const HeroMainConfig = {
+  name: "hero",
+  populate: {
+    fields: ["title", "description"],
+    populate: {
+      images: true,
+    },
+  },
+  reorder: (res: any): any => ({
+    title: res.title,
+    description: res.description,
+    images: res.images.map((image: OriginalImageType) =>
+      ImageConfig.reorder(image)
+    ),
+  }),
+};
+
+// SECTION
+export const SectionConfig = {
+  name: "section",
+  populate: { fields: ["name"] },
+  reorder: (res: { name: string }): SectionType => ({
+    type: res.name,
+  }),
+};
+
+// -------------------------------------------
+// --------------- COMPONENTS ----------------
+// -------------------------------------------
+
 // BUTTON
 export const ButtonConfig = {
   name: "button",
@@ -76,22 +111,6 @@ export const ButtonConfig = {
   }),
 };
 
-// HERO
-export const HeroMainConfig = {
-  name: "hero",
-  populate: {
-    fields: ["title", "description"],
-    populate: {
-      images: true,
-    },
-  },
-  reorder: (res: any): any => ({
-    title: res.title,
-    description: res.description,
-    images: res.images.map((image: any) => ImageConfig.reorder(image)),
-  }),
-};
-
 // TAG
 export const TagConfig = {
   name: "tag",
@@ -104,15 +123,6 @@ export const TagConfig = {
   reorder: (res: OriginalTagType): TagType => ({
     label: res.label,
     color: res.color ? ColorConfig.reorder(res.color) : null,
-  }),
-};
-
-// SECTION
-export const SectionConfig = {
-  name: "section",
-  populate: { fields: ["name"] },
-  reorder: (res: { name: string }): SectionType => ({
-    type: res.name,
   }),
 };
 
@@ -246,7 +256,10 @@ export const FormConfig = {
   }),
 };
 
-// ORIGNALS TYPES
+// ---------------------------------------------
+// --------------- OriginalType ----------------
+// ---------------------------------------------
+
 interface OriginalInputType {
   label: string;
   placeholder: string;
