@@ -1,10 +1,10 @@
 import { reorderComponentKeys } from "../populate";
 
-export async function getPage(api, heroConfig) {
+export async function getPage(api, heroConfig?: any) {
   const res = await strapi.entityService.findMany(api, {
     populate: {
       seo: true,
-      hero: heroConfig.populate,
+      hero: heroConfig?.populate,
       sections: {
         populate: {
           sectionType: { fields: ["name"] },
