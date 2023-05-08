@@ -1,4 +1,4 @@
-import {
+/* import {
   AlertType,
   ButtonType,
   CheckedType,
@@ -7,7 +7,7 @@ import {
   SectionType,
   SelectType,
   TagType,
-} from "utils";
+} from "utils"; */
 
 const reorderDynamicZone = (propValue, config) => {
   const res = propValue.map((item, i) => {
@@ -85,7 +85,7 @@ export const HeroMainConfig = {
 export const SectionConfig = {
   name: "section",
   populate: { fields: ["name"] },
-  reorder: (res: { name: string }): SectionType => ({
+  reorder: (res: { name: string }): any => ({
     type: res.name,
   }),
 };
@@ -103,7 +103,7 @@ export const ButtonConfig = {
       color: { fields: ["code"] },
     },
   },
-  reorder: (res: OriginalButtonType): ButtonType => ({
+  reorder: (res: OriginalButtonType): any => ({
     label: res.label,
     link: res.link,
     newWindow: res.newWindow,
@@ -120,7 +120,7 @@ export const TagConfig = {
       color: { fields: ["code"] },
     },
   },
-  reorder: (res: OriginalTagType): TagType => ({
+  reorder: (res: OriginalTagType): any => ({
     label: res.label,
     color: res.color ? ColorConfig.reorder(res.color) : null,
   }),
@@ -130,7 +130,7 @@ export const TagConfig = {
 export const ImageConfig = {
   name: "image",
   populate: true,
-  reorder: (res: OriginalImageType): ImageType => ({
+  reorder: (res: OriginalImageType): any => ({
     url: res.url,
     format: {
       small: res.formats.small?.url,
@@ -164,7 +164,7 @@ export const AlertConfig = {
     },
   },
 
-  reorder: (res: OriginalAlertType): AlertType => ({
+  reorder: (res: OriginalAlertType): any => ({
     text: res.message ? res.message.text : null,
     color: res.message ? ColorConfig.reorder(res.message.color) : null,
   }),
@@ -182,7 +182,7 @@ export const InputConfig = {
     },
   },
 
-  reorder: (res: OriginalInputType): InputType => ({
+  reorder: (res: OriginalInputType): any => ({
     label: res.label,
     placeholder: res.placeholder,
     name: res.name,
@@ -202,7 +202,7 @@ export const SelectConfig = {
     },
   },
 
-  reorder: (res: OriginalSelectType): SelectType => ({
+  reorder: (res: OriginalSelectType): any => ({
     label: res.label,
     name: res.name,
     type: "select",
@@ -217,7 +217,7 @@ export const CheckboxConfig = {
     fields: ["label", "defaultChecked", "name"],
   },
 
-  reorder: (res: OriginalCheckedType): CheckedType => ({
+  reorder: (res: OriginalCheckedType): any => ({
     label: res.label,
     type: "checkbox",
     name: res.name,
