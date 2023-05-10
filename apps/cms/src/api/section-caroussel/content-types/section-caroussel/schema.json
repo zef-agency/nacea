@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "section_caroussels",
+  "info": {
+    "singularName": "section-caroussel",
+    "pluralName": "section-caroussels",
+    "displayName": "📒 Section : Caroussel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "attributes": {
+      "type": "dynamiczone",
+      "components": [
+        "assets.card-event",
+        "assets.card-product"
+      ],
+      "max": 1,
+      "min": 1,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.button"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section.section"
+    }
+  }
+}

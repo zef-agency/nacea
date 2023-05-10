@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_assets_card_products",
+  "info": {
+    "displayName": "🌮 Products",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::settings-product.settings-product"
+    }
+  }
+}

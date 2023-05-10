@@ -3,6 +3,7 @@
  */
 
 import { factories } from "@strapi/strapi";
+
 import { ButtonConfig, reorderComponentKeys } from "../../../utils/populate";
 
 export default factories.createCoreController(

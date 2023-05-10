@@ -20,12 +20,6 @@
       "type": "boolean",
       "default": true
     },
-    "sections": {
-      "type": "component",
-      "repeatable": true,
-      "component": "config.sections",
-      "required": true
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
@@ -37,6 +31,14 @@
       "repeatable": false,
       "component": "sections.hero",
       "required": true
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.section-banner",
+        "sections.section-caroussel",
+        "sections.section-event"
+      ]
     }
   }
 }

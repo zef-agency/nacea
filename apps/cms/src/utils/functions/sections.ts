@@ -1,31 +1,35 @@
 import {
   AlertConfig,
   ButtonConfig,
+  CardConfig,
+  ColorConfig,
   deleteProps,
+  EventConfig,
   FormConfig,
   ImageConfig,
   reorderComponentKeys,
   SectionConfig,
-  TagConfig,
 } from "../populate";
 
 export function getAllSections(entries: { sections: any[] }) {
   return Promise.all(
     entries.sections.map(
-      async (section: { sectionType: { name: string }; slug: string }) => {
-        const { sectionType, slug } = section;
+      async (section: {
+        section: { slug: string; section: { name: string } };
+      }) => {
+        if (!section.section.section.name) return null;
 
-        if (!sectionType) return null;
-
-        switch (sectionType.name) {
-          case sectionType.name:
+        switch (section.section.section.name) {
+          case section.section.section.name:
             const [res] = await strapi.entityService.findMany(
-              `api::${sectionType.name}.${sectionType.name}`,
+              `api::${section.section.section.name}.${section.section.section.name}`,
               {
                 filters: {
-                  slug,
+                  slug: section.section.slug,
                 },
                 populate: {
+                  event: EventConfig.populate,
+                  backgroundColor: ColorConfig.populate,
                   section: SectionConfig.populate,
                   button: ButtonConfig.populate,
                   alert: AlertConfig.populate,
@@ -33,8 +37,8 @@ export function getAllSections(entries: { sections: any[] }) {
                   image: ImageConfig.populate,
                   attributes: {
                     on: {
-                      "assets.tag": TagConfig.populate,
-                      "assets.button": ButtonConfig.populate,
+                      "assets.card-event": CardConfig.populate,
+                      "assets.card-product": CardConfig.populate,
                     },
                   },
                 },
@@ -46,12 +50,14 @@ export function getAllSections(entries: { sections: any[] }) {
             }
 
             reorderComponentKeys(res, {
+              event: EventConfig,
               button: ButtonConfig,
               alert: AlertConfig,
               section: SectionConfig,
               image: ImageConfig,
               form: FormConfig,
-              attributes: [TagConfig, ButtonConfig],
+              backgroundColor: ColorConfig,
+              attributes: [CardConfig],
             });
 
             deleteProps(res, ["slug", "publishedAt", "createdAt", "updatedAt"]);

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_section_events",
+  "info": {
+    "displayName": "Section : Event"
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-event.section-event"
+    }
+  }
+}

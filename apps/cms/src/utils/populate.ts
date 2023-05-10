@@ -149,6 +149,58 @@ export const ColorConfig = {
   reorder: (res: OriginalColorType): string => res.code,
 };
 
+// Event
+export const EventConfig = {
+  name: "event",
+  populate: {
+    fields: ["label", "description", "intro"],
+    populate: {
+      image: true,
+    },
+  },
+  reorder: (res: any): any => ({
+    label: res.label,
+    description: res.description,
+    intro: res.intro,
+    image: ImageConfig.reorder(res.image),
+  }),
+};
+
+// Product
+export const ProductConfig = {
+  name: "product",
+  populate: {
+    fields: ["label", "intro"],
+    populate: {
+      image: true,
+    },
+  },
+  reorder: (res: any): any => ({
+    label: res.label,
+    intro: res.intro,
+    image: ImageConfig.reorder(res.image),
+  }),
+};
+
+// Card
+export const CardConfig = {
+  name: "card",
+  populate: {
+    populate: {
+      events: EventConfig.populate,
+      products: ProductConfig.populate,
+    },
+  },
+  reorder: (res: any): any => ({
+    events: res.events
+      ? res.events.map((event: any) => EventConfig.reorder(event))
+      : null,
+    products: res.products
+      ? res.products.map((product: any) => ProductConfig.reorder(product))
+      : null,
+  }),
+};
+
 // ALERT
 export const AlertConfig = {
   name: "alert",

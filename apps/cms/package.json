@@ -10,17 +10,19 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^2.0.4",
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
     "@strapi/plugin-color-picker": "^4.9.2",
     "@strapi/plugin-i18n": "4.9.1",
     "@strapi/plugin-users-permissions": "4.9.1",
     "@strapi/strapi": "4.9.1",
-    "mysql": "2.18.1"
+    "mysql": "2.18.1",
+    "util": "^0.12.5"
   },
   "devDependencies": {
+    "config": "*",
     "tsconfig": "*",
-    "utils": "*",
-    "config": "*"
+    "utils": "*"
   },
   "author": {
     "name": "A Strapi developer"

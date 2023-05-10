@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "section_cards",
+  "collectionName": "section_events",
   "info": {
-    "singularName": "section-card",
-    "pluralName": "section-cards",
-    "displayName": "📒 Section : Card",
+    "singularName": "section-event",
+    "pluralName": "section-events",
+    "displayName": "📒 Section : Event",
     "description": ""
   },
   "options": {
@@ -12,26 +12,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "slug": {
-      "type": "string"
-    },
-    "section": {
+    "event": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::section.section"
-    },
-    "title": {
-      "type": "string"
+      "target": "api::event.event"
     },
     "button": {
       "type": "component",
       "repeatable": false,
       "component": "assets.button"
     },
-    "form": {
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "section": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::form.form"
+      "target": "api::section.section"
     }
   }
 }

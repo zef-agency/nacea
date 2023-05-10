@@ -7,7 +7,12 @@ export async function getPage(api, heroConfig?: any) {
       hero: heroConfig?.populate,
       sections: {
         populate: {
-          sectionType: { fields: ["name"] },
+          section: {
+            fields: ["slug"],
+            populate: {
+              section: { fields: ["name"] },
+            },
+          },
         },
       },
     },
