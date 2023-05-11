@@ -10,13 +10,13 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "string",
+    "subtitle": {
+      "type": "text",
       "required": true
     },
-    "images": {
+    "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images",
@@ -24,6 +24,11 @@
         "videos",
         "audios"
       ]
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.button"
     }
   }
 }

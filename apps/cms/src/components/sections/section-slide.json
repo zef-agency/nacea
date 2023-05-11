@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_section_slides",
+  "info": {
+    "displayName": "Section : Slide"
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-slide.section-slide"
+    }
+  }
+}

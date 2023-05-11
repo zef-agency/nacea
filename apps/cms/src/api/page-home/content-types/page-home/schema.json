@@ -37,7 +37,11 @@
       "components": [
         "sections.section-banner",
         "sections.section-caroussel",
-        "sections.section-event"
+        "sections.section-event",
+        "sections.section-relance",
+        "sections.section-slide",
+        "sections.section-contact",
+        "sections.section-devis"
       ]
     }
   }

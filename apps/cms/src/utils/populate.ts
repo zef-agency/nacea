@@ -48,37 +48,6 @@ export function deleteProps(obj: any, props: string[]) {
   }
 }
 
-// -----------------------------------------
-// --------------- SECTIONS ----------------
-// -----------------------------------------
-
-// HERO
-export const HeroMainConfig = {
-  name: "hero",
-  populate: {
-    fields: ["title", "description"],
-    populate: {
-      images: true,
-    },
-  },
-  reorder: (res: any): any => ({
-    title: res.title,
-    description: res.description,
-    images: res.images.map((image: OriginalImageType) =>
-      ImageConfig.reorder(image)
-    ),
-  }),
-};
-
-// SECTION
-export const SectionConfig = {
-  name: "section",
-  populate: { fields: ["name"] },
-  reorder: (res: { name: string }): any => ({
-    type: res.name,
-  }),
-};
-
 // -------------------------------------------
 // --------------- COMPONENTS ----------------
 // -------------------------------------------
@@ -152,6 +121,17 @@ export const EventConfig = {
     description: res.description,
     intro: res.intro,
     image: ImageConfig.reorder(res.image),
+  }),
+};
+
+// EventName
+export const EventNameConfig = {
+  name: "event",
+  populate: {
+    fields: ["label"],
+  },
+  reorder: (res: any): any => ({
+    label: res.label,
   }),
 };
 
@@ -294,6 +274,37 @@ export const FormConfig = {
       : null,
     errors: res.errors,
     button: res.button ? ButtonConfig.reorder(res.button) : null,
+  }),
+};
+
+// -----------------------------------------
+// --------------- SECTIONS ----------------
+// -----------------------------------------
+
+// HERO
+export const HeroMainConfig = {
+  name: "hero",
+  populate: {
+    fields: ["title", "subtitle"],
+    populate: {
+      image: true,
+      button: ButtonConfig.populate,
+    },
+  },
+  reorder: (res: any): any => ({
+    title: res.title,
+    subtitle: res.subtitle,
+    image: ImageConfig.reorder(res.image),
+    button: ButtonConfig.reorder(res.button),
+  }),
+};
+
+// SECTION
+export const SectionConfig = {
+  name: "section",
+  populate: { fields: ["name"] },
+  reorder: (res: { name: string }): any => ({
+    type: res.name,
   }),
 };
 

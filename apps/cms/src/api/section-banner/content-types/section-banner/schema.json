@@ -39,7 +39,7 @@
       "component": "assets.button",
       "required": true
     },
-    "description": {
+    "subtitle": {
       "type": "customField",
       "options": {
         "preset": "toolbarBaloon"
@@ -59,6 +59,10 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::color.color"
+    },
+    "imageLeft": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "section_slides",
+  "info": {
+    "singularName": "section-slide",
+    "pluralName": "section-slides",
+    "displayName": "📒 Section : Slide",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event"
+    },
+    "backgroundColor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::color.color"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section.section"
+    }
+  }
+}

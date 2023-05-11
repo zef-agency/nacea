@@ -5,6 +5,7 @@ import {
   ColorConfig,
   deleteProps,
   EventConfig,
+  EventNameConfig,
   FormConfig,
   ImageConfig,
   reorderComponentKeys,
@@ -17,7 +18,9 @@ export function getAllSections(entries: { sections: any[] }) {
       async (section: {
         section: { slug: string; section: { name: string } };
       }) => {
-        if (!section.section.section.name) return null;
+        console.log(section);
+
+        if (!section.section) return null;
 
         switch (section.section.section.name) {
           case section.section.section.name:
@@ -29,6 +32,7 @@ export function getAllSections(entries: { sections: any[] }) {
                 },
                 populate: {
                   event: EventConfig.populate,
+                  events: EventNameConfig.populate,
                   backgroundColor: ColorConfig.populate,
                   section: SectionConfig.populate,
                   button: ButtonConfig.populate,
@@ -51,6 +55,7 @@ export function getAllSections(entries: { sections: any[] }) {
 
             reorderComponentKeys(res, {
               event: EventConfig,
+              events: EventNameConfig,
               button: ButtonConfig,
               alert: AlertConfig,
               section: SectionConfig,

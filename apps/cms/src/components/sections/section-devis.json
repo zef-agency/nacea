@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_section_devis",
+  "info": {
+    "displayName": "Section : Devis"
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-devis.section-devis"
+    }
+  }
+}

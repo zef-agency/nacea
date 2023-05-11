@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_section_relances",
+  "info": {
+    "displayName": "Section : Relance"
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section-relance.section-relance"
+    }
+  }
+}
