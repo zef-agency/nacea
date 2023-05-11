@@ -91,9 +91,9 @@ export const ImageConfig = {
   reorder: (res: OriginalImageType): any => ({
     url: res.url,
     format: {
-      small: res.formats.small?.url,
-      medium: res.formats.medium?.url,
-      thumbnail: res.formats.thumbnail?.url,
+      small: res.formats?.small?.url,
+      medium: res.formats?.medium?.url,
+      thumbnail: res.formats?.thumbnail?.url,
     },
   }),
 };
