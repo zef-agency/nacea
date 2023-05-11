@@ -1,14 +1,3 @@
-/* import {
-  AlertType,
-  ButtonType,
-  CheckedType,
-  ImageType,
-  InputType,
-  SectionType,
-  SelectType,
-  TagType,
-} from "utils"; */
-
 const reorderDynamicZone = (propValue, config) => {
   const res = propValue.map((item, i) => {
     const matchingConfig = config.find((c) => item.__component.match(c.name));
