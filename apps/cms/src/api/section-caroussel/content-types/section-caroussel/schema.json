@@ -23,10 +23,12 @@
       "required": true
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "subtitle": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "button": {
       "type": "component",

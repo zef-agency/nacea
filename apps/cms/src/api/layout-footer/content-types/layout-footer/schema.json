@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "links": {
-      "type": "component",
-      "repeatable": true,
-      "component": "assets.button"
-    },
     "signature": {
       "type": "string"
     },
@@ -24,9 +19,25 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "assets.button"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "links": {
       "type": "component",
       "repeatable": true,
       "component": "assets.button"

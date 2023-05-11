@@ -31,7 +31,7 @@
       "type": "string"
     },
     "subtitle": {
-      "type": "string"
+      "type": "text"
     },
     "image": {
       "type": "media",

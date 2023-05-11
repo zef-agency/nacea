@@ -1,7 +1,8 @@
 {
   "collectionName": "components_sections_section_slides",
   "info": {
-    "displayName": "Section : Slide"
+    "displayName": "📒 Section : Slide",
+    "description": ""
   },
   "options": {},
   "attributes": {

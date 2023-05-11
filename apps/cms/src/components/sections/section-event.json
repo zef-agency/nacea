@@ -1,7 +1,8 @@
 {
   "collectionName": "components_sections_section_events",
   "info": {
-    "displayName": "Section : Event"
+    "displayName": "📒 Section : Event",
+    "description": ""
   },
   "options": {},
   "attributes": {

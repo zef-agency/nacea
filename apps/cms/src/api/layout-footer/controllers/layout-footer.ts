@@ -4,7 +4,11 @@
 
 import { factories } from "@strapi/strapi";
 
-import { ButtonConfig, reorderComponentKeys } from "../../../utils/populate";
+import {
+  ButtonConfig,
+  ImageConfig,
+  reorderComponentKeys,
+} from "../../../utils/populate";
 
 export default factories.createCoreController(
   "api::layout-footer.layout-footer",
@@ -14,17 +18,18 @@ export default factories.createCoreController(
         "api::layout-footer.layout-footer",
         {
           populate: {
-            logo: true,
-            links: ButtonConfig.populate,
+            logo: ImageConfig.populate,
             socials: ButtonConfig.populate,
+            links: ButtonConfig.populate,
           },
-          fields: ["id", "signature"],
+          fields: ["id", "signature", "title", "subtitle"],
         }
       );
 
       reorderComponentKeys(res, {
         socials: ButtonConfig,
         links: ButtonConfig,
+        logo: ImageConfig,
       });
 
       return res;
