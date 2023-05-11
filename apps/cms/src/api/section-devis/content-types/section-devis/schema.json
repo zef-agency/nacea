@@ -13,7 +13,9 @@
   "pluginOptions": {},
   "attributes": {
     "slug": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "section": {
       "type": "relation",
@@ -33,7 +35,7 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -42,10 +44,13 @@
       ]
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "unique": false,
+      "required": true
     },
     "subtitle": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }
