@@ -1,13 +1,13 @@
 import {
   AlertConfig,
   ButtonConfig,
-  CardConfig,
   ColorConfig,
   deleteProps,
   EventConfig,
   EventNameConfig,
   FormConfig,
   ImageConfig,
+  ItemConfig,
   reorderComponentKeys,
   SectionConfig,
 } from "../populate";
@@ -18,8 +18,6 @@ export function getAllSections(entries: { sections: any[] }) {
       async (section: {
         section: { slug: string; section: { name: string } };
       }) => {
-        console.log(section);
-
         if (!section.section) return null;
 
         switch (section.section.section.name) {
@@ -41,8 +39,8 @@ export function getAllSections(entries: { sections: any[] }) {
                   image: ImageConfig.populate,
                   attributes: {
                     on: {
-                      "assets.card-event": CardConfig.populate,
-                      "assets.card-product": CardConfig.populate,
+                      "assets.card-event": ItemConfig.populate,
+                      "assets.card-product": ItemConfig.populate,
                     },
                   },
                 },
@@ -62,7 +60,7 @@ export function getAllSections(entries: { sections: any[] }) {
               image: ImageConfig,
               form: FormConfig,
               backgroundColor: ColorConfig,
-              attributes: [CardConfig],
+              attributes: [ItemConfig],
             });
 
             deleteProps(res, ["slug", "publishedAt", "createdAt", "updatedAt"]);

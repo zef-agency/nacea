@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "layout_modals",
+  "info": {
+    "singularName": "layout-modal",
+    "pluralName": "layout-modals",
+    "displayName": "📌 Layout : Modal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "forms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::form.form"
+    },
+    "title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.button"
+    }
+  }
+}

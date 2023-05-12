@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_assets_definitions",
+  "info": {
+    "displayName": "definition"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::color.color"
+    }
+  }
+}

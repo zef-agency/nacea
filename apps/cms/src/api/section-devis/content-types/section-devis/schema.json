@@ -51,6 +51,10 @@
     "subtitle": {
       "type": "text",
       "required": true
+    },
+    "imageLeft": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

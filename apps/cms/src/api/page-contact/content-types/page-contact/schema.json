@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_contacts",
+  "info": {
+    "singularName": "page-contact",
+    "pluralName": "page-contacts",
+    "displayName": "📝 Page : Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "boolean",
+      "default": true
+    },
+    "footer": {
+      "type": "boolean",
+      "default": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "config.seo",
+      "required": true
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.section-banner",
+        "sections.section-caroussel",
+        "sections.section-event",
+        "sections.section-relance",
+        "sections.section-slide",
+        "sections.section-contact",
+        "sections.section-devis"
+      ]
+    }
+  }
+}

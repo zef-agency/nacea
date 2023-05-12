@@ -151,8 +151,8 @@ export const ProductConfig = {
   }),
 };
 
-// Card
-export const CardConfig = {
+// Item
+export const ItemConfig = {
   name: "card",
   populate: {
     populate: {
@@ -167,6 +167,21 @@ export const CardConfig = {
     products: res.products
       ? res.products.map((product: any) => ProductConfig.reorder(product))
       : null,
+  }),
+};
+// Card
+export const CardConfig = {
+  name: "card",
+  populate: {
+    field: ["title", "description"],
+    populate: {
+      icon: ImageConfig.populate,
+    },
+  },
+  reorder: (res: any): any => ({
+    title: res.title,
+    description: res.description,
+    icon: ImageConfig.reorder(res.icon),
   }),
 };
 
@@ -249,7 +264,7 @@ export const CheckboxConfig = {
 export const FormConfig = {
   name: "form",
   populate: {
-    fields: ["errors"],
+    fields: ["errors", "title"],
 
     populate: {
       attributes: {
@@ -273,6 +288,7 @@ export const FormConfig = {
         ])
       : null,
     errors: res.errors,
+    title: res.title,
     button: res.button ? ButtonConfig.reorder(res.button) : null,
   }),
 };
@@ -287,7 +303,7 @@ export const HeroMainConfig = {
   populate: {
     fields: ["title", "subtitle"],
     populate: {
-      image: true,
+      image: ImageConfig.populate,
       button: ButtonConfig.populate,
     },
   },
@@ -296,6 +312,41 @@ export const HeroMainConfig = {
     subtitle: res.subtitle,
     image: ImageConfig.reorder(res.image),
     button: ButtonConfig.reorder(res.button),
+  }),
+};
+// HERO
+export const HeroEventConfig = {
+  name: "hero",
+  populate: {
+    fields: ["title", "subtitle"],
+    populate: {
+      image: ImageConfig.populate,
+      form: FormConfig.populate,
+    },
+  },
+  reorder: (res: any): any => ({
+    title: res.title,
+    subtitle: res.subtitle,
+    image: ImageConfig.reorder(res.image),
+    form: FormConfig.reorder(res.form),
+  }),
+};
+
+// HERO
+export const HeroConceptConfig = {
+  name: "hero",
+  populate: {
+    fields: ["title", "subtitle"],
+    populate: {
+      images: ImageConfig.populate,
+      cards: CardConfig.populate,
+    },
+  },
+  reorder: (res: any): any => ({
+    title: res.title,
+    subtitle: res.subtitle,
+    images: res.images.map((image) => ImageConfig.reorder(image)),
+    cards: res.cards.map((card) => CardConfig.reorder(card)),
   }),
 };
 
@@ -339,6 +390,7 @@ interface OriginalFormType {
   button: OriginalButtonType;
   attributes: any;
   errors: any;
+  title: string;
 }
 
 interface OriginalButtonType {

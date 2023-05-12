@@ -32,6 +32,9 @@
     "errors": {
       "type": "json",
       "required": true
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

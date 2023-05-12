@@ -1,28 +1,37 @@
 {
   "collectionName": "components_sections_hero_seconds",
   "info": {
-    "displayName": "hero-second"
+    "displayName": "hero-concept",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "string"
+    "subtitle": {
+      "type": "text"
     },
-    "type": {
-      "type": "string"
-    },
-    "image": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "assets.card"
+    },
+    "definition": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.definition"
     }
   }
 }

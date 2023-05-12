@@ -37,7 +37,7 @@
       "type": "component",
       "repeatable": false,
       "component": "assets.button",
-      "required": true
+      "required": false
     },
     "subtitle": {
       "type": "customField",
