@@ -27,5 +27,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@strapi/provider-upload-cloudinary": "^4.10.5"
+  }
 }

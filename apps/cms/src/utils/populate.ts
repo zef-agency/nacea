@@ -89,11 +89,11 @@ export const ImageConfig = {
   name: "image",
   populate: true,
   reorder: (res: OriginalImageType): any => ({
-    url: res.url,
+    url: res ? res.url : null,
     format: {
-      small: res.formats?.small?.url,
-      medium: res.formats?.medium?.url,
-      thumbnail: res.formats?.thumbnail?.url,
+      small: res ? res.formats?.small?.url : null,
+      medium: res ? res.formats?.medium?.url : null,
+      thumbnail: res ? res.formats?.thumbnail?.url : null,
     },
   }),
 };
