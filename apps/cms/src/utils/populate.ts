@@ -1,3 +1,12 @@
+import {
+  AlertType,
+  ButtonType,
+  CheckedType,
+  ImageType,
+  InputType,
+  SelectType,
+  TagType,
+} from "utils";
 const reorderDynamicZone = (propValue, config) => {
   const res = propValue.map((item, i) => {
     const matchingConfig = config.find((c) => item.__component.match(c.name));
@@ -61,7 +70,7 @@ export const ButtonConfig = {
       color: { fields: ["code"] },
     },
   },
-  reorder: (res: OriginalButtonType): any => ({
+  reorder: (res: OriginalButtonType): ButtonType => ({
     label: res.label,
     link: res.link,
     newWindow: res.newWindow,
@@ -78,7 +87,7 @@ export const TagConfig = {
       color: { fields: ["code"] },
     },
   },
-  reorder: (res: OriginalTagType): any => ({
+  reorder: (res: OriginalTagType): TagType => ({
     label: res.label,
     color: res.color ? ColorConfig.reorder(res.color) : null,
   }),
@@ -88,7 +97,7 @@ export const TagConfig = {
 export const ImageConfig = {
   name: "image",
   populate: true,
-  reorder: (res: OriginalImageType): any => ({
+  reorder: (res: OriginalImageType): ImageType => ({
     url: res ? res.url : null,
     alt: res ? res.name : null,
     format: {
@@ -201,7 +210,7 @@ export const AlertConfig = {
     },
   },
 
-  reorder: (res: OriginalAlertType): any => ({
+  reorder: (res: OriginalAlertType): AlertType => ({
     text: res.message ? res.message.text : null,
     color: res.message ? ColorConfig.reorder(res.message.color) : null,
   }),
@@ -219,7 +228,7 @@ export const InputConfig = {
     },
   },
 
-  reorder: (res: OriginalInputType): any => ({
+  reorder: (res: OriginalInputType): InputType => ({
     label: res.label,
     placeholder: res.placeholder,
     name: res.name,
@@ -239,7 +248,7 @@ export const SelectConfig = {
     },
   },
 
-  reorder: (res: OriginalSelectType): any => ({
+  reorder: (res: OriginalSelectType): SelectType => ({
     label: res.label,
     name: res.name,
     type: "select",
@@ -254,7 +263,7 @@ export const CheckboxConfig = {
     fields: ["label", "defaultChecked", "name"],
   },
 
-  reorder: (res: OriginalCheckedType): any => ({
+  reorder: (res: OriginalCheckedType): CheckedType => ({
     label: res.label,
     type: "checkbox",
     name: res.name,
