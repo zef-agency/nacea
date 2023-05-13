@@ -1,23 +1,29 @@
-import NextImage, { ImageProps as NextImageProps } from "next/legacy/image";
+import Image from "next/image";
 import React from "react";
 import { ImageType } from "utils";
 
-export interface ImageProps extends NextImageProps {
+export interface ImageProps {
   src: ImageType["url"];
+  alt: string;
   priority?: boolean;
 }
 
-export function Image(props: ImageProps): JSX.Element {
-  const { priority, ...imageProps } = props;
+const imageLoader = ({ src, width, quality }: any) => {
+  return `${src}?w=${width}&q=${quality || 75}`;
+};
+
+export function CustomImage(props: ImageProps): JSX.Element {
+  const { priority, src, alt, ...imageProps } = props;
 
   return (
     <div className={"w-full h-full relative z-0"}>
-      <NextImage
+      <Image
+        alt={alt}
         width={1000}
         height={1000}
-        layout="responsive"
-        objectFit="contain"
         priority={priority}
+        src={src}
+        loader={imageLoader}
         {...imageProps}
       />
     </div>

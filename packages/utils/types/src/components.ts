@@ -1,5 +1,6 @@
 export interface ImageType {
   url: string;
+  alt: string;
   format: {
     small: string;
     medium: string;

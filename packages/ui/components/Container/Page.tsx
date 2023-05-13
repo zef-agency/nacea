@@ -25,9 +25,9 @@ export function Page(props: PageType) {
       ) : (
         <></>
       )}
-      <div className="">
+      {/*       <div className="">
         {sections ? sections.map((section) => renderSection(section)) : <></>}
-      </div>
+      </div> */}
       {footer ? (
         <Footer
           links={footer.links}

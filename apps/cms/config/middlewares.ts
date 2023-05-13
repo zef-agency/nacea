@@ -1,21 +1,8 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
   "strapi::errors",
-  {
-    name: "strapi::security",
-    config: {
-      contentSecurityPolicy: {
-        useDefaults: true,
-        directives: {
-          "connect-src": ["'self'", "https:"],
-          "img-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
-          "media-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
-          upgradeInsecureRequests: null,
-        },
-      },
-    },
-  },
   "strapi::cors",
+  "strapi::security",
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",

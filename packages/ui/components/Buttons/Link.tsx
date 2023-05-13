@@ -9,11 +9,11 @@ const globalClasses: string[] = ["text-black"];
 const link = cva(globalClasses, {
   variants: {
     size: {
-      small: ["text-xs"],
+      medium: ["text-14"],
     },
   },
   defaultVariants: {
-    size: "small",
+    size: "medium",
   },
 });
 
@@ -39,7 +39,7 @@ export function Links({
 interface ButtonProps extends PropsWithChildren<any> {
   props?: React.ButtonHTMLAttributes<HTMLButtonElement>;
   className?: ClassValue;
-  size?: "small";
+  size?: "medium";
   color: ButtonType["color"];
   href: string;
 }

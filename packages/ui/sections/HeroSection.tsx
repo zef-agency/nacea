@@ -1,7 +1,7 @@
 import React from "react";
 import { getUrl, HeroSectionType } from "utils";
 
-import { Button, Image, Text, Title } from "../components";
+import { Button, CustomImage, Text, Title } from "../components";
 
 interface HeroSectionProps {
   data: HeroSectionType;
@@ -15,7 +15,7 @@ export function HeroSection({ data }: HeroSectionProps) {
       <Title> {title} </Title>
       <Text> {description} </Text>
       <div className="w-full max-w-[120px]">
-        <Image priority={true} alt="image" src={getUrl(image.url)} />
+        <CustomImage priority={true} src={getUrl(image.url)} />
       </div>
       {button && (
         <Button color={button?.color} href={button?.link}>

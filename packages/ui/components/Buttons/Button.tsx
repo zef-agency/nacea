@@ -5,7 +5,8 @@ import { PropsWithChildren } from "react";
 import { ButtonType } from "utils";
 
 const globalClasses: string[] = [
-  "rounded-md",
+  "rounded-br-xs",
+  "rounded-tl-xs",
   "flex",
   "items-center",
   "justify-center",
@@ -17,7 +18,7 @@ const button = cva(globalClasses, {
   variants: {
     size: {
       small: ["text-xs", "py-1", "px-2"],
-      medium: ["text-sm", "py-1.5", "px-3"],
+      medium: ["text-14", "py-2.5", "px-7"],
       iconOnly: ["p-1.5"],
     },
   },

@@ -2,7 +2,7 @@ import React from "react";
 import { FooterType, getUrl } from "utils";
 
 import { Links } from "../Buttons/Link";
-import { Image } from "../Image/Image";
+import { CustomImage } from "../Image/Image";
 
 export function Footer(props: FooterType) {
   const { links, socials, logo } = props;
@@ -10,7 +10,7 @@ export function Footer(props: FooterType) {
   return (
     <div className="flex items-center justify-between w-full py-2 px-10">
       <div className="w-full max-w-[200px]">
-        <Image priority={true} alt="image" src={getUrl(logo.url)} />
+        <CustomImage priority={true} alt={logo.alt} src={logo.url} />
       </div>
       <div className="flex items-center justify-between gap-4">
         {links?.map((link, k) => (
