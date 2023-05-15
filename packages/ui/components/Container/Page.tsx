@@ -1,42 +1,25 @@
 import React from "react";
-import { FooterType, HeaderType, SectionsType } from "utils";
+import { PageType } from "utils";
 
 import { renderSection } from "../../sections/sections";
 import { Footer } from "../Layout/Footer";
 import { Header } from "../Layout/Header";
 
-interface PageType {
-  header?: HeaderType;
-  footer?: FooterType;
-  sections?: SectionsType[];
+interface PageProps {
+  data: PageType;
 }
 
-export function Page(props: PageType) {
-  const { header, footer, sections } = props;
+export function Page({ data }: PageProps) {
+  const { header, footer, sections, hero } = data;
 
   return (
     <div>
-      {header ? (
-        <Header
-          links={header.links}
-          button={header.button}
-          logo={header.logo}
-        />
-      ) : (
-        <></>
-      )}
-      {/*       <div className="">
+      {header ? <Header data={header} /> : <></>}
+      {hero && renderSection(hero)}
+      <div className="">
         {sections ? sections.map((section) => renderSection(section)) : <></>}
-      </div> */}
-      {footer ? (
-        <Footer
-          links={footer.links}
-          socials={footer.socials}
-          logo={footer.logo}
-        />
-      ) : (
-        <> </>
-      )}
+      </div>
+      {footer ? <Footer data={footer} /> : <> </>}
     </div>
   );
 }

@@ -8,7 +8,7 @@ const form = cva(globalClasses, {
     size: {
       smallest: ["text-14"],
       small: ["text-15"],
-      base: ["text-14 md:text-16"],
+      base: ["text-16"],
       medium: ["text-17"],
       large: ["text-18"],
       largest: ["text-20"],
@@ -16,12 +16,15 @@ const form = cva(globalClasses, {
     },
     weight: {
       normal: ["font-normal"],
-      sb: ["font-bold"],
-      bold: ["font-ApercuBold"],
+      sb: ["font-semibold"],
+      bold: ["font-bold"],
       lightItalic: ["font-ApercuLightItalic"],
-      regular: ["font-ApercuRegular"],
-      medium: ["font-ApercuMedium"],
-      light: ["font-ApercuLight"],
+      regular: ["font-regular"],
+      medium: ["font-medium"],
+      light: ["font-light"],
+    },
+    family: {
+      montserrat: ["font-Montserrat"],
     },
     variations: {
       normal: ["text-black"],
@@ -33,6 +36,7 @@ const form = cva(globalClasses, {
     size: "small",
     weight: "normal",
     variations: "normal",
+    family: "montserrat",
   },
 });
 

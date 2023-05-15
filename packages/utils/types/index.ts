@@ -12,10 +12,19 @@ export type {
   TagType,
 } from "./src/components";
 export type {
-  CardSectionType,
+  BannerSectionType,
+  CarousselSectionType,
+  ContactSectionType,
+  DevisSectionType,
+  EventSectionType,
   FooterType,
   HeaderType,
+  HeroMainSectionType,
   HeroSectionType,
+  PageType,
+  RelanceSectionType,
   SectionsType,
   SectionType,
+  SeoType,
+  SlideSectionType,
 } from "./src/sections";

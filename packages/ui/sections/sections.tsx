@@ -1,25 +1,82 @@
 import {
-  CardSectionType,
+  BannerSectionType,
+  CarousselSectionType,
+  ContactSectionType,
+  DevisSectionType,
+  EventSectionType,
   getRandom,
-  HeroSectionType,
+  HeroMainSectionType,
+  RelanceSectionType,
   SectionsType,
+  SlideSectionType,
 } from "utils";
 
-import { CardSection } from "./CardSection";
-import { HeroSection } from "./HeroSection";
+import { BannerSection } from "./BannerSection";
+import { CarousselSection } from "./CarousselSection";
+import { ContactSection } from "./ContactSection";
+import { DevisSection } from "./DevisSection";
+import { EventSection } from "./EventSection";
+import { HeroMain } from "./HeroMain";
+import { RelanceSection } from "./RelanceSection";
+import { SlideSection } from "./SlideSection";
 
 export function renderSection(section: SectionsType) {
   if (!section || !section.section) {
     return <div key={getRandom(9999)}></div>;
   }
   switch (section.section.type) {
-    case "section-card":
+    case "section-relance":
       return (
-        <CardSection key={getRandom(9999)} data={section as CardSectionType} />
+        <RelanceSection
+          key={getRandom(9999)}
+          data={section as RelanceSectionType}
+        />
       );
-    case "section-hero":
+    case "section-caroussel":
       return (
-        <HeroSection key={getRandom(9999)} data={section as HeroSectionType} />
+        <CarousselSection
+          key={getRandom(9999)}
+          data={section as CarousselSectionType}
+        />
+      );
+    case "section-devis":
+      return (
+        <DevisSection
+          key={getRandom(9999)}
+          data={section as DevisSectionType}
+        />
+      );
+    case "section-banner":
+      return (
+        <BannerSection
+          key={getRandom(9999)}
+          data={section as BannerSectionType}
+        />
+      );
+    case "section-event":
+      return (
+        <EventSection
+          key={getRandom(9999)}
+          data={section as EventSectionType}
+        />
+      );
+    case "section-contact":
+      return (
+        <ContactSection
+          key={getRandom(9999)}
+          data={section as ContactSectionType}
+        />
+      );
+    case "section-slide":
+      return (
+        <SlideSection
+          key={getRandom(9999)}
+          data={section as SlideSectionType}
+        />
+      );
+    case "hero-main":
+      return (
+        <HeroMain key={getRandom(9999)} data={section as HeroMainSectionType} />
       );
     default:
       break;

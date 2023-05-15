@@ -15,17 +15,29 @@
     "logo": {
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "button": {
       "type": "component",
       "repeatable": false,
-      "component": "assets.button"
+      "component": "assets.button",
+      "required": true
     },
     "links": {
       "type": "component",
       "repeatable": true,
+      "component": "assets.button",
+      "required": true
+    },
+    "telephone": {
+      "type": "component",
+      "repeatable": false,
       "component": "assets.button"
     }
   }

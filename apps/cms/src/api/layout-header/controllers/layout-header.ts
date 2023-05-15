@@ -21,6 +21,7 @@ export default factories.createCoreController(
             logo: ImageConfig.populate,
             links: ButtonConfig.populate,
             button: ButtonConfig.populate,
+            telephone: ButtonConfig.populate,
           },
           fields: ["id"],
         }
@@ -29,6 +30,7 @@ export default factories.createCoreController(
       reorderComponentKeys(res, {
         button: ButtonConfig,
         links: ButtonConfig,
+        telephone: ButtonConfig,
         logo: ImageConfig,
       });
 

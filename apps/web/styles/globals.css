@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+   background-color: #FFFCF8 !important;
+   font-family: 'Montserrat'
+}
+
+@layer components {
+   .max-w {
+     @apply max-w-[1500px] my-0 mx-auto;
+   }
+ }

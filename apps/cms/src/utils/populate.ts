@@ -1,12 +1,20 @@
 import {
   AlertType,
+  BannerSectionType,
   ButtonType,
+  CarousselSectionType,
   CheckedType,
+  ContactSectionType,
+  DevisSectionType,
+  EventSectionType,
   ImageType,
   InputType,
+  RelanceSectionType,
   SelectType,
+  SlideSectionType,
   TagType,
 } from "utils";
+
 const reorderDynamicZone = (propValue, config) => {
   const res = propValue.map((item, i) => {
     const matchingConfig = config.find((c) => item.__component.match(c.name));
@@ -123,7 +131,7 @@ export const EventConfig = {
   populate: {
     fields: ["label", "description", "intro"],
     populate: {
-      image: true,
+      image: ImageConfig.populate,
     },
   },
   reorder: (res: any): any => ({
@@ -322,6 +330,7 @@ export const HeroMainConfig = {
     subtitle: res.subtitle,
     image: ImageConfig.reorder(res.image),
     button: ButtonConfig.reorder(res.button),
+    section: { type: "hero-main" },
   }),
 };
 // HERO
@@ -339,6 +348,7 @@ export const HeroEventConfig = {
     subtitle: res.subtitle,
     image: ImageConfig.reorder(res.image),
     form: FormConfig.reorder(res.form),
+    section: { type: "hero-event" },
   }),
 };
 
@@ -357,6 +367,7 @@ export const HeroConceptConfig = {
     subtitle: res.subtitle,
     images: res.images.map((image) => ImageConfig.reorder(image)),
     cards: res.cards.map((card) => CardConfig.reorder(card)),
+    section: { type: "hero-concept" },
   }),
 };
 
@@ -366,6 +377,179 @@ export const SectionConfig = {
   populate: { fields: ["name"] },
   reorder: (res: { name: string }): any => ({
     type: res.name,
+  }),
+};
+
+// SECTION RELANCE
+export const SectionRelanceConfig = {
+  name: "section-relance",
+  api: "api::section-relance.section-relance",
+  populate: {
+    fields: ["title", "subtitle"],
+    populate: {
+      backgroundColor: ColorConfig.populate,
+      button: ButtonConfig.populate,
+      section: SectionConfig.populate,
+    },
+  },
+  reorder: (res: any): RelanceSectionType => ({
+    id: res.id,
+    title: res.title,
+    subtitle: res.subtitle,
+    button: res.button ? ButtonConfig.reorder(res.button) : null,
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    backgroundColor: res.backgroundColor
+      ? ColorConfig.reorder(res.backgroundColor)
+      : null,
+  }),
+};
+
+// SECTION CARROUSSEL
+export const SectionCarouselConfig = {
+  name: "section-caroussel",
+  api: "api::section-caroussel.section-caroussel",
+  populate: {
+    fields: ["title", "subtitle", "id"],
+    populate: {
+      button: ButtonConfig.populate,
+      section: SectionConfig.populate,
+      attributes: {
+        on: {
+          "assets.card-event": ItemConfig.populate,
+          "assets.card-product": ItemConfig.populate,
+        },
+      },
+    },
+  },
+  reorder: (res: any): CarousselSectionType => ({
+    id: res.id,
+    title: res.title,
+    subtitle: res.subtitle,
+    button: res.button ? ButtonConfig.reorder(res.button) : null,
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    attributes: res.attributes
+      ? reorderDynamicZone(res.attributes, [ItemConfig])
+      : null,
+  }),
+};
+// SECTION DEVIS
+export const SectionDevisConfig = {
+  name: "section-devis",
+  api: "api::section-devis.section-devis",
+  populate: {
+    fields: ["title", "subtitle", "id", "imageLeft"],
+    populate: {
+      section: SectionConfig.populate,
+      backgroundColor: ColorConfig.populate,
+      image: ImageConfig.populate,
+      form: FormConfig.populate,
+    },
+  },
+  reorder: (res: any): DevisSectionType => ({
+    id: res.id,
+    title: res.title,
+    subtitle: res.subtitle,
+    imageLeft: res.imageLeft,
+    form: FormConfig.reorder(res.form),
+    image: ImageConfig.reorder(res.image),
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    backgroundColor: res.backgroundColor
+      ? ColorConfig.reorder(res.backgroundColor)
+      : null,
+  }),
+};
+
+// SECTION DEVIS
+export const SectionContactConfig = {
+  name: "section-contact",
+  api: "api::section-contact.section-contact",
+  populate: {
+    fields: ["title", "subtitle", "id"],
+    populate: {
+      section: SectionConfig.populate,
+      backgroundColor: ColorConfig.populate,
+      image: ImageConfig.populate,
+      form: FormConfig.populate,
+    },
+  },
+  reorder: (res: any): ContactSectionType => ({
+    id: res.id,
+    title: res.title,
+    subtitle: res.subtitle,
+    form: FormConfig.reorder(res.form),
+    image: ImageConfig.reorder(res.image),
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    backgroundColor: res.backgroundColor
+      ? ColorConfig.reorder(res.backgroundColor)
+      : null,
+  }),
+};
+
+// SECTION BANNER
+export const SectionBannerConfig = {
+  name: "section-banner",
+  api: "api::section-banner.section-banner",
+  populate: {
+    fields: ["title", "subtitle", "id", "imageLeft"],
+    populate: {
+      button: ButtonConfig.populate,
+      section: SectionConfig.populate,
+      backgroundColor: ColorConfig.populate,
+      image: ImageConfig.populate,
+    },
+  },
+  reorder: (res: any): BannerSectionType => ({
+    id: res.id,
+    title: res.title,
+    subtitle: res.subtitle,
+    imageLeft: res.imageLeft,
+    button: res.button ? ButtonConfig.reorder(res.button) : null,
+    image: ImageConfig.reorder(res.image),
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    backgroundColor: res.backgroundColor
+      ? ColorConfig.reorder(res.backgroundColor)
+      : null,
+  }),
+};
+// SECTION EVENT
+export const SectionEventConfig = {
+  name: "section-event",
+  api: "api::section-event.section-event",
+  populate: {
+    fields: ["id", "imageLeft"],
+    populate: {
+      button: ButtonConfig.populate,
+      section: SectionConfig.populate,
+      event: EventConfig.populate,
+    },
+  },
+  reorder: (res: any): EventSectionType => ({
+    id: res.id,
+    imageLeft: res.imageLeft,
+    button: res.button ? ButtonConfig.reorder(res.button) : null,
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    event: res.event ? EventConfig.reorder(res.event) : null,
+  }),
+};
+// SECTION EVENT
+export const SectionSlideConfig = {
+  name: "section-slide",
+  api: "api::section-slide.section-slide",
+  populate: {
+    fields: ["id"],
+    populate: {
+      backgroundColor: ColorConfig.populate,
+      section: SectionConfig.populate,
+      events: EventNameConfig.populate,
+    },
+  },
+  reorder: (res: any): SlideSectionType => ({
+    id: res.id,
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    events: EventNameConfig.reorder(res.events),
+    backgroundColor: res.backgroundColor
+      ? ColorConfig.reorder(res.backgroundColor)
+      : null,
   }),
 };
 
@@ -434,4 +618,8 @@ interface OriginalImageType {
     medium: { url: string };
     thumbnail: { url: string };
   };
+}
+
+export interface SectionType {
+  section: { slug: string; id: number; section: { name: string } };
 }

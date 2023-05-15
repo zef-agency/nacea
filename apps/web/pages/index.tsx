@@ -1,25 +1,17 @@
 import { Layout, Page } from "ui";
-import { fetcher, FooterType, getUrl, HeaderType, SectionsType } from "utils";
+import { fetcher, getUrl, PageType, SeoType } from "utils";
 
-interface PageHomeProps {
-  seo: {
-    title: string;
-    description: string;
-  };
-  header?: HeaderType;
-  footer?: FooterType;
-  sections?: SectionsType[];
+interface PageProps extends PageType {
+  seo: SeoType;
 }
 
-export default function Web(props: PageHomeProps) {
-  const { seo, sections, footer, header } = props;
+export default function index(props: PageProps) {
+  const { seo, ...rest } = props;
 
   return (
-    <div>
-      <Layout title={seo?.title} description={seo?.description}>
-        <Page sections={sections} footer={footer} header={header} />
-      </Layout>
-    </div>
+    <Layout title={seo?.title} description={seo?.description}>
+      <Page data={rest} />
+    </Layout>
   );
 }
 
@@ -36,6 +28,7 @@ export async function getStaticProps() {
     props: {
       seo: success.seo,
       sections: success.sections,
+      hero: success.hero ? success.hero : null,
       header: success.header ? header.success : null,
       footer: success.footer ? footer.success : null,
     },

@@ -16,15 +16,15 @@ module.exports = {
         maximum: "95%",
       },
       colors: {
-        black: "#363636",
+        black: "#000000",
         red: "#B2403F",
-        white: "#EAE9E6",
+        white: "#FFFFFF",
         whiteGray: "rgba(221, 220, 211, 0.31)",
-        gray: "#989898",
+        gray: "#B8B8B8",
         grayLight: "#C4C4C4",
       },
       fontFamily: {
-        Julius: ["JuliusSansOne", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"],
       },
     },
     borderRadius: {
@@ -34,8 +34,8 @@ module.exports = {
     screens: {
       xs: "375px",
       sm: "780px",
-      md: "846px",
-      lg: "1200px",
+      md: "1080px",
+      lg: "1512px",
     },
 
     fontSize: {
