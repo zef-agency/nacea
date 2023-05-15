@@ -11,7 +11,6 @@ const globalClasses: string[] = [
   "items-center",
   "justify-center",
   "text-white",
-  "leading-normal",
   "w-fit",
   "h-fit",
 ];
@@ -20,7 +19,7 @@ const button = cva(globalClasses, {
   variants: {
     size: {
       small: ["text-14", "py-2", "px-3", "w-full"],
-      medium: ["text-14", "py-3", "px-6"],
+      medium: ["text-14", "py-2.5 md:py-3", "px-5 md:px-6"],
       iconOnly: ["p-1.5"],
     },
     family: {
@@ -54,7 +53,11 @@ export function Button({
       type={submit ? "submit" : "button"}
     >
       {children}
-      {icon && <span className="z-10 text-24 font-bold"> {icon} </span>}
+      {icon && (
+        <span className={`${icon && "mx-2"} z-10 text-24 font-bold`}>
+          {icon}
+        </span>
+      )}
     </button>
   );
 }

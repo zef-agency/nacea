@@ -16,7 +16,7 @@ export function Header({ data }: HeaderProps) {
 
   return (
     <div className="border-b border-gray">
-      <Wrapper classes="flex items-center justify-between w-full py-3.5 px-5 sm:py-5 sm:px-7 md:px-12 ">
+      <Wrapper classes="flex items-center justify-between w-full">
         <div className="w-full max-w-[100px] md:max-w-[120px]">
           <CustomImage priority={true} alt={logo.alt} src={getUrl(logo.url)} />
         </div>
@@ -41,7 +41,7 @@ export function Header({ data }: HeaderProps) {
             {button.label}
           </Button>
         </div>
-        <div className="md:hidden flex items-center justify-center">
+        <div className="md:hidden flex items-center justify-center ">
           <Dropdown trigger={<Burger />}>
             <div className="flex flex-col justify-between gap-4">
               {links?.map((link, k) => (
@@ -70,7 +70,6 @@ export function Header({ data }: HeaderProps) {
 
             <Button
               className="sm:hidden"
-              size="small"
               href={getUrl(button.link, true)}
               color={button.color}
             >

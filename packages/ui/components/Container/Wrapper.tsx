@@ -2,7 +2,10 @@ import React, { PropsWithChildren } from "react";
 
 export function Wrapper({ children, classes, ...props }: WrapperProps) {
   return (
-    <div {...props} className={`max-w ${classes}`}>
+    <div
+      {...props}
+      className={`max-w py-3.5 px-5 sm:py-5 sm:px-7 md:px-12 ${classes}`}
+    >
       {children}
     </div>
   );

@@ -23,9 +23,6 @@ module.exports = {
         gray: "#B8B8B8",
         grayLight: "#C4C4C4",
       },
-      fontFamily: {
-        Montserrat: ["Montserrat", "sans-serif"],
-      },
     },
     borderRadius: {
       xs: "9px",
@@ -50,6 +47,10 @@ module.exports = {
       24: "1.50rem",
       28: "1.75rem",
       30: "1.95rem",
+      35: "2.188rem",
+      40: "2.5rem",
+      50: "3.125rem",
+      60: "3.725rem",
     },
   },
   plugins: [],

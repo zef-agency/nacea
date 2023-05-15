@@ -7,6 +7,10 @@ body {
    font-family: 'Montserrat'
 }
 
+h1{
+  font-family: 'BlackMango-regular'
+}
+
 @layer components {
    .max-w {
      @apply max-w-[1500px] my-0 mx-auto;
