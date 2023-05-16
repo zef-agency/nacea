@@ -4,6 +4,7 @@ import { Form, Formik } from "formik";
 import { attributesType, FormType, getInitialValues, yupify } from "utils";
 import * as Yup from "yup";
 
+import { Arrow } from "../../svg";
 import { Button } from "../Buttons/Button";
 import { Input } from "./Input";
 
@@ -12,13 +13,15 @@ const globalClasses: string[] = [];
 const formClass = cva(globalClasses, {
   variants: {
     variations: {
-      full: ["w-full"],
       row: ["flex flex-row gap-4 items-center"],
       column: ["flex flex-col gap-4 items-start"],
+      devis: [
+        "flex flex-col sm:grid-cols-2 md:grid-cols-3 sm:grid sm:items-stretch sm:justify-items-start gap-4 items-start w-full",
+      ],
     },
   },
   defaultVariants: {
-    variations: "row",
+    variations: "devis",
   },
 });
 
@@ -38,7 +41,7 @@ export function CustomForm(props: FormProps) {
           {form.attributes?.map((attribute: attributesType, k: number) => (
             <Input key={k} attribute={attribute} />
           ))}
-          <Button submit color={form.button?.color}>
+          <Button icon={<Arrow />} submit color={form.button?.color}>
             {form.button?.label}
           </Button>
         </Form>
@@ -54,8 +57,7 @@ CustomForm.defaultProps = {
 
 interface FormProps {
   form: FormType;
-  errors: any;
   callback: Function;
   className?: ClassValue;
-  variations?: "full" | "row" | "column";
+  variations?: "devis" | "row" | "column";
 }

@@ -11,6 +11,10 @@ h1{
   font-family: 'BlackMango-regular'
 }
 
+h2{
+  font-family: 'BlackMango-bold'
+}
+
 @layer components {
    .max-w {
      @apply max-w-[1500px] my-0 mx-auto;

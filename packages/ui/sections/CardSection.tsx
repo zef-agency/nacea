@@ -20,7 +20,6 @@ export function CardSection({ data }: CardSectionProps) {
       {form && (
         <CustomForm
           form={form}
-          errors={CardErrors}
           callback={(result: any) => console.log("result", result)}
         />
       )}

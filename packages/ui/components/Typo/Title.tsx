@@ -6,9 +6,10 @@ const globalClasses: string[] = [""];
 const form = cva(globalClasses, {
   variants: {
     size: {
+      Xsmall: ["text-14 md:text-16"],
       small: ["text-16 md:text-18"],
-      medium: ["text-xl"],
-      big: ["text-35 sm:text-40 md:text-50 lg:text-60"],
+      medium: ["text-22", "sm:text-24", "md:text-28"],
+      big: ["text-35 sm:text-40 md:text-60"],
     },
     weight: {
       normal: ["font-normal"],

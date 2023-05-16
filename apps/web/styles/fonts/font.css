@@ -17,7 +17,7 @@
 }
 
 @font-face {
-    font-family: 'BlackMango';
+    font-family: 'BlackMango-bold';
     src: url('BlackMango-Bold.woff2') format('woff2'),
         url('BlackMango-Bold.woff') format('woff');
     font-weight: bold;
