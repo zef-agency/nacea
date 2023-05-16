@@ -14,6 +14,7 @@
 		"class-variance-authority": "^0.5.3",
 		"eslint": "^8.39.0",
 		"formik": "^2.2.9",
+		"keen-slider": "^6.8.5",
 		"next": "latest",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -25,8 +26,8 @@
 	},
 	"devDependencies": {
 		"@types/node": "^17.0.12",
-		"@types/react": "^18.0.22",
-		"@types/react-dom": "^18.0.7",
+		"@types/react": "^18.2.6",
+		"@types/react-dom": "^18.2.4",
 		"autoprefixer": "^10.4.14",
 		"config": "*",
 		"eslint-config-next": "^13.3.1",

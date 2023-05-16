@@ -1,5 +1,6 @@
 export { Button } from "./Buttons/Button";
 export { Page } from "./Container/Page";
+export { TitleContainer } from "./Container/TitleContainer";
 export { Wrapper } from "./Container/Wrapper";
 export { CustomImage } from "./Image/Image";
 export { CustomForm } from "./Input/FormWrapper";

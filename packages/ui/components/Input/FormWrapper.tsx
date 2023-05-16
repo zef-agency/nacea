@@ -41,7 +41,12 @@ export function CustomForm(props: FormProps) {
           {form.attributes?.map((attribute: attributesType, k: number) => (
             <Input key={k} attribute={attribute} />
           ))}
-          <Button icon={<Arrow />} submit color={form.button?.color}>
+          <Button
+            className="mt-4"
+            icon={<Arrow />}
+            submit
+            color={form.button?.color}
+          >
             {form.button?.label}
           </Button>
         </Form>

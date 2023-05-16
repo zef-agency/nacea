@@ -14,12 +14,12 @@
   },
   "overrides": {
     "cms": {
-      "react": "18.2.0",
-      "react-dom": "18.2.0"
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
     },
     "web": {
-      "react": "18.2.0",
-      "react-dom": "18.2.0"
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
     }
   },
   "name": "my-turborepo",
