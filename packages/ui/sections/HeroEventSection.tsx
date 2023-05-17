@@ -1,35 +1,37 @@
 import React from "react";
-import { getUrl, HeroMainSectionType } from "utils";
+import { getUrl, HeroEventSectionType } from "utils";
 
-import { Button, CustomImage, Title, Wrapper } from "../components";
-import { Arrow, Truck } from "../svg";
+import { CustomForm, CustomImage, Title, Wrapper } from "../components";
 
 interface HeroMainProps {
-  data: HeroMainSectionType;
+  data: HeroEventSectionType;
 }
 
-export function HeroMain({ data }: HeroMainProps) {
-  const { title, subtitle, button, image } = data;
+export function HeroEventSection({ data }: HeroMainProps) {
+  const { title, subtitle, form, image } = data;
 
   return (
     <div className="flex flex-col sm:flex-row max-w">
       <Wrapper classes="flex flex-col justify-center gap-6 md:gap-8 py-5 max-w-[800px] md:py-8 lg:py-16 ">
         <div className="flex flex-col gap-2.5 md:gap-4">
           <div className="flex flex-row justify-between">
-            <Title className="max-w-[78%]" size="big">
+            <Title className="w-full" size="big">
               {title}
             </Title>
-            <Truck />
           </div>
           <Title size="small" HTMLtag="h3">
             {subtitle}
           </Title>
         </div>
-        <Button icon={<Arrow />} href={button.link} color={button.color}>
-          {button.label}
-        </Button>
+        {form && (
+          <CustomForm
+            form={form}
+            callback={(result: any) => console.log("result", result)}
+          />
+        )}
       </Wrapper>
-      <div className="sm:min-w-[400px] md:min-w-[550px] max-h-[600px]">
+
+      <div className="sm:min-w-[400px] md:min-w-[550px] h-[480px] sm:h-[580px]">
         <CustomImage priority={true} alt={image.alt} src={getUrl(image.url)} />
       </div>
     </div>

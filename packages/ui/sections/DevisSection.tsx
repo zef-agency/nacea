@@ -11,15 +11,13 @@ export function DevisSection({ data }: DevisSectionProps) {
   const { title, subtitle, form, image, backgroundColor, imageLeft } = data;
 
   return (
-    <div className=" py-6" style={{ backgroundColor }}>
+    <div className=" py-8" style={{ backgroundColor }}>
       <Wrapper
-        classes={`flex flex-col items-center  ${
-          imageLeft
-            ? "sm:flex-row-reverse sm:justify-center sm:items-center sm:gap-24"
-            : "sm:flex-row sm:justify-center sm:items-center sm:gap-24"
-        } gap-6`}
+        classes={`flex flex-col gap-6 items-center sm:justify-center sm:items-center sm:gap-24 ${
+          imageLeft ? "sm:flex-row-reverse" : "sm:flex-row"
+        } `}
       >
-        <div className="max-w-[350px] sm:max-w-[300px]">
+        <div className="w-[250px] sm:w-[240px] sm:max-w-[300px]">
           <CustomImage
             priority={true}
             alt={image.alt}

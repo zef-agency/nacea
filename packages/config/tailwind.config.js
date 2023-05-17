@@ -15,7 +15,12 @@ module.exports = {
       maxWidth: {
         maximum: "95%",
       },
+      brightness: {
+        25: ".25",
+        40: ".40",
+      },
       colors: {
+        beige: "#F9EFE1",
         black: "#000000",
         red: "#B2403F",
         white: "#FFFFFF",
@@ -25,13 +30,14 @@ module.exports = {
       },
     },
     borderRadius: {
-      xs: "9px",
+      xs: "7px",
       full: "100%",
     },
     screens: {
       xs: "375px",
       sm: "780px",
       md: "1080px",
+      md2: "1243px",
       lg: "1512px",
     },
 

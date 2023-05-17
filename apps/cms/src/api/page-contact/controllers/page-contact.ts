@@ -17,7 +17,6 @@ export default factories.createCoreController(
         seo: entries.seo,
         header: entries.header,
         footer: entries.footer,
-        hero: entries.hero,
         sections,
       };
     },

@@ -19,11 +19,14 @@ interface CarousselSectionProps {
 
 export function CarousselSection({ data }: CarousselSectionProps) {
   const { title, subtitle, button, attributes } = data;
+  const items = attributes[0].events
+    ? attributes[0].events
+    : attributes[0].products;
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: {
       origin: 0,
-      perView: 4,
-      spacing: 10,
+      perView: items.length >= 4 ? 4 : items.length,
+      spacing: 5,
     },
     breakpoints: {
       "(max-width: 1200px)": {
@@ -51,17 +54,11 @@ export function CarousselSection({ data }: CarousselSectionProps) {
   });
 
   return (
-    <div className="pt-4 md:pt-8">
+    <div className="py-5 md:py-8">
       <TitleContainer title={title} subtitle={subtitle} />
-      <Wrapper classes="flex flex-col mt-8 gap-8 items-center">
-        <div ref={sliderRef} className="keen-slider ">
-          <RenderCards
-            object={
-              attributes[0].events
-                ? attributes[0].events
-                : attributes[0].products
-            }
-          />
+      <Wrapper classes="flex flex-col sm:mt-8 gap-8 items-center">
+        <div ref={sliderRef} className="keen-slider">
+          <RenderCards object={items} />
         </div>
         <div className="flex flex-row gap-3">
           <ArrowCommand
@@ -76,14 +73,16 @@ export function CarousselSection({ data }: CarousselSectionProps) {
             }
           />
         </div>
-        <Button
-          className="w-full sm:w-fit"
-          icon={<Arrow />}
-          color={button.color}
-          href={button.link}
-        >
-          {button.label}
-        </Button>
+        {button && (
+          <Button
+            className="w-full sm:w-fit"
+            icon={<Arrow />}
+            color={button.color}
+            href={button.link}
+          >
+            {button.label}
+          </Button>
+        )}
       </Wrapper>
     </div>
   );
@@ -93,9 +92,12 @@ const RenderCards = ({ object }: any) => {
   return (
     <>
       {object.map((card: any, i: number) => (
-        <div key={i} className={`keen-slider__slide number-slide${i}`}>
-          <div className="flex flex-col items-center max-w-[280px]">
-            <div className="mb-2">
+        <div
+          key={i}
+          className={`keen-slider__slide number-slide${i} flex items-center justify-center`}
+        >
+          <div className="flex flex-col items-center max-w-[265px] mx-0 my-auto">
+            <div className="mb-2 w-[265px]">
               <CustomImage
                 priority={true}
                 alt={card.image.alt}

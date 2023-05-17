@@ -19,8 +19,6 @@ export async function getPage(api, heroConfig?: any) {
     fields: ["id", "header", "footer"],
   });
 
-  console.log("res", res);
-
   reorderComponentKeys(res, {
     hero: heroConfig,
   });

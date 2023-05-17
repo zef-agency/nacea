@@ -14,7 +14,9 @@ export type SectionsType =
   | EventSectionType
   | SlideSectionType
   | ContactSectionType
-  | HeroMainSectionType;
+  | HeroConceptSectionType
+  | HeroMainSectionType
+  | HeroEventSectionType;
 
 export interface PageType {
   header?: HeaderType;
@@ -131,5 +133,22 @@ export interface HeroMainSectionType {
   title: string;
   subtitle: string;
   button: ButtonType;
+  image: ImageType;
+}
+export interface HeroConceptSectionType {
+  id: number;
+  section: SectionType;
+  title: string;
+  subtitle: string;
+  images: ImageType[];
+  cards: any;
+  definition: { backgroundColor: string; label: string };
+}
+export interface HeroEventSectionType {
+  id: number;
+  section: SectionType;
+  title: string;
+  subtitle: string;
+  form: FormType;
   image: ImageType;
 }

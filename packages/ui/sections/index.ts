@@ -5,6 +5,5 @@ export { ContactSection } from "./ContactSection";
 export { DevisSection } from "./DevisSection";
 export { EventSection } from "./EventSection";
 export { HeroMain } from "./HeroMain";
-export { HeroSection } from "./HeroSection";
 export { RelanceSection } from "./RelanceSection";
 export { SlideSection } from "./SlideSection";

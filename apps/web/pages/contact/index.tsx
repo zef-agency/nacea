@@ -17,7 +17,7 @@ export default function index(props: PageProps) {
 }
 
 export async function getStaticProps() {
-  const { success, error } = await fetcher(getUrl("/api/page-concept"));
+  const { success, error } = await fetcher(getUrl("/api/page-contact"));
   const header = await fetcher(getUrl("/api/layout-header"));
   const footer = await fetcher(getUrl("/api/layout-footer"));
 
@@ -29,7 +29,6 @@ export async function getStaticProps() {
     props: {
       seo: success.seo,
       sections: success.sections,
-      hero: success.hero ? success.hero : null,
       header: success.header ? header.success : null,
       footer: success.footer ? footer.success : null,
     },

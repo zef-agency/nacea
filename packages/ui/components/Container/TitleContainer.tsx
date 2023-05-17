@@ -11,9 +11,13 @@ export function TitleContainer({
 }) {
   return (
     <div className="w-full flex flex-col gap-2 items-center">
-      <div className="flex flex-row w-full items-center gap-2">
-        <span className="w-full h-[1px] bg-gray"> </span>
-        <Title size="medium" HTMLtag="h2">
+      <div className="flex flex-row w-full gap-2  items-center ">
+        <span className="w-full h-[0.5px] bg-gray"> </span>
+        <Title
+          size="medium"
+          HTMLtag="h2"
+          className="w-full text-center min-w-[230px]"
+        >
           {title}
         </Title>
         <span className="w-full h-[1px] bg-gray"> </span>

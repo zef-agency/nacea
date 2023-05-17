@@ -1,12 +1,52 @@
 import React from "react";
 import { SlideSectionType } from "utils";
 
+import { Title } from "../components";
+
 interface SlideSectionProps {
   data: SlideSectionType;
 }
 
 export function SlideSection({ data }: SlideSectionProps) {
-  const { id, events, backgroundColor } = data;
+  const { events, backgroundColor } = data;
 
-  return <div>SlideSection</div>;
+  return (
+    <div className="py-6 flex whitespace-nowrap  overflow-hidden border border-y-whiteGray">
+      <div className="animate-slider items-center flex gap-8">
+        {events.map((event: any, k: number) => (
+          <>
+            <div
+              style={{ backgroundColor }}
+              className="rounded-full w-5 h-5"
+            ></div>
+            <Title size="medium" key={k}>
+              {event.label}
+            </Title>
+          </>
+        ))}
+        {events.map((event: any, k: number) => (
+          <>
+            <div
+              style={{ backgroundColor }}
+              className="rounded-full w-5 h-5"
+            ></div>
+            <Title size="medium" key={k}>
+              {event.label}
+            </Title>
+          </>
+        ))}
+        {events.map((event: any, k: number) => (
+          <>
+            <div
+              style={{ backgroundColor }}
+              className="rounded-full w-5 h-5"
+            ></div>
+            <Title size="medium" key={k}>
+              {event.label}
+            </Title>
+          </>
+        ))}
+      </div>
+    </div>
+  );
 }

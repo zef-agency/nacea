@@ -1,11 +1,11 @@
 import Image from "next/image";
-import React from "react";
 import { ImageType } from "utils";
 
 export interface ImageProps {
   src: ImageType["url"];
   alt: string;
   priority?: boolean;
+  classes?: string;
 }
 
 const imageLoader = ({ src, width, quality }: any) => {
@@ -13,19 +13,18 @@ const imageLoader = ({ src, width, quality }: any) => {
 };
 
 export function CustomImage(props: ImageProps): JSX.Element {
-  const { priority, src, alt, ...imageProps } = props;
+  const { classes, priority, src, alt, ...imageProps } = props;
 
   return (
-    <div className={"w-full h-full relative z-0"}>
-      <Image
-        alt={alt}
-        width={1000}
-        height={1000}
-        priority={priority}
-        src={src}
-        loader={imageLoader}
-        {...imageProps}
-      />
-    </div>
+    <Image
+      alt={alt}
+      width={1000}
+      height={1000}
+      priority={priority}
+      src={src}
+      className={`w-full h-full object-cover ${classes}`}
+      loader={imageLoader}
+      {...imageProps}
+    />
   );
 }

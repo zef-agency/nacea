@@ -19,6 +19,8 @@ export type {
   EventSectionType,
   FooterType,
   HeaderType,
+  HeroConceptSectionType,
+  HeroEventSectionType,
   HeroMainSectionType,
   HeroSectionType,
   PageType,

@@ -125,6 +125,23 @@ export const ColorConfig = {
   reorder: (res: OriginalColorType): string => res.code,
 };
 
+// Definition
+export const DefinitionConfig = {
+  name: "tag",
+  populate: {
+    fields: ["label"],
+    populate: {
+      backgroundColor: ColorConfig.populate,
+    },
+  },
+  reorder: (res: any): any => ({
+    label: res.label,
+    backgroundColor: res.backgroundColor
+      ? ColorConfig.reorder(res.backgroundColor)
+      : null,
+  }),
+};
+
 // Event
 export const EventConfig = {
   name: "event",
@@ -360,6 +377,7 @@ export const HeroConceptConfig = {
     populate: {
       images: ImageConfig.populate,
       cards: CardConfig.populate,
+      definition: DefinitionConfig.populate,
     },
   },
   reorder: (res: any): any => ({
@@ -368,6 +386,7 @@ export const HeroConceptConfig = {
     images: res.images.map((image) => ImageConfig.reorder(image)),
     cards: res.cards.map((card) => CardConfig.reorder(card)),
     section: { type: "hero-concept" },
+    definition: DefinitionConfig.reorder(res.definition),
   }),
 };
 
@@ -546,7 +565,9 @@ export const SectionSlideConfig = {
   reorder: (res: any): SlideSectionType => ({
     id: res.id,
     section: res.section ? SectionConfig.reorder(res.section) : null,
-    events: EventNameConfig.reorder(res.events),
+    events: res.events
+      ? res.events.map((event: any) => EventNameConfig.reorder(event))
+      : null,
     backgroundColor: res.backgroundColor
       ? ColorConfig.reorder(res.backgroundColor)
       : null,

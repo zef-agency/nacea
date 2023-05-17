@@ -16,7 +16,7 @@ const formClass = cva(globalClasses, {
       row: ["flex flex-row gap-4 items-center"],
       column: ["flex flex-col gap-4 items-start"],
       devis: [
-        "flex flex-col sm:grid-cols-2 md:grid-cols-3 sm:grid sm:items-stretch sm:justify-items-start gap-4 items-start w-full",
+        "flex flex-col sm:grid-cols-2 sm:grid sm:items-stretch sm:justify-items-start gap-4 items-start w-full max-w-[600px]",
       ],
     },
   },
@@ -42,7 +42,7 @@ export function CustomForm(props: FormProps) {
             <Input key={k} attribute={attribute} />
           ))}
           <Button
-            className="mt-4"
+            className="mt-4 "
             icon={<Arrow />}
             submit
             color={form.button?.color}

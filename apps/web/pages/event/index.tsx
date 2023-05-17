@@ -17,7 +17,7 @@ export default function index(props: PageProps) {
 }
 
 export async function getStaticProps() {
-  const { success, error } = await fetcher(getUrl("/api/page-concept"));
+  const { success, error } = await fetcher(getUrl("/api/page-event"));
   const header = await fetcher(getUrl("/api/layout-header"));
   const footer = await fetcher(getUrl("/api/layout-footer"));
 

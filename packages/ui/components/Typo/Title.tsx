@@ -7,8 +7,10 @@ const form = cva(globalClasses, {
   variants: {
     size: {
       Xsmall: ["text-14 md:text-16"],
-      small: ["text-16 md:text-18"],
+      small: ["text-16"],
+      regular: ["text-18", "sm:text-20", "md:text-22"],
       medium: ["text-22", "sm:text-24", "md:text-28"],
+      semiBig: ["text-24", "sm:text-30", "md:text-35"],
       big: ["text-35 sm:text-40 md:text-60"],
     },
     weight: {

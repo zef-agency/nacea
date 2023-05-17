@@ -3,6 +3,7 @@ import { getUrl, HeaderType } from "utils";
 import { Burger, Telephone } from "../../svg";
 import { Button } from "../Buttons/Button";
 import { Links } from "../Buttons/Link";
+import Link from "next/link";
 import { Wrapper } from "../Container/Wrapper";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { CustomImage } from "../Image/Image";
@@ -18,7 +19,13 @@ export function Header({ data }: HeaderProps) {
     <div className="border-b border-gray">
       <Wrapper classes="flex items-center justify-between w-full">
         <div className="w-full max-w-[100px] md:max-w-[120px]">
-          <CustomImage priority={true} alt={logo.alt} src={getUrl(logo.url)} />
+          <Link href={getUrl("/", true)}>
+            <CustomImage
+              priority={true}
+              alt={logo.alt}
+              src={getUrl(logo.url)}
+            />{" "}
+          </Link>
         </div>
         <div className="md:flex hidden items-center justify-between gap-12">
           {links?.map((link, k) => (
