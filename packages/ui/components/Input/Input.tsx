@@ -21,7 +21,7 @@ const globalClasses: string[] = [
   "border-[#B6B9B3]",
   "border",
   "rounded-xs",
-  "bg-[#E3E7E0]",
+  "bg-whiteTransparent",
   "py-3.5",
 ];
 
@@ -46,11 +46,11 @@ const inputClass = cva(globalClasses, {
 export function Input(
   props: InputProps & InputHTMLAttributes<HTMLInputElement | HTMLSelectElement>
 ) {
-  const { attribute, className, variations, size, icon } = props;
+  const { attribute, className, variations, size, placement, icon } = props;
 
   return (
     <>
-      <div className="relative flex flex-col gap-1 w-full items-start">
+      <div className={`${placement} flex flex-col gap-1 w-full items-start`}>
         {/* Input TEXT, EMAIL, PASSWORD */}
         {["text", "email", "password"].includes(attribute.type) && (
           <div className="relative w-full">
@@ -89,9 +89,29 @@ export function Input(
             </Field>
           </div>
         )}
+        {/* Input TEXTAREA */}
+        {attribute.type === "textarea" && (
+          <div className="relative w-full">
+            <Title HTMLtag="h3" size="Xsmall" className="mb-1.5">
+              {attribute.label}
+            </Title>
+            <Field
+              rows="3"
+              placeholder={(attribute as InputType).placeholder}
+              autoComplete="true"
+              name={attribute.name}
+              as="textarea"
+              className={inputClass({
+                variations,
+                size,
+                className,
+              })}
+            />
+          </div>
+        )}
 
         {attribute.type === "checkbox" && (
-          <div className="relative  flex flex-row-reverse gap-2 md:mt-8">
+          <div className="relative  flex flex-row-reverse gap-2">
             <Title HTMLtag="h3" size="Xsmall" className="mb-2">
               {attribute.label}
             </Title>
@@ -116,5 +136,6 @@ export interface InputProps {
   className?: ClassValue;
   variations?: "input" | "textarea";
   size?: "small" | "medium" | "iconOnly";
+  placement?: string | any;
   icon?: any;
 }

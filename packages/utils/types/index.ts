@@ -23,6 +23,7 @@ export type {
   HeroEventSectionType,
   HeroMainSectionType,
   HeroSectionType,
+  PageProps,
   PageType,
   RelanceSectionType,
   SectionsType,

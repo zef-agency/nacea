@@ -30,6 +30,11 @@ export interface SeoType {
   description: string;
 }
 
+export interface PageProps extends PageType {
+  seo: SeoType;
+  modal: any;
+}
+
 export interface FooterType {
   logo: ImageType;
   socials: ButtonType[];

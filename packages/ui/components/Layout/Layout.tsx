@@ -1,14 +1,22 @@
 import Head from "next/head";
 import React, { PropsWithChildren } from "react";
+import { useAlert, useHasHydrated, useModal } from "utils";
+
+import { Alert } from "../Alert/Alert";
+import { ContactModal } from "../Modals/ContactModal";
+import { ModalNames } from "../Modals/ModalNames";
 
 interface LayoutProps extends PropsWithChildren<any> {
   title: string;
   description: string;
+  modal?: any;
 }
 export function Layout(props: LayoutProps) {
-  const { title, children, description } = props;
-  // const { isOpen, handleModal } = useModal();
-  // const { handleAlert, ...AlertProps } = useAlert();
+  const { title, children, description, modal } = props;
+  const { isOpen } = useModal();
+  const hasHydrated = useHasHydrated();
+  const visible: any = hasHydrated ? isOpen : [];
+  const { handleAlert, ...AlertProps } = useAlert();
 
   return (
     <>
@@ -19,9 +27,8 @@ export function Layout(props: LayoutProps) {
       </Head>
       {children}
 
-      {/* 	<Alert setAlert={handleAlert} alert={AlertProps} /> */}
-      {/* 	<Exemple2Modal visible={isOpen === ModalNames.EXEMPLE2_MODAL} />
-			<ExempleModal visible={isOpen === ModalNames.EXEMPLE_MODAL} /> */}
+      <Alert setAlert={handleAlert} alert={AlertProps} />
+      {visible === ModalNames.CONTACT_MODAL && <ContactModal modal={modal} />}
     </>
   );
 }

@@ -2,8 +2,6 @@ import { useRouter } from "next/router";
 import React, { PropsWithChildren } from "react";
 import { useModal } from "utils";
 
-import { Modal } from "./Modal";
-
 interface ModalProps {
   visible: boolean;
 }
@@ -20,9 +18,14 @@ export function ModalWrapper({
     router.push(router.pathname);
   };
 
+  if (!visible) {
+    return <> </>;
+  }
+
   return (
-    <Modal IsOpen={visible} onRequestClose={closeModal}>
-      <div> {children} </div>
-    </Modal>
+    <div>
+      <p onClick={closeModal}> Close </p>
+      {children}{" "}
+    </div>
   );
 }

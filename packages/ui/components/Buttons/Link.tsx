@@ -26,11 +26,16 @@ const link = cva(globalClasses, {
     family: {
       montserrat: ["Montserrat"],
     },
+    current: {
+      true: ["underline"],
+      false: [""],
+    },
   },
   defaultVariants: {
     size: "medium",
     weight: "normal",
     family: "montserrat",
+    current: false,
   },
 });
 
@@ -40,6 +45,7 @@ export function Links({
   href,
   icon,
   size,
+  current,
   weight,
   children,
   ...props
@@ -48,7 +54,7 @@ export function Links({
     <p
       {...props}
       style={{ color: color }}
-      className={link({ size, weight, className })}
+      className={link({ size, weight, current, className })}
     >
       {icon && <span className="z-10 text-24 p-1 font-bold"> {icon} </span>}
       <Link href={href}>{children}</Link>
@@ -60,6 +66,7 @@ interface ButtonProps extends PropsWithChildren<any> {
   props?: React.ButtonHTMLAttributes<HTMLButtonElement>;
   className?: ClassValue;
   size?: "medium" | "base";
+  current?: boolean;
   family?: "monserrat";
   color: ButtonType["color"];
   href: string;

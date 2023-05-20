@@ -1,9 +1,10 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { getUrl, HeaderType } from "utils";
 
 import { Burger, Telephone } from "../../svg";
 import { Button } from "../Buttons/Button";
 import { Links } from "../Buttons/Link";
-import Link from "next/link";
 import { Wrapper } from "../Container/Wrapper";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { CustomImage } from "../Image/Image";
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 export function Header({ data }: HeaderProps) {
   const { links, button, logo, telephone } = data;
+  const router = useRouter();
 
   return (
     <div className="border-b border-gray">
@@ -24,12 +26,17 @@ export function Header({ data }: HeaderProps) {
               priority={true}
               alt={logo.alt}
               src={getUrl(logo.url)}
-            />{" "}
+            />
           </Link>
         </div>
         <div className="md:flex hidden items-center justify-between gap-12">
           {links?.map((link, k) => (
-            <Links href={getUrl(link.link, true)} color={link.color} key={k}>
+            <Links
+              current={router.pathname === link.link}
+              href={getUrl(link.link, true)}
+              color={link.color}
+              key={k}
+            >
               {link.label}
             </Links>
           ))}

@@ -30,3 +30,15 @@ export const getItemsInArray = (attributes: any) => {
 
   return sliced;
 };
+
+export const resizeGridChild = (elements: string[], attribute: any) => {
+  const foundElement = elements.find(
+    (element: string) => attribute.name === element
+  );
+
+  if (foundElement) {
+    return "sm:col-span-2";
+  } else {
+    return "";
+  }
+};

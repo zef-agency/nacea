@@ -1,5 +1,9 @@
 // Array
-export { filterUniqueKeys, getItemsInArray } from "./src/array";
+export {
+  filterUniqueKeys,
+  getItemsInArray,
+  resizeGridChild,
+} from "./src/array";
 
 // String
 export {

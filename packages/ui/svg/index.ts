@@ -1,7 +1,9 @@
 export { Arrow } from "./Arrow";
 export { ArrowLittle } from "./ArrowLittle";
 export { Burger } from "./Burger";
+export { Close } from "./Close";
 export { Facebook } from "./Facebook";
+export { Flowers } from "./Flowers";
 export { Instagram } from "./Instagram";
 export { Telephone } from "./Telephone";
 export { Truck } from "./Truck";

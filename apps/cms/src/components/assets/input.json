@@ -20,7 +20,8 @@
       "enum": [
         "text",
         "email",
-        "password"
+        "password",
+        "textarea"
       ],
       "default": "text",
       "required": true

@@ -21,7 +21,9 @@ import { EventSection } from "./EventSection";
 import { HeroConceptSection } from "./HeroConceptSection";
 import { HeroEventSection } from "./HeroEventSection";
 import { HeroMain } from "./HeroMain";
+import { MentionsLegalesSection } from "./MentionsLegalesSection";
 import { RelanceSection } from "./RelanceSection";
+import { Section404 } from "./Section404";
 import { SlideSection } from "./SlideSection";
 
 export function renderSection(section: SectionsType) {
@@ -96,6 +98,11 @@ export function renderSection(section: SectionsType) {
           data={section as HeroEventSectionType}
         />
       );
+    // STATICS SECTIONS
+    case "404":
+      return <Section404 key={getRandom(9999)} />;
+    case "mentions-legales":
+      return <MentionsLegalesSection key={getRandom(9999)} />;
     default:
       break;
   }

@@ -1,6 +1,9 @@
 module.exports = {
+  mode: "jit",
+
   content: [
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
+    "../../packages/utils/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -24,6 +27,7 @@ module.exports = {
         black: "#000000",
         red: "#B2403F",
         white: "#FFFFFF",
+        whiteTransparent: "rgba(255, 255, 255, 0.39)",
         whiteGray: "rgba(221, 220, 211, 0.31)",
         gray: "#B8B8B8",
         grayLight: "#C4C4C4",

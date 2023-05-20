@@ -1,23 +1,28 @@
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { Form, Formik } from "formik";
-import { attributesType, FormType, getInitialValues, yupify } from "utils";
+import {
+  attributesType,
+  FormType,
+  resizeGridChild,
+  useModal,
+  yupify,
+} from "utils";
 import * as Yup from "yup";
 
 import { Arrow } from "../../svg";
 import { Button } from "../Buttons/Button";
 import { Input } from "./Input";
 
-const globalClasses: string[] = [];
+const globalClasses: string[] = ["max-w-[600px]"];
 
 const formClass = cva(globalClasses, {
   variants: {
     variations: {
-      row: ["flex flex-row gap-4 items-center"],
-      column: ["flex flex-col gap-4 items-start"],
       devis: [
-        "flex flex-col sm:grid-cols-2 sm:grid sm:items-stretch sm:justify-items-start gap-4 items-start w-full max-w-[600px]",
+        "flex flex-col sm:grid-cols-2 sm:grid sm:items-stretch sm:justify-items-start gap-4 items-start w-full",
       ],
+      contact: ["grid gap-3 grid-cols-1 sm:grid-cols-2x"],
     },
   },
   defaultVariants: {
@@ -26,11 +31,12 @@ const formClass = cva(globalClasses, {
 });
 
 export function CustomForm(props: FormProps) {
-  const { form, callback, className, variations } = props;
+  const { loading = false, form, callback, className, variations } = props;
+  const { modalData } = useModal();
 
   return (
     <Formik
-      initialValues={getInitialValues(form.attributes)}
+      initialValues={modalData}
       validationSchema={Yup.object().shape(yupify(JSON.stringify(form.errors)))}
       onSubmit={(values) => {
         callback(values);
@@ -39,15 +45,22 @@ export function CustomForm(props: FormProps) {
       {() => (
         <Form className={formClass({ variations, className })}>
           {form.attributes?.map((attribute: attributesType, k: number) => (
-            <Input key={k} attribute={attribute} />
+            <Input
+              key={k}
+              placement={resizeGridChild(
+                ["message", "email", "boissons"],
+                attribute
+              )}
+              attribute={attribute}
+            />
           ))}
           <Button
             className="mt-4 "
-            icon={<Arrow />}
+            icon={!loading && <Arrow />}
             submit
             color={form.button?.color}
           >
-            {form.button?.label}
+            {loading ? "Envoi en cours ..." : form.button?.label}
           </Button>
         </Form>
       )}
@@ -64,5 +77,6 @@ interface FormProps {
   form: FormType;
   callback: Function;
   className?: ClassValue;
-  variations?: "devis" | "row" | "column";
+  loading?: boolean;
+  variations?: "devis" | "contact";
 }

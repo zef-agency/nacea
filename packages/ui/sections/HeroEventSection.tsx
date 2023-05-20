@@ -1,7 +1,8 @@
 import React from "react";
-import { getUrl, HeroEventSectionType } from "utils";
+import { getUrl, HeroEventSectionType, useModal } from "utils";
 
 import { CustomForm, CustomImage, Title, Wrapper } from "../components";
+import { ModalNames } from "../components/Modals/ModalNames";
 
 interface HeroMainProps {
   data: HeroEventSectionType;
@@ -9,6 +10,7 @@ interface HeroMainProps {
 
 export function HeroEventSection({ data }: HeroMainProps) {
   const { title, subtitle, form, image } = data;
+  const { handleModal, modalData } = useModal();
 
   return (
     <div className="flex flex-col sm:flex-row max-w">
@@ -26,7 +28,16 @@ export function HeroEventSection({ data }: HeroMainProps) {
         {form && (
           <CustomForm
             form={form}
-            callback={(result: any) => console.log("result", result)}
+            callback={(result: any) =>
+              handleModal({
+                isOpen: ModalNames.CONTACT_MODAL,
+                modalData: {
+                  ...modalData,
+                  event: result.event,
+                  invite: result.invite,
+                },
+              })
+            }
           />
         )}
       </Wrapper>

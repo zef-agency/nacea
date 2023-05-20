@@ -1,7 +1,8 @@
 import React from "react";
-import { DevisSectionType, getUrl } from "utils";
+import { DevisSectionType, getUrl, useModal } from "utils";
 
 import { CustomForm, CustomImage, Title, Wrapper } from "../components";
+import { ModalNames } from "../components/Modals/ModalNames";
 
 interface DevisSectionProps {
   data: DevisSectionType;
@@ -9,6 +10,7 @@ interface DevisSectionProps {
 
 export function DevisSection({ data }: DevisSectionProps) {
   const { title, subtitle, form, image, backgroundColor, imageLeft } = data;
+  const { handleModal, modalData } = useModal();
 
   return (
     <div className=" py-8" style={{ backgroundColor }}>
@@ -36,7 +38,16 @@ export function DevisSection({ data }: DevisSectionProps) {
           {form && (
             <CustomForm
               form={form}
-              callback={(result: any) => console.log("result", result)}
+              callback={(result: any) =>
+                handleModal({
+                  isOpen: ModalNames.CONTACT_MODAL,
+                  modalData: {
+                    ...modalData,
+                    event: result.event,
+                    invite: result.invite,
+                  },
+                })
+              }
             />
           )}
         </div>

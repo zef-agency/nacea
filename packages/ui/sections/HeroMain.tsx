@@ -1,7 +1,8 @@
 import React from "react";
-import { getUrl, HeroMainSectionType } from "utils";
+import { getUrl, HeroMainSectionType, useModal } from "utils";
 
 import { Button, CustomImage, Title, Wrapper } from "../components";
+import { ModalNames } from "../components/Modals/ModalNames";
 import { Arrow, Truck } from "../svg";
 
 interface HeroMainProps {
@@ -10,6 +11,8 @@ interface HeroMainProps {
 
 export function HeroMain({ data }: HeroMainProps) {
   const { title, subtitle, button, image } = data;
+
+  const { handleModal, modalData } = useModal();
 
   return (
     <div className="flex flex-col sm:flex-row max-w">
@@ -25,7 +28,16 @@ export function HeroMain({ data }: HeroMainProps) {
             {subtitle}
           </Title>
         </div>
-        <Button icon={<Arrow />} href={button.link} color={button.color}>
+        <Button
+          icon={<Arrow />}
+          color={button.color}
+          onClick={() =>
+            handleModal({
+              isOpen: ModalNames.CONTACT_MODAL,
+              modalData,
+            })
+          }
+        >
           {button.label}
         </Button>
       </Wrapper>

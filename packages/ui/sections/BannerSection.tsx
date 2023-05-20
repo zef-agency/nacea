@@ -19,7 +19,7 @@ export function BannerSection({ data }: BannerSectionProps) {
       }`}
     >
       <Wrapper
-        classes={`flex flex-col justify-center gap-6 md:gap-8 py-8 max-w-[800px] ${
+        classes={`flex flex-col justify-center gap-6 md:gap-8 py-12 max-w-[850px] ${
           imageLeft ? "sm:mr-12" : "sm:ml-12"
         }`}
       >
@@ -42,7 +42,7 @@ export function BannerSection({ data }: BannerSectionProps) {
           </Button>
         )}
       </Wrapper>
-      <div className="h-[300px]  sm:w-full sm:max-w-[50%] sm:min-h-[400px]  sm:max-h-[520px]">
+      <div className="h-[300px]  sm:w-full sm:max-w-[50%] sm:min-h-[450px]">
         <CustomImage priority={true} alt={image.alt} src={getUrl(image.url)} />
       </div>
     </div>
