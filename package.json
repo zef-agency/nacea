@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "cd apps/cms && npm run build",
+    "build": "npx turbo run build",
     "build-next": "cd apps/web && npm run build",
+    "build-cms": "cd apps/cms && npm run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
