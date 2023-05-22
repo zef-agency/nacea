@@ -2,11 +2,11 @@ export const root = {
   API_URL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:1337"
-      : "http://localhost:1337",
+      : "https://sea-lion-app-ng2ys.ondigitalocean.app",
   FRONT_URL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "http://localhost:3000",
+      : "https://nacea-web-zefagence-gmailcom.vercel.app",
 };
 
 const token: string | undefined = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
