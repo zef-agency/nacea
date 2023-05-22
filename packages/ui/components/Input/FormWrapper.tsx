@@ -38,30 +38,36 @@ export function CustomForm(props: FormProps) {
     <Formik
       initialValues={modalData}
       validationSchema={Yup.object().shape(yupify(JSON.stringify(form.errors)))}
-      onSubmit={(values) => {
+      onSubmit={(values, { resetForm }) => {
         callback(values);
+        setTimeout(() => {
+          resetForm();
+        }, 1000);
       }}
     >
       {() => (
         <Form className={formClass({ variations, className })}>
-          {form.attributes?.map((attribute: attributesType, k: number) => (
-            <Input
-              key={k}
-              placement={resizeGridChild(
-                ["message", "email", "boissons"],
-                attribute
-              )}
-              attribute={attribute}
-            />
-          ))}
-          <Button
-            className="mt-4 "
-            icon={!loading && <Arrow />}
-            submit
-            color={form.button?.color}
-          >
-            {loading ? "Envoi en cours ..." : form.button?.label}
-          </Button>
+          {form.attributes &&
+            form.attributes.map((attribute: attributesType, k: number) => (
+              <Input
+                key={k}
+                placement={resizeGridChild(
+                  ["message", "email", "boissons"],
+                  attribute
+                )}
+                attribute={attribute}
+              />
+            ))}
+          {form.button && (
+            <Button
+              className="mt-4 "
+              icon={!loading && <Arrow />}
+              submit
+              color={form.button?.color}
+            >
+              {loading ? "Envoi en cours ..." : form.button?.label}
+            </Button>
+          )}
         </Form>
       )}
     </Formik>

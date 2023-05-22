@@ -9,6 +9,7 @@ import {
   EventSectionType,
   ImageType,
   InputType,
+  InstagramSectionType,
   RelanceSectionType,
   SelectType,
   SlideSectionType,
@@ -550,7 +551,7 @@ export const SectionEventConfig = {
     event: res.event ? EventConfig.reorder(res.event) : null,
   }),
 };
-// SECTION EVENT
+// SECTION SLIDE
 export const SectionSlideConfig = {
   name: "section-slide",
   api: "api::section-slide.section-slide",
@@ -571,6 +572,25 @@ export const SectionSlideConfig = {
     backgroundColor: res.backgroundColor
       ? ColorConfig.reorder(res.backgroundColor)
       : null,
+  }),
+};
+// SECTION INSTAGRAM
+export const SectionInstagramConfig = {
+  name: "section-instagram",
+  api: "api::section-instagram.section-instagram",
+  populate: {
+    fields: ["id", "title", "subtitle"],
+    populate: {
+      section: SectionConfig.populate,
+      button: ButtonConfig.populate,
+    },
+  },
+  reorder: (res: any): InstagramSectionType => ({
+    id: res.id,
+    section: res.section ? SectionConfig.reorder(res.section) : null,
+    button: res.button ? ButtonConfig.reorder(res.button) : null,
+    title: res.title,
+    subtitle: res.subtitle,
   }),
 };
 

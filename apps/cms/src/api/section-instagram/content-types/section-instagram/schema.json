@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "section_instagrams",
+  "info": {
+    "singularName": "section-instagram",
+    "pluralName": "section-instagrams",
+    "displayName": "📒 Section : Instagram",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::section.section"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.button"
+    }
+  }
+}

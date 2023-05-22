@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { useRouter } from "next/router";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import { ButtonType } from "utils";
 
 const globalClasses: string[] = [
@@ -38,18 +38,27 @@ export function Button({
   icon,
   submit,
   href,
+  onclick,
   size,
   children,
   ...props
 }: ButtonProps) {
   const router = useRouter();
+  const hoverColor = `${color + "d9"}`;
+  const [colorState, setColorState] = useState(color);
 
   return (
     <button
       {...props}
-      onClick={() => !submit && router.push(href ? href : router.asPath)}
-      style={{ backgroundColor: color }}
-      className={button({ size, className })}
+      onClick={
+        onclick
+          ? () => onclick()
+          : () => !submit && router.push(href ? href : router.asPath)
+      }
+      onMouseEnter={() => setColorState(hoverColor)}
+      onMouseLeave={() => setColorState(color)}
+      style={{ backgroundColor: colorState }}
+      className={`${button({ size, className })}`}
       type={submit ? "submit" : "button"}
     >
       {children}
@@ -75,4 +84,5 @@ interface ButtonProps extends PropsWithChildren<any> {
   color: ButtonType["color"];
   href?: ButtonType["link"];
   submit?: boolean;
+  onclick?: Function;
 }

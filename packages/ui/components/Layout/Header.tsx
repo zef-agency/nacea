@@ -30,44 +30,49 @@ export function Header({ data }: HeaderProps) {
           </Link>
         </div>
         <div className="md:flex hidden items-center justify-between gap-12">
-          {links?.map((link, k) => (
-            <Links
-              current={router.pathname === link.link}
-              href={getUrl(link.link, true)}
-              color={link.color}
-              key={k}
-            >
-              {link.label}
-            </Links>
-          ))}
+          {links &&
+            links.map((link, k) => (
+              <Links
+                current={router.pathname === link.link}
+                href={getUrl(link.link, true)}
+                color={link.color}
+                key={k}
+              >
+                {link.label}
+              </Links>
+            ))}
         </div>
         <div className="hidden sm:flex flex-row items-center gap-4">
-          <Links
-            icon={<Telephone />}
-            size="base"
-            weight="medium"
-            href={getUrl(telephone.link, true)}
-            color={telephone.color}
-          >
-            {telephone.label}
-          </Links>
-          <Button href={getUrl(button.link, true)} color={button.color}>
-            {button.label}
-          </Button>
+          {telephone && (
+            <Links
+              icon={<Telephone />}
+              weight="medium"
+              href={getUrl(telephone.link, true)}
+              color={telephone.color}
+            >
+              {telephone.label}
+            </Links>
+          )}
+          {button && (
+            <Button href={getUrl(button.link, true)} color={button.color}>
+              {button.label}
+            </Button>
+          )}
         </div>
         <div className="md:hidden flex items-center justify-center ">
           <Dropdown trigger={<Burger />}>
             <div className="flex flex-col justify-between gap-4">
-              {links?.map((link, k) => (
-                <Links
-                  size="base"
-                  href={getUrl(link.link, true)}
-                  color={link.color}
-                  key={k}
-                >
-                  {link.label}
-                </Links>
-              ))}
+              {links &&
+                links.map((link, k) => (
+                  <Links
+                    size="base"
+                    href={getUrl(link.link, true)}
+                    color={link.color}
+                    key={k}
+                  >
+                    {link.label}
+                  </Links>
+                ))}
             </div>
             {telephone && (
               <Links
@@ -82,13 +87,15 @@ export function Header({ data }: HeaderProps) {
               </Links>
             )}
 
-            <Button
-              className="sm:hidden"
-              href={getUrl(button.link, true)}
-              color={button.color}
-            >
-              {button.label}
-            </Button>
+            {button && (
+              <Button
+                className="sm:hidden"
+                href={getUrl(button.link, true)}
+                color={button.color}
+              >
+                {button.label}
+              </Button>
+            )}
           </Dropdown>
         </div>
       </Wrapper>

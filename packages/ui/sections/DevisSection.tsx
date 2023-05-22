@@ -21,6 +21,7 @@ export function DevisSection({ data }: DevisSectionProps) {
       >
         <div className="w-[250px] sm:w-[240px] sm:max-w-[300px]">
           <CustomImage
+            classes="rounded-xl"
             priority={true}
             alt={image.alt}
             src={getUrl(image.url)}

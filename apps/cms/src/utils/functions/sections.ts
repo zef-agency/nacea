@@ -5,6 +5,7 @@ import {
   SectionContactConfig,
   SectionDevisConfig,
   SectionEventConfig,
+  SectionInstagramConfig,
   SectionRelanceConfig,
   SectionSlideConfig,
   SectionType,
@@ -56,6 +57,9 @@ export function getAllSections(entries: { sections: any[] }) {
         // SECTION SLIDE
         case SectionSlideConfig.name:
           return getSection(SectionSlideConfig, sectionId);
+        // SECTION INSTAGRAM
+        case SectionInstagramConfig.name:
+          return getSection(SectionInstagramConfig, sectionId);
         default:
           break;
       }

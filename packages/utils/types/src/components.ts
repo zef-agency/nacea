@@ -42,6 +42,13 @@ export interface SelectType {
   options: OptionType[];
 }
 
+export interface ContactModalType {
+  button: ButtonType;
+  forms: FormType[];
+  title: string;
+  type: string;
+}
+
 export interface CheckedType {
   label: string;
   defaultChecked: boolean;

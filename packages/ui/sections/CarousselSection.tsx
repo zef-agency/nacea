@@ -54,7 +54,7 @@ export function CarousselSection({ data }: CarousselSectionProps) {
   });
 
   return (
-    <div className="py-5 md:py-8">
+    <div className="py-5 md:py-12">
       <TitleContainer title={title} subtitle={subtitle} />
       <Wrapper classes="flex flex-col sm:mt-8 gap-8 items-center">
         <div ref={sliderRef} className="keen-slider">
@@ -99,6 +99,7 @@ const RenderCards = ({ object }: any) => {
           <div className="flex flex-col items-center max-w-[265px] mx-0 my-auto">
             <div className="mb-2 w-[265px]">
               <CustomImage
+                classes=" rounded-xl"
                 priority={true}
                 alt={card.image.alt}
                 src={getUrl(card.image.url)}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Layout, Page } from "ui";
 import { fetcher, getUrl, PageProps, PageType, SeoType } from "utils";
 

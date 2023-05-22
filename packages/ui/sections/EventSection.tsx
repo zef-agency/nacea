@@ -1,7 +1,8 @@
 import React from "react";
-import { EventSectionType, getUrl } from "utils";
+import { EventSectionType, getUrl, useModal } from "utils";
 
 import { Button, CustomImage, Title } from "../components";
+import { ModalNames } from "../components/Modals/ModalNames";
 import { Arrow } from "../svg";
 
 interface EventSectionProps {
@@ -10,6 +11,7 @@ interface EventSectionProps {
 
 export function EventSection({ data }: EventSectionProps) {
   const { imageLeft, event, button } = data;
+  const { handleModal, modalData } = useModal();
 
   return (
     <div
@@ -20,6 +22,13 @@ export function EventSection({ data }: EventSectionProps) {
       }`}
     >
       <div className="p-4 sm:py-5 md:py-10 max-w-[600px] flex flex-col justify-center gap-8">
+        <div
+          className={`absolute ${
+            imageLeft ? "transform -scale-x-100 -right-28" : "-left-36"
+          }  -bottom-10 hidden sm:block  z-20`}
+        >
+          <CustomImage priority={true} alt="flowers" src="/flowers_pnh.png" />
+        </div>
         <div className="flex flex-col gap-2.5 md:gap-4">
           <div className="flex flex-row justify-between gap-4">
             <Title size="semiBig" HTMLtag="h2">
@@ -32,7 +41,19 @@ export function EventSection({ data }: EventSectionProps) {
           </Title>
         </div>
         {button && (
-          <Button icon={<Arrow />} href={button.link} color={button.color}>
+          <Button
+            icon={<Arrow />}
+            onclick={() =>
+              handleModal({
+                isOpen: ModalNames.CONTACT_MODAL,
+                modalData: {
+                  ...modalData,
+                  event: event.label,
+                },
+              })
+            }
+            color={button.color}
+          >
             {button.label}
           </Button>
         )}
@@ -55,6 +76,7 @@ export function EventSection({ data }: EventSectionProps) {
             priority={true}
             alt={event.image.alt}
             src={getUrl(event.image.url)}
+            classes="rounded-xl"
           />
         </div>
       </div>

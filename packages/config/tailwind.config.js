@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-
+  safelist: ["lg:grid-cols-[1fr_4fr]", "lg:grid-cols-[1fr_3fr_1fr]"],
   content: [
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
     "../../packages/utils/**/*.{js,ts,jsx,tsx}",
@@ -22,6 +22,9 @@ module.exports = {
         25: ".25",
         40: ".40",
       },
+      gridTemplateColumns: {
+        instagram: "repeat(3, minmax(0, 300px))",
+      },
       colors: {
         beige: "#F9EFE1",
         black: "#000000",
@@ -35,6 +38,7 @@ module.exports = {
     },
     borderRadius: {
       xs: "7px",
+      xl: "20px",
       full: "100%",
     },
     screens: {

@@ -8,6 +8,7 @@ import {
   HeroConceptSectionType,
   HeroEventSectionType,
   HeroMainSectionType,
+  InstagramSectionType,
   RelanceSectionType,
   SectionsType,
   SlideSectionType,
@@ -21,6 +22,7 @@ import { EventSection } from "./EventSection";
 import { HeroConceptSection } from "./HeroConceptSection";
 import { HeroEventSection } from "./HeroEventSection";
 import { HeroMain } from "./HeroMain";
+import { InstagramSection } from "./InstagramSection";
 import { MentionsLegalesSection } from "./MentionsLegalesSection";
 import { RelanceSection } from "./RelanceSection";
 import { Section404 } from "./Section404";
@@ -78,6 +80,13 @@ export function renderSection(section: SectionsType) {
         <SlideSection
           key={getRandom(9999)}
           data={section as SlideSectionType}
+        />
+      );
+    case "section-instagram":
+      return (
+        <InstagramSection
+          key={getRandom(9999)}
+          data={section as InstagramSectionType}
         />
       );
     case "hero-main":

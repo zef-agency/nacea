@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { PropsWithChildren } from "react";
-import { useAlert, useHasHydrated, useModal } from "utils";
+import { ContactModalType, useAlert, useHasHydrated, useModal } from "utils";
 
 import { Alert } from "../Alert/Alert";
 import { ContactModal } from "../Modals/ContactModal";
@@ -28,7 +28,9 @@ export function Layout(props: LayoutProps) {
       {children}
 
       <Alert setAlert={handleAlert} alert={AlertProps} />
-      {visible === ModalNames.CONTACT_MODAL && <ContactModal modal={modal} />}
+      {visible === ModalNames.CONTACT_MODAL && (
+        <ContactModal data={modal as ContactModalType} />
+      )}
     </>
   );
 }

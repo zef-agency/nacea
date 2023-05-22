@@ -90,6 +90,13 @@ export interface CarousselSectionType {
   button: ButtonType;
   attributes?: any;
 }
+export interface InstagramSectionType {
+  id: number;
+  section: SectionType;
+  title: string;
+  subtitle: string;
+  button: ButtonType;
+}
 export interface DevisSectionType {
   id: number;
   section: SectionType;

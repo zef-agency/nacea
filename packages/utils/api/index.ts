@@ -1,2 +1,2 @@
 export { fetcher, root } from "./src/config";
-export { sendInformationModal } from "./src/emailjs";
+export { GetInstagramPosts } from "./src/instagram";

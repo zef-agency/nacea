@@ -1,7 +1,8 @@
 import React from "react";
-import { RelanceSectionType } from "utils";
+import { RelanceSectionType, useModal } from "utils";
 
 import { Button, Title } from "../components";
+import { ModalNames } from "../components/Modals/ModalNames";
 import { Arrow } from "../svg";
 
 interface RelanceSectionProps {
@@ -10,6 +11,7 @@ interface RelanceSectionProps {
 
 export function RelanceSection({ data }: RelanceSectionProps) {
   const { title, subtitle, backgroundColor, button } = data;
+  const { handleModal, modalData } = useModal();
 
   return (
     <div
@@ -23,11 +25,25 @@ export function RelanceSection({ data }: RelanceSectionProps) {
         <Title className="text-center" size="small" HTMLtag="h3">
           <span dangerouslySetInnerHTML={{ __html: subtitle }} />
         </Title>
-        {button && (
-          <Button icon={<Arrow />} href={button.link} color={button.color}>
-            {button.label}
-          </Button>
-        )}
+        {button &&
+          (button.link === "devis" ? (
+            <Button
+              icon={<Arrow />}
+              onclick={() =>
+                handleModal({
+                  isOpen: ModalNames.CONTACT_MODAL,
+                  modalData,
+                })
+              }
+              color={button.color}
+            >
+              {button.label}
+            </Button>
+          ) : (
+            <Button icon={<Arrow />} href={button.link} color={button.color}>
+              {button.label}
+            </Button>
+          ))}
       </div>
     </div>
   );

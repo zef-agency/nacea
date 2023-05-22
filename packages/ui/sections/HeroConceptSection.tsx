@@ -11,7 +11,10 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
   const { title, subtitle, images, definition, cards } = data;
 
   return (
-    <div>
+    <div className="relative">
+      <div className="absolute md:top-10 sm:top-4 hidden sm:block sm:-left-32 md:-left-20  max-w-4">
+        <CustomImage priority={true} alt="flowers" src="/flowers_pnh.png" />
+      </div>
       <Wrapper classes="flex flex-col items-center gap-4 sm:px-16 md:max-w-[1200px]">
         <Title className="text-center" size="big">
           {title}
