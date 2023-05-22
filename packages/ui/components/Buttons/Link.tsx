@@ -9,18 +9,18 @@ const globalClasses: string[] = [
   "flex",
   "flex-row",
   "items-center",
-  "hover:underline",
 ];
 
 const link = cva(globalClasses, {
   variants: {
     size: {
-      medium: ["text-14"],
+      medium: ["text-14 hover:underline"],
       base: ["text-16"],
     },
     weight: {
       normal: ["font-normal"],
       medium: ["font-medium"],
+      semiBold: ["font-semibold"],
       bold: ["font-bold"],
     },
     family: {
@@ -44,6 +44,7 @@ export function Links({
   color,
   href,
   icon,
+  leftIcon = false,
   size,
   current,
   weight,
@@ -54,9 +55,24 @@ export function Links({
     <p
       {...props}
       style={{ color: color }}
-      className={link({ size, weight, current, className })}
+      className={`${link({
+        size,
+        weight,
+        current,
+        className,
+      })} group flex items-center ${
+        leftIcon ? "flex-row-reverse items-end justify-end" : ""
+      }`}
     >
-      {icon && <span className="z-10 text-24 p-1 font-bold"> {icon} </span>}
+      {icon && (
+        <span
+          className={`z-10 text-24 p-1 transition-all font-bold ${
+            leftIcon ? "group-hover:px-2" : ""
+          } `}
+        >
+          {icon}
+        </span>
+      )}
       <Link href={href}>{children}</Link>
     </p>
   );

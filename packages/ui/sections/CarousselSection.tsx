@@ -11,6 +11,7 @@ import {
   TitleContainer,
   Wrapper,
 } from "../components";
+import { Links } from "../components/Buttons/Link";
 import { Arrow } from "../svg";
 
 interface CarousselSectionProps {
@@ -96,7 +97,7 @@ const RenderCards = ({ object }: any) => {
           key={i}
           className={`keen-slider__slide number-slide${i} flex items-center justify-center`}
         >
-          <div className="flex flex-col items-center max-w-[265px] mx-0 my-auto">
+          <div className="flex flex-col justify-start items-center max-w-[265px] mx-0 my-auto">
             <div className="mb-2 w-[265px]">
               <CustomImage
                 classes=" rounded-xl"
@@ -108,6 +109,18 @@ const RenderCards = ({ object }: any) => {
             <div className="w-full">
               <Title size="medium">{card.label}</Title>
               <Text> {Truncate(card.intro, 80)} </Text>
+              {card.button && (
+                <Links
+                  className="w-full sm:w-fit"
+                  leftIcon
+                  weight="semiBold"
+                  icon={<Arrow color={card.button.color} />}
+                  color={card.button.color}
+                  href={card.button.link}
+                >
+                  {card.button.label}
+                </Links>
+              )}
             </div>
           </div>
         </div>
@@ -119,7 +132,7 @@ const RenderCards = ({ object }: any) => {
 function ArrowCommand(props: {
   left?: boolean;
   // eslint-disable-next-line no-unused-vars
-  onClick: (e: EventTarget) => void;
+  onClick: (e: any) => void;
 }) {
   return (
     <div

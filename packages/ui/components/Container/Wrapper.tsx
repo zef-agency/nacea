@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 
-export function Wrapper({ children, classes, ...props }: WrapperProps) {
+export function Wrapper({ children, classes, ...props }: WrapperProps): any {
   return (
     <div
       {...props}
@@ -11,6 +11,7 @@ export function Wrapper({ children, classes, ...props }: WrapperProps) {
   );
 }
 
-interface WrapperProps
-  extends React.HTMLAttributes<HTMLElement>,
-    PropsWithChildren<any> {}
+interface WrapperProps extends React.HTMLAttributes<HTMLElement> {
+  classes: any;
+  children: any;
+}

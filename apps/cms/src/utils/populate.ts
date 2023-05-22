@@ -150,6 +150,7 @@ export const EventConfig = {
     fields: ["label", "description", "intro"],
     populate: {
       image: ImageConfig.populate,
+      button: ButtonConfig.populate,
     },
   },
   reorder: (res: any): any => ({
@@ -157,6 +158,7 @@ export const EventConfig = {
     description: res.description,
     intro: res.intro,
     image: ImageConfig.reorder(res.image),
+    button: ButtonConfig.reorder(res.button),
   }),
 };
 

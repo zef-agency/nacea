@@ -39,6 +39,11 @@
     "intro": {
       "type": "text",
       "required": true
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.button"
     }
   }
 }

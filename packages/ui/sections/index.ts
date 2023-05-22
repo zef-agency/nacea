@@ -1,5 +1,4 @@
 export { BannerSection } from "./BannerSection";
-export { CardSection } from "./CardSection";
 export { CarousselSection } from "./CarousselSection";
 export { ContactSection } from "./ContactSection";
 export { DevisSection } from "./DevisSection";

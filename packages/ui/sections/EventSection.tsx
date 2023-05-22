@@ -15,6 +15,7 @@ export function EventSection({ data }: EventSectionProps) {
 
   return (
     <div
+      id={event.label}
       className={`flex flex-col max-w gap-6 md:gap-28   relative ${
         imageLeft
           ? "md:flex-row-reverse justify-end"
