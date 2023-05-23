@@ -8,7 +8,6 @@ export default async function handler(req, res) {
     await res.revalidate("/event");
     await res.revalidate("/contact");
     await res.revalidate("/concept");
-    await res.revalidate("/404");
     await res.revalidate("/mentions-legales");
 
     return res.json({ revalidated: true });
