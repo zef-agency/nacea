@@ -4,18 +4,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    const urls = [
-      "/",
-      "/event",
-      "/contact",
-      "/concept",
-      "/404",
-      "/mentions-legales",
-    ];
-
-    for (const url of urls) {
-      await res.revalidate(url);
-    }
+    await res.revalidate("/");
+    await res.revalidate("/event");
+    await res.revalidate("/contact");
+    await res.revalidate("/concept");
+    await res.revalidate("/404");
+    await res.revalidate("/mentions-legales");
 
     return res.json({ revalidated: true });
   } catch (err) {
