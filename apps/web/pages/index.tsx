@@ -31,6 +31,5 @@ export async function getStaticProps() {
       header: success.header ? header.success : null,
       footer: success.footer ? footer.success : null,
     },
-    revalidate: 10,
   };
 }
