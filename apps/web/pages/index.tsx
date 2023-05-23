@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { Layout, Page } from "ui";
-import { fetcher, getUrl, PageProps, PageType, SeoType } from "utils";
+import { fetcher, getUrl, PageProps } from "utils";
 
 export default function index(props: PageProps) {
   const { seo, modal, ...rest } = props;
