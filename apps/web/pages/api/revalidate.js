@@ -4,16 +4,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    await res.revalidate("/");
-    console.log("home ok");
-    await res.revalidate("/event");
-    console.log("event ok");
-    await res.revalidate("/contact");
-    console.log("contact ok");
-    await res.revalidate("/concept");
-    console.log("concept ok");
-    await res.revalidate("/mentions-legales");
-    console.log("ml ok");
+    const urls = ["/", "/event", "/contact", "/concept", "/mentions-legales"];
+
+    await Promise.all(urls.map(async (url) => await res.revalidate(url)));
 
     return res.json({ revalidated: true });
   } catch (err) {
