@@ -63,6 +63,12 @@
     "imageLeft": {
       "type": "boolean",
       "default": true
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "inversedBy": "section_banners"
     }
   }
 }

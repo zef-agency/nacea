@@ -10,6 +10,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::section-banner.section-banner"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
     }
   }
 }

@@ -17,6 +17,14 @@ async function getSection(
 ) {
   let res = await strapi.entityService.findOne(config.api, id, config.populate);
 
+  /*   Promise.all(
+    await strapi.entityService.update(config.api, res.id, {
+      data: {
+        pages: 1,
+      },
+    })
+  ); */
+
   if (!res) {
     return null;
   }
