@@ -32,6 +32,7 @@ export function ContactModal({ data }: ContactModalProps) {
             <CustomForm
               key={k}
               variations="contact"
+              reset={true}
               loading={loading}
               form={form}
               callback={(result: any) => sendInformationModal(result)}
