@@ -6,7 +6,7 @@ export const root = {
   FRONT_URL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://nacea-web-zefagence-gmailcom.vercel.app",
+      : "https://nacea-web.vercel.app",
 };
 
 const token: string | undefined = process.env.NEXT_PUBLIC_STRAPI_TOKEN;

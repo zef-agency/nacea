@@ -31,7 +31,14 @@ const formClass = cva(globalClasses, {
 });
 
 export function CustomForm(props: FormProps) {
-  const { loading = false, form, callback, className, variations } = props;
+  const {
+    loading = false,
+    reset = false,
+    form,
+    callback,
+    className,
+    variations,
+  } = props;
   const { modalData } = useModal();
 
   return (
@@ -40,9 +47,10 @@ export function CustomForm(props: FormProps) {
       validationSchema={Yup.object().shape(yupify(JSON.stringify(form.errors)))}
       onSubmit={(values, { resetForm }) => {
         callback(values);
-        setTimeout(() => {
-          resetForm();
-        }, 1000);
+        reset &&
+          setTimeout(() => {
+            resetForm();
+          }, 1000);
       }}
     >
       {() => (
@@ -84,5 +92,6 @@ interface FormProps {
   callback: Function;
   className?: ClassValue;
   loading?: boolean;
+  reset?: boolean;
   variations?: "devis" | "contact";
 }
