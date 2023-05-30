@@ -59,16 +59,16 @@ export function CustomForm(props: FormProps) {
             form.attributes.map((attribute: attributesType, k: number) => (
               <Input
                 key={k}
+                attribute={attribute}
                 placement={resizeGridChild(
                   ["message", "email", "boissons"],
                   attribute
                 )}
-                attribute={attribute}
               />
             ))}
           {form.button && (
             <Button
-              className="mt-4 "
+              className="mt-4 entrance_animation_2"
               icon={!loading && <Arrow />}
               submit
               color={form.button?.color}
