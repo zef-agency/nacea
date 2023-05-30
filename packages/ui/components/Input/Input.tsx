@@ -51,7 +51,9 @@ export function Input(
 
   return (
     <>
-      <div className={`${placement} flex flex-col gap-1 w-full items-start`}>
+      <div
+        className={`${placement} entrance_animation_2 flex flex-col gap-1 w-full items-start`}
+      >
         {/* Input TEXT, EMAIL, PASSWORD */}
         {["text", "email", "password"].includes(attribute.type) && (
           <div className="relative w-full">

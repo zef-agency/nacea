@@ -29,7 +29,10 @@ export function Layout(props: LayoutProps) {
 
       <Alert setAlert={handleAlert} alert={AlertProps} />
       {visible === ModalNames.CONTACT_MODAL && (
-        <ContactModal data={modal as ContactModalType} />
+        <ContactModal
+          visible={visible === ModalNames.CONTACT_MODAL}
+          data={modal as ContactModalType}
+        />
       )}
     </>
   );
