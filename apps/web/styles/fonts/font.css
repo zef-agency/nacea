@@ -49,7 +49,7 @@
 }
 
 @font-face {
-    font-family: 'BlackMango';
+    font-family: 'BlackMangoRegular';
     src: url('BlackMango-Regular.woff2') format('woff2'),
         url('BlackMango-Regular.woff') format('woff'),
         url('BlackMango-Regular.ttf') format('truetype');

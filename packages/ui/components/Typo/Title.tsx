@@ -8,16 +8,18 @@ const form = cva(globalClasses, {
     size: {
       Xsmall: ["text-14 md:text-16 font-Montserrat"],
       small: ["text-16 font-Montserrat"],
-      regular: ["text-18", "sm:text-20", "md:text-22"],
-      medium: ["text-22", "sm:text-24", "md:text-28", "font-BlackMangoBold"],
-      semiBig: ["text-24 sm:text-30 md:text-35 font-BlackMangoRegular"],
-      big: ["text-35 sm:text-40 md:text-60 font-BlackMangoRegular"],
+      regular: ["text-18", "sm:text-20", "md:text-22", "font-BlackMango"],
+      medium: ["text-22", "sm:text-24", "md:text-28", "font-BlackMango"],
+      semiBig: ["text-24 sm:text-30 md:text-35 font-BlackMango"],
+      big: ["text-35 sm:text-40 md:text-60 font-BlackMango"],
     },
     weight: {
+      light: ["font-light"],
       normal: ["font-normal"],
       medium: ["font-medium"],
       sb: ["font-semibold"],
       bold: ["font-bold"],
+      extrabold: ["font-extrabold"],
     },
     color: {
       white: ["text-white"],
@@ -40,7 +42,14 @@ export function Title({
   const Component = HTMLtag as any;
 
   return (
-    <Component className={form({ size, className, weight, color })}>
+    <Component
+      className={` ${form({
+        size,
+        className,
+        weight,
+        color,
+      })}`}
+    >
       {children}
     </Component>
   );

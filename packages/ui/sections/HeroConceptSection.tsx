@@ -38,7 +38,11 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
                 />
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Title size="regular" className="text-center max-w-[250px]">
+                <Title
+                  size="regular"
+                  weight="medium"
+                  className="text-center max-w-[250px]"
+                >
                   {card.title}
                 </Title>
                 <Text size="smallest" className="text-center">

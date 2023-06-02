@@ -34,7 +34,7 @@ export function BannerSection({ data }: BannerSectionProps) {
         </div>
         <div className="flex flex-col gap-2.5 md:gap-4">
           <div className="flex flex-row justify-between gap-4">
-            <Title size="medium" HTMLtag="h2">
+            <Title size="medium" weight="bold" HTMLtag="h2">
               <span dangerouslySetInnerHTML={{ __html: title }} />
             </Title>
             <div className="w-24">

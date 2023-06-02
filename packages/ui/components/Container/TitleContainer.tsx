@@ -15,6 +15,7 @@ export function TitleContainer({
         <span className="w-full h-[0.5px] bg-gray"> </span>
         <Title
           size="medium"
+          weight="bold"
           HTMLtag="h2"
           className="w-full text-center min-w-[230px]"
         >
