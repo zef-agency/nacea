@@ -4,15 +4,6 @@
 
 body {
    background-color: #FFFCF8 !important;
-   font-family: 'Montserrat'
-}
-
-h1{
-  font-family: 'BlackMango-regular'
-}
-
-h2{
-  font-family: 'BlackMango-bold'
 }
 
 @layer components {

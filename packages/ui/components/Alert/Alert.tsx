@@ -16,7 +16,7 @@ export function Alert({ alert, setAlert, duration }: AlertProps) {
     <p
       className={`${
         alert.active ? "opacity-100 translate-y-24" : "opacity-100 "
-      } transition-all duration-500  ${
+      } font-Montserrat transition-all duration-500  ${
         alert.success
           ? "bg-white border border-black text-black"
           : "bg-red text-white"
