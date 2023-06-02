@@ -47,7 +47,7 @@ export function Header({ data }: HeaderProps) {
             <Links
               icon={<Telephone />}
               weight="medium"
-              href={`tel:${telephone.label}`}
+              href={`tel:${telephone.link}`}
               color={telephone.color}
             >
               {telephone.label}
