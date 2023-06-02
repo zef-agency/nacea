@@ -37,7 +37,7 @@ export function HeroMain({ data }: HeroMainProps) {
         >
           {button.label}
         </Button>
-        <span className="absolute top-4 right-8 md:top-10 md:right-10">
+        <span className="absolute hidden sm:block top-4 right-8 md:top-10 md:right-10">
           <Truck />
         </span>
         <div className="absolute -bottom-10 hidden sm:block sm:-left-28 md:-left-40 lg:-left-44 -z-20 max-w-4">

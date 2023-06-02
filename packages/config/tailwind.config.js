@@ -5,7 +5,6 @@ module.exports = {
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
     "../../packages/utils/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./styles/**/*.{css}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
