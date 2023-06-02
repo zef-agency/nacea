@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 import { BannerSectionType, getUrl, useModal } from "utils";
 
 import { Button, CustomImage, Title, Wrapper } from "../components";
@@ -21,7 +21,7 @@ export function BannerSection({ data }: BannerSectionProps) {
       }`}
     >
       <Wrapper
-        classes={`relative  flex flex-col justify-center gap-6 md:gap-8 py-12 max-w-[850px] ${
+        classes={`relative py-6 flex flex-col justify-center gap-6 md:gap-8 md:w-[50%] py-12  ${
           imageLeft ? "sm:mr-12" : "sm:ml-12"
         }`}
       >
@@ -30,7 +30,13 @@ export function BannerSection({ data }: BannerSectionProps) {
             imageLeft ? "transform -scale-x-100 -right-36" : "-left-44"
           }  -bottom-10 hidden sm:block  z-20`}
         >
-          <CustomImage priority={true} alt="flowers" src="/flowers_pnh.png" />
+          <Image
+            priority={true}
+            width={200}
+            height={200}
+            alt="flowers"
+            src="/flowers_pnh.png"
+          />{" "}
         </div>
         <div className="flex flex-col gap-2.5 md:gap-4">
           <div className="flex flex-row justify-between gap-4">

@@ -16,7 +16,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
         <CustomImage priority={true} alt="flowers" src="/flowers_pnh.png" />
       </div>
       <Wrapper classes="flex entrance_animation flex-col items-center gap-4 sm:px-16 md:max-w-[1200px]">
-        <Title className="text-center" size="big">
+        <Title className="text-center md:max-w-[900px]" size="big">
           {title}
         </Title>
         <Title className="text-center" size="small" HTMLtag="h3">
@@ -24,7 +24,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
         </Title>
       </Wrapper>
       <div className="flex flex-col md:mt-6">
-        <div className="bg-beige flex flex-col gap-8 items-center px-8 py-6 sm:mx-[100px] sm:-mb-32 sm:z-50 md:flex-row md:items-start md:max-w-[1200px] md:py-8 md:px-16 md:justify-between">
+        <div className="bg-beige rounded-md flex flex-col gap-8 items-center px-8 py-6 sm:mx-[100px] sm:-mb-32 sm:z-50 md:flex-row md:items-start md:max-w-[1200px] md:py-8 md:px-16 md:justify-between">
           {cards.map((card: any, k: number) => (
             <div
               className="flex flex-col items-center gap-1 md:w-[350px]"
@@ -41,6 +41,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
                 <Title
                   size="regular"
                   weight="medium"
+                  HTMLtag="h3"
                   className="text-center max-w-[250px]"
                 >
                   {card.title}
@@ -68,7 +69,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
         style={{ backgroundColor: definition.backgroundColor }}
         className="w-full py-4 md:py-6 text-center px-[10%] sm:px-[3%]"
       >
-        <Title size="medium" className="text-center text-white">
+        <Title size="medium" HTMLtag="h3" className="text-center text-white">
           {definition.label}
         </Title>
       </div>

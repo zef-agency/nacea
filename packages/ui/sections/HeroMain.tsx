@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { getUrl, HeroMainSectionType, useModal } from "utils";
 
@@ -15,7 +16,7 @@ export function HeroMain({ data }: HeroMainProps) {
 
   return (
     <div className="flex flex-col sm:flex-row max-w ">
-      <Wrapper classes="relative entrance_animation flex flex-col justify-center gap-6 md:gap-8 py-5 max-w-[700px] md:py-8 lg:py-16 ">
+      <Wrapper classes="relative entrance_animation flex flex-col justify-center gap-6 md:gap-8 py-5 max-w-[800px] md:py-8 lg:py-16 ">
         <div className="flex flex-col gap-2.5 md:gap-4">
           <Title size="big" weight="normal">
             {title}
@@ -41,10 +42,16 @@ export function HeroMain({ data }: HeroMainProps) {
           <Truck />
         </span>
         <div className="absolute -bottom-10 hidden sm:block sm:-left-28 md:-left-40 lg:-left-44 -z-20 max-w-4">
-          <CustomImage priority={true} alt="flowers" src="/flowers_pnh.png" />
+          <Image
+            priority={true}
+            width={200}
+            height={200}
+            alt="flowers"
+            src="/flowers_pnh.png"
+          />
         </div>
       </Wrapper>
-      <div className="sm:min-w-[400px] md:max-w-[50%] entrance_opacity_3 md:min-w-[550px] h-[300px] sm:h-[450px] md:h-[600px]">
+      <div className="sm:min-w-[400px] md:max-w-[50%] entrance_opacity_3 md:min-w-[600px] h-[300px] sm:h-[450px] md:h-[600px]">
         <CustomImage priority={true} alt={image.alt} src={getUrl(image.url)} />
       </div>
     </div>

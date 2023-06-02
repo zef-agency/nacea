@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { getUrl, HeaderType } from "utils";
+import { getUrl, HeaderType, useModal } from "utils";
 
 import { Burger, Telephone } from "../../svg";
 import { Button } from "../Buttons/Button";
@@ -8,6 +8,7 @@ import { Links } from "../Buttons/Link";
 import { Wrapper } from "../Container/Wrapper";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { CustomImage } from "../Image/Image";
+import { ModalNames } from "../Modals/ModalNames";
 
 interface HeaderProps {
   data: HeaderType;
@@ -15,12 +16,14 @@ interface HeaderProps {
 
 export function Header({ data }: HeaderProps) {
   const { links, button, logo, telephone } = data;
+  const { handleModal, modalData } = useModal();
+
   const router = useRouter();
 
   return (
     <div className="border-b border-gray">
       <Wrapper classes="flex items-center justify-between w-full">
-        <div className="w-full max-w-[100px] md:max-w-[120px]">
+        <div className="w-full max-w-[100px] md:max-w-[140px]">
           <Link href={getUrl("/", true)}>
             <CustomImage
               priority={true}
@@ -54,7 +57,15 @@ export function Header({ data }: HeaderProps) {
             </Links>
           )}
           {button && (
-            <Button href={getUrl(button.link, true)} color={button.color}>
+            <Button
+              color={button.color}
+              onclick={() =>
+                handleModal({
+                  isOpen: ModalNames.CONTACT_MODAL,
+                  modalData,
+                })
+              }
+            >
               {button.label}
             </Button>
           )}

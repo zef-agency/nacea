@@ -20,7 +20,7 @@ export function ContactSection({ data }: ContactSectionProps) {
         className="relative w-full h-[400px] md:h-[700px] md:w-[50%]"
       >
         <div
-          className={`absolute entrance_opacity_3 top-0 left-[50%] translate-x-[-50%] md:translate-x-[-35%] lg:translate-x-[-25%] md:top-[50%] md:translate-y-[-50%] h-full w-[300px] mt-6 md:mt-0 sm:w-[300px] md:w-[400px] sm:h-[400px] md:h-[450px] `}
+          className={`absolute rounded-md entrance_opacity_3 top-0 left-[50%] translate-x-[-50%] md:translate-x-[-35%] lg:translate-x-[-25%] md:top-[50%] md:translate-y-[-50%] h-full w-[300px] mt-6 md:mt-0 sm:w-[300px] md:w-[400px] sm:h-[400px] md:h-[450px] `}
         >
           <CustomImage
             priority={true}
