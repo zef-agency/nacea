@@ -19,7 +19,7 @@ export function DevisSection({ data }: DevisSectionProps) {
           imageLeft ? "sm:flex-row-reverse" : "sm:flex-row"
         } `}
       >
-        <div className="w-[250px] sm:w-[240px] sm:max-w-[300px]">
+        <div className="w-[250px] sm:w-[275px] sm:max-w-[302px]">
           <CustomImage
             classes="rounded-xl"
             priority={true}
@@ -27,9 +27,14 @@ export function DevisSection({ data }: DevisSectionProps) {
             src={getUrl(image.url)}
           />
         </div>
-        <div className="flex flex-col gap-6 max-w-[800px]">
-          <div className="flex flex-col gap-2">
-            <Title size="medium" weight="bold" HTMLtag="h2">
+        <div className="flex flex-col gap-6 max-w-[700px]">
+          <div className="flex flex-col gap-2 ">
+            <Title
+              size="medium"
+              className="max-w-[600px]"
+              weight="bold"
+              HTMLtag="h2"
+            >
               {title}
             </Title>
             <Title size="small" HTMLtag="h3">

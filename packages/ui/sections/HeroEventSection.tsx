@@ -13,7 +13,7 @@ export function HeroEventSection({ data }: HeroMainProps) {
   const { handleModal, modalData } = useModal();
 
   return (
-    <div className="flex flex-col sm:flex-row max-w">
+    <div className="flex flex-col sm:flex-row max-w justify-between">
       <Wrapper classes="entrance_animation flex flex-col justify-center gap-6 md:gap-8 py-5 max-w-[800px] md:py-8 lg:py-16 ">
         <div className="flex flex-col gap-2.5 md:gap-4 ">
           <div className="flex flex-row justify-between">
@@ -42,7 +42,7 @@ export function HeroEventSection({ data }: HeroMainProps) {
         )}
       </Wrapper>
 
-      <div className="sm:min-w-[400px] md:min-w-[550px] h-[480px] sm:h-[580px]">
+      <div className="sm:min-w-[400px] md:min-w-[550px] md:min-w-[30%] h-[480px] sm:h-[580px]">
         <CustomImage priority={true} alt={image.alt} src={getUrl(image.url)} />
       </div>
     </div>

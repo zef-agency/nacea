@@ -50,6 +50,7 @@ module.exports = {
     },
     borderRadius: {
       xs: "7px",
+      md: "10px",
       xl: "20px",
       full: "100%",
     },
