@@ -20,7 +20,10 @@ export function Footer({ data }: FooterProps) {
         <CustomImage priority={true} alt={logo.alt} src={getUrl(logo.url)} />
       </div>
       <div className="flex flex-col gap-2 w-full md:max-w-[400px]">
-        <Title weight="sb"> {title}</Title>
+        <Title weight="sb" HTMLtag="h2">
+          {" "}
+          {title}
+        </Title>
         <Text size="smallest"> {subtitle}</Text>
       </div>
 
