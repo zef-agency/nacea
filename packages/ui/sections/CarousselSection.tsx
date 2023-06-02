@@ -97,8 +97,8 @@ const RenderCards = ({ object }: any) => {
           key={i}
           className={`keen-slider__slide number-slide${i} flex items-center justify-center`}
         >
-          <div className="flex flex-col justify-start items-center max-w-[270px] md:max-w-[275px] mx-0 my-auto">
-            <div className="mb-2 max-w-[270px] md:max-w-[275px] h-[207px]">
+          <div className="flex flex-col justify-start items-center w-[270px] md:max-w-[275px] mx-0 my-auto">
+            <div className="mb-2 w-[270px] md:max-w-[275px] h-[207px]">
               <CustomImage
                 classes=" rounded-xl"
                 priority={true}
