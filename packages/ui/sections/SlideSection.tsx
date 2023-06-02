@@ -19,7 +19,7 @@ export function SlideSection({ data }: SlideSectionProps) {
               style={{ backgroundColor }}
               className="rounded-full w-5 h-5"
             ></div>
-            <Title size="semiBig" key={k}>
+            <Title size="semiBig" key={k} HTMLtag="h3">
               {event.label}
             </Title>
           </>
@@ -30,7 +30,7 @@ export function SlideSection({ data }: SlideSectionProps) {
               style={{ backgroundColor }}
               className="rounded-full w-5 h-5"
             ></div>
-            <Title size="semiBig" key={k}>
+            <Title size="semiBig" key={k} HTMLtag="h3">
               {event.label}
             </Title>
           </>
@@ -41,7 +41,7 @@ export function SlideSection({ data }: SlideSectionProps) {
               style={{ backgroundColor }}
               className="rounded-full w-5 h-5"
             ></div>
-            <Title size="semiBig" key={k}>
+            <Title size="semiBig" key={k} HTMLtag="h3">
               {event.label}
             </Title>
           </>

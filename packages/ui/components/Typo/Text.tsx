@@ -15,12 +15,12 @@ const form = cva(globalClasses, {
       30: ["text-30"],
     },
     weight: {
+      light: ["font-light"],
+      regular: ["font-regular"],
       normal: ["font-normal"],
+      medium: ["font-medium"],
       sb: ["font-semibold"],
       bold: ["font-bold"],
-      regular: ["font-regular"],
-      medium: ["font-medium"],
-      light: ["font-light"],
     },
     variations: {
       normal: ["text-black"],

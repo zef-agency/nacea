@@ -36,11 +36,18 @@ module.exports = {
         gray: "#B8B8B8",
         grayLight: "#C4C4C4",
       },
-    },
-    fontFamily: {
-      Montserrat: "Montserrat",
-      BlackMangoRegular: "BlackMango-regular",
-      BlackMangoBold: "BlackMango-bold",
+      fontFamily: {
+        Montserrat: ["var(--font-montserrat)"],
+        BlackMango: ["var(--font-blackMango)"],
+      },
+      fontWeight: {
+        light: 300,
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+        extrabold: 800,
+      },
     },
     borderRadius: {
       xs: "7px",

@@ -29,7 +29,7 @@ export function DevisSection({ data }: DevisSectionProps) {
         </div>
         <div className="flex flex-col gap-6 max-w-[800px]">
           <div className="flex flex-col gap-2">
-            <Title size="medium" HTMLtag="h2">
+            <Title size="medium" weight="bold" HTMLtag="h2">
               {title}
             </Title>
             <Title size="small" HTMLtag="h3">

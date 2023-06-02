@@ -17,11 +17,11 @@ export function HeroMain({ data }: HeroMainProps) {
     <div className="flex flex-col sm:flex-row max-w ">
       <Wrapper classes="relative entrance_animation flex flex-col justify-center gap-6 md:gap-8 py-5 max-w-[700px] md:py-8 lg:py-16 ">
         <div className="flex flex-col gap-2.5 md:gap-4">
-          <Title className="" size="big">
+          <Title size="big" weight="normal">
             {title}
           </Title>
 
-          <Title size="small" HTMLtag="h3">
+          <Title size="small" weight="normal" HTMLtag="h3">
             {subtitle}
           </Title>
         </div>
