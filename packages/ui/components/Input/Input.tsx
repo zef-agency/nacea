@@ -24,6 +24,7 @@ const globalClasses: string[] = [
   "rounded-xs",
   "bg-whiteTransparent",
   "py-3.5",
+  "font-Montserrat",
 ];
 
 const inputClass = cva(globalClasses, {
@@ -124,7 +125,9 @@ export function Input(
           </div>
         )}
         <ErrorMessage name={attribute.name}>
-          {(msg) => <div className="text-14 text-red">{msg}</div>}
+          {(msg) => (
+            <div className="text-14 text-red font-Montserrat">{msg}</div>
+          )}
         </ErrorMessage>
         <span className="absolute flex items-center justify-center text-base text-gray-500 h-full peer-focus:text-gray-800 top-0 left-3">
           {icon}

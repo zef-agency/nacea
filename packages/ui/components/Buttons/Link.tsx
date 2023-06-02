@@ -9,6 +9,7 @@ const globalClasses: string[] = [
   "flex",
   "flex-row",
   "items-center",
+  "font-Montserrat",
 ];
 
 const link = cva(globalClasses, {
@@ -23,9 +24,6 @@ const link = cva(globalClasses, {
       semiBold: ["font-semibold"],
       bold: ["font-bold"],
     },
-    family: {
-      montserrat: ["Montserrat"],
-    },
     current: {
       true: ["underline"],
       false: [""],
@@ -34,7 +32,6 @@ const link = cva(globalClasses, {
   defaultVariants: {
     size: "medium",
     weight: "normal",
-    family: "montserrat",
     current: false,
   },
 });

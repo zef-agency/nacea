@@ -5,6 +5,7 @@ module.exports = {
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
     "../../packages/utils/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.{css}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -35,6 +36,11 @@ module.exports = {
         gray: "#B8B8B8",
         grayLight: "#C4C4C4",
       },
+    },
+    fontFamily: {
+      Montserrat: "Montserrat",
+      BlackMangoRegular: "BlackMango-regular",
+      BlackMangoBold: "BlackMango-bold",
     },
     borderRadius: {
       xs: "7px",

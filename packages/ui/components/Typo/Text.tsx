@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { PropsWithChildren } from "react";
 
-const globalClasses: string[] = [];
+const globalClasses: string[] = ["font-Montserrat"];
 
 const form = cva(globalClasses, {
   variants: {
@@ -18,13 +18,9 @@ const form = cva(globalClasses, {
       normal: ["font-normal"],
       sb: ["font-semibold"],
       bold: ["font-bold"],
-      lightItalic: ["font-ApercuLightItalic"],
       regular: ["font-regular"],
       medium: ["font-medium"],
       light: ["font-light"],
-    },
-    family: {
-      montserrat: ["font-Montserrat"],
     },
     variations: {
       normal: ["text-black"],
@@ -36,7 +32,6 @@ const form = cva(globalClasses, {
     size: "small",
     weight: "normal",
     variations: "normal",
-    family: "montserrat",
   },
 });
 
@@ -67,13 +62,6 @@ interface TitleProps
   children?: any;
   color?: string;
   size?: "smallest" | "small" | "base" | "medium" | "large" | "largest" | 30;
-  weight?:
-    | "normal"
-    | "sb"
-    | "bold"
-    | "lightItalic"
-    | "regular"
-    | "medium"
-    | "light";
+  weight?: "normal" | "sb" | "bold" | "regular" | "medium" | "light";
   variations?: "normal" | "link" | "white";
 }

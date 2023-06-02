@@ -13,6 +13,7 @@ const globalClasses: string[] = [
   "text-white",
   "w-fit",
   "h-fit",
+  "font-Montserrat",
 ];
 
 const button = cva(globalClasses, {
@@ -22,13 +23,9 @@ const button = cva(globalClasses, {
       medium: ["text-14", "py-2.5 md:py-3", "px-5 md:px-6"],
       iconOnly: ["p-1.5"],
     },
-    family: {
-      montserrat: ["Montserrat"],
-    },
   },
   defaultVariants: {
     size: "medium",
-    family: "montserrat",
   },
 });
 
