@@ -1,4 +1,5 @@
 import { GetInstagramPosts, InstagramSectionType, Truncate } from "utils";
+import Image from "next/image";
 
 import { Button, Text, TitleContainer } from "../components";
 import { Arrow } from "../svg";
@@ -30,11 +31,14 @@ export function InstagramSection({ data }: InstagramSectionProps) {
               key={i}
               className="relative group transition-all w-fit w-[300px] cursor-pointer"
             >
-              <img
-                alt="ee"
-                className="object-cover rounded-xl group-hover:brightness-40 transition-all w-[320px] h-[280px]"
-                src={postInsta.media_url}
-              />
+              <div className="group-hover:brightness-40 transition-all w-[320px] h-[280px]">
+                <Image
+                  alt="ee"
+                  fill={true}
+                  className="object-cover w-full h-full rounded-xl"
+                  src={postInsta.media_url}
+                />
+              </div>
               <Text
                 variations="white"
                 size="smallest"

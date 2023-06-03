@@ -23,7 +23,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
           {subtitle}
         </Title>
       </Wrapper>
-      <div className="flex flex-col md:mt-6">
+      <div className="flex flex-col items-center md:mt-6">
         <div className="bg-beige rounded-md flex flex-col gap-8 items-center px-8 py-6 sm:mx-[100px] sm:-mb-32 sm:z-50 md:flex-row md:items-start md:max-w-[1200px] md:py-8 md:px-16 md:justify-between">
           {cards.map((card: any, k: number) => (
             <div
@@ -31,11 +31,13 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
               key={k}
             >
               <div className="mb-2 w-[60px]">
-                <CustomImage
-                  priority={true}
-                  alt={card.icon.alt}
-                  src={getUrl(card.icon.url)}
-                />
+                {card.icon && (
+                  <CustomImage
+                    priority={true}
+                    alt={card.icon.alt}
+                    src={getUrl(card.icon.url)}
+                  />
+                )}
               </div>
               <div className="flex flex-col items-center gap-2">
                 <Title
@@ -53,7 +55,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-2  sm:flex-row items-center">
+        <div className="flex flex-col gap-2 w-full sm:flex-row items-center">
           {images.map((image: any, k: number) => (
             <div key={k} className=" w-full h-[290px] sm:h-[400px]">
               <CustomImage

@@ -3,8 +3,8 @@ import React from "react";
 export function Truck() {
   return (
     <svg
-      width="80"
-      height="63"
+      width="90"
+      height="73"
       viewBox="0 0 98 81"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

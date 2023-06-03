@@ -8,8 +8,8 @@ export interface ImageProps {
   classes?: string;
 }
 
-const imageLoader = ({ src, width, quality }: any) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
+const imageLoader = ({ src, width }: any) => {
+  return `${src}?w=${width}&q=${50}`;
 };
 
 export function CustomImage(props: ImageProps): JSX.Element {
@@ -18,8 +18,9 @@ export function CustomImage(props: ImageProps): JSX.Element {
   return (
     <Image
       alt={alt}
-      width={1000}
-      height={1000}
+      width={500}
+      height={500}
+      quality={75}
       priority={priority}
       src={src}
       className={`w-full h-full object-cover ${classes}`}
