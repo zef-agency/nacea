@@ -5,6 +5,7 @@ import { InputHTMLAttributes } from "react";
 import { attributesType, InputType, OptionType, SelectType } from "utils";
 
 import { Title } from "../Typo/Title";
+import { ArrowSelect } from "../../svg";
 
 const globalClasses: string[] = [
   "block",
@@ -77,20 +78,29 @@ export function Input(
             <Title HTMLtag="h3" size="Xsmall" className="mb-1.5">
               {attribute.label}
             </Title>
-            <Field
-              autoComplete="true"
-              name={attribute.name}
-              as="select"
-              className={inputClass({ variations, size, className })}
-            >
-              {(attribute as SelectType).options?.map(
-                (option: OptionType, k: number) => (
-                  <option key={k} value={option}>
-                    {option}
-                  </option>
-                )
-              )}
-            </Field>
+            <div className="w-full relative">
+              <Field
+                autoComplete="true"
+                name={attribute.name}
+                as="select"
+                className={`appearance-none ${inputClass({
+                  variations,
+                  size,
+                  className,
+                })}`}
+              >
+                {(attribute as SelectType).options?.map(
+                  (option: OptionType, k: number) => (
+                    <option key={k} value={option}>
+                      {option}
+                    </option>
+                  )
+                )}
+              </Field>
+              <span className="absolute top-[50%] translate-y-[-50%] right-2">
+                <ArrowSelect />
+              </span>
+            </div>
           </div>
         )}
         {/* Input TEXTAREA */}
