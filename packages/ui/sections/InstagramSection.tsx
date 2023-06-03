@@ -23,7 +23,7 @@ export function InstagramSection({ data }: InstagramSectionProps) {
   return (
     <div className="py-5 md:py-12 flex flex-col items-center">
       <TitleContainer title={title} subtitle={subtitle} />
-      <div className="grid grid-cols-1 gap-6 md:gap-10 sm:grid-cols-2 md:grid-cols-instagram auto-cols-min justify-center mx-14 md:mx-32  my-16">
+      <div className="grid grid-cols-1 gap-6 md:gap-10 sm:grid-cols-2 md:grid-cols-instagram auto-cols-min justify-center mx-2 md:mx-32  my-6 sm:my-16">
         {posts &&
           posts.map((postInsta: any, i: number) => (
             // eslint-disable-next-line @next/next/no-img-element
@@ -31,9 +31,9 @@ export function InstagramSection({ data }: InstagramSectionProps) {
               key={i}
               className="relative group transition-all w-fit w-[300px] cursor-pointer"
             >
-              <div className="group-hover:brightness-40 transition-all w-[320px] h-[280px]">
+              <div className="group-hover:brightness-40 transition-all w-[300px] h-[280px] md:w-[320px] md:h-[280px]">
                 <Image
-                  alt="ee"
+                  alt={postInsta.caption}
                   fill={true}
                   className="object-cover w-full h-full rounded-xl"
                   src={postInsta.media_url}
