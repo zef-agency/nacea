@@ -13,6 +13,7 @@ import {
 } from "../components";
 import { Links } from "../components/Buttons/Link";
 import { Arrow } from "../svg";
+import { useState } from "react";
 
 interface CarousselSectionProps {
   data: CarousselSectionType;
@@ -20,10 +21,20 @@ interface CarousselSectionProps {
 
 export function CarousselSection({ data }: CarousselSectionProps) {
   const { title, subtitle, button, attributes } = data;
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [loaded, setLoaded] = useState(false);
+
   const items = attributes[0].events
     ? attributes[0].events
     : attributes[0].products;
   const [sliderRef, instanceRef] = useKeenSlider({
+    slideChanged(slider) {
+      console.log(slider.track.details.rel);
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
     slides: {
       origin: 0,
       perView: items.length >= 4 ? 4 : items.length,
@@ -61,19 +72,27 @@ export function CarousselSection({ data }: CarousselSectionProps) {
         <div ref={sliderRef} className="keen-slider">
           <RenderCards object={items} />
         </div>
-        <div className="flex flex-row gap-3">
-          <ArrowCommand
-            left
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.prev()
-            }
-          />
-          <ArrowCommand
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.next()
-            }
-          />
-        </div>
+        {loaded && instanceRef.current && (
+          <div className="flex flex-row gap-3">
+            <ArrowCommand
+              left
+              disabled={currentSlide === 0}
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+            />
+            <ArrowCommand
+              disabled={
+                currentSlide ===
+                items.length - instanceRef.current?.options?.slides?.perView
+              }
+              onClick={(e: any) => {
+                e.stopPropagation() || instanceRef.current?.next();
+              }}
+            />
+          </div>
+        )}
+
         {button && (
           <Button
             className="w-full sm:w-fit"
@@ -133,14 +152,21 @@ const RenderCards = ({ object }: any) => {
 
 function ArrowCommand(props: {
   left?: boolean;
+  disabled?: boolean;
   // eslint-disable-next-line no-unused-vars
   onClick: (e: any) => void;
 }) {
   return (
     <div
-      style={{ transform: props.left ? "rotate(180deg)" : "rotate(0deg)" }}
-      className="px-4 py-2  rounded-xs bg-[#FFD874] cursor-pointer"
-      onClick={props.onClick}
+      style={{
+        transform: props.left ? "rotate(180deg)" : "rotate(0deg)",
+        backgroundColor: props.disabled ? "#F4E7C4" : "#FFD874",
+      }}
+      className={`px-4 py-2  rounded-xs   ${
+        props.disabled ? "cursor-not-allowed" : "cursor-pointer"
+      }`}
+      // eslint-disable-next-line no-empty-function
+      onClick={!props.disabled ? props.onClick : () => {}}
     >
       {props.left ? <Arrow color="black" /> : <Arrow color="black" />}
     </div>
