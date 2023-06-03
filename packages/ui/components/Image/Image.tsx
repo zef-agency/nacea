@@ -17,7 +17,7 @@ export function CustomImage(props: ImageProps): JSX.Element {
 
   return (
     <Image
-      alt={alt}
+      alt={alt ? alt : src}
       width={500}
       height={500}
       quality={75}

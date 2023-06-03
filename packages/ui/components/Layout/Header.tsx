@@ -1,3 +1,4 @@
+import { Menu } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { getUrl, HeaderType, useModal } from "utils";
@@ -36,10 +37,10 @@ export function Header({ data }: HeaderProps) {
           {links &&
             links.map((link, k) => (
               <Links
+                key={k}
                 current={router.pathname === link.link}
                 href={getUrl(link.link, true)}
                 color={link.color}
-                key={k}
               >
                 {link.label}
               </Links>
@@ -75,14 +76,16 @@ export function Header({ data }: HeaderProps) {
             <div className="flex flex-col justify-between gap-4">
               {links &&
                 links.map((link, k) => (
-                  <Links
-                    size="base"
-                    href={getUrl(link.link, true)}
-                    color={link.color}
-                    key={k}
-                  >
-                    {link.label}
-                  </Links>
+                  <Menu.Item key={k}>
+                    <Links
+                      size="base"
+                      href={getUrl(link.link, true)}
+                      color={link.color}
+                      key={k}
+                    >
+                      {link.label}
+                    </Links>
+                  </Menu.Item>
                 ))}
             </div>
             {telephone && (

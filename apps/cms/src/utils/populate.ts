@@ -108,7 +108,7 @@ export const ImageConfig = {
   populate: true,
   reorder: (res: OriginalImageType): ImageType => ({
     url: res ? res.url : null,
-    alt: res ? res.name : null,
+    alt: res ? res.alternativeText : null,
     format: {
       small: res ? res.formats?.small?.url : null,
       medium: res ? res.formats?.medium?.url : null,
@@ -656,6 +656,7 @@ interface OriginalAlertType {
 interface OriginalImageType {
   url: string;
   name: string;
+  alternativeText: string;
   formats: {
     small: { url: string };
     medium: { url: string };
