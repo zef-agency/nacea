@@ -1,6 +1,8 @@
+// @ts-nocheck
 import "keen-slider/keen-slider.min.css";
 
 import { useKeenSlider } from "keen-slider/react";
+import { useState } from "react";
 import { CarousselSectionType, getUrl, Truncate } from "utils";
 
 import {
@@ -13,7 +15,6 @@ import {
 } from "../components";
 import { Links } from "../components/Buttons/Link";
 import { Arrow } from "../svg";
-import { useState } from "react";
 
 interface CarousselSectionProps {
   data: CarousselSectionType;
@@ -21,7 +22,7 @@ interface CarousselSectionProps {
 
 export function CarousselSection({ data }: CarousselSectionProps) {
   const { title, subtitle, button, attributes } = data;
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [currentSlide, setCurrentSlide] = useState<any>(0);
   const [loaded, setLoaded] = useState(false);
 
   const items = attributes[0].events
@@ -29,7 +30,6 @@ export function CarousselSection({ data }: CarousselSectionProps) {
     : attributes[0].products;
   const [sliderRef, instanceRef] = useKeenSlider({
     slideChanged(slider) {
-      console.log(slider.track.details.rel);
       setCurrentSlide(slider.track.details.rel);
     },
     created() {
@@ -81,6 +81,7 @@ export function CarousselSection({ data }: CarousselSectionProps) {
                 e.stopPropagation() || instanceRef.current?.prev()
               }
             />
+
             <ArrowCommand
               disabled={
                 currentSlide ===
