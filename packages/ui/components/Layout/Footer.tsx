@@ -15,7 +15,7 @@ export function Footer({ data }: FooterProps) {
   const { links, socials, logo, signature, subtitle, title } = data;
 
   return (
-    <div className="flex flex-col md:flex-row items-start  justify-between w-full py-5 md:gap-8 gap-7 sm:px-7 md:px-12 px-5 max-w">
+    <div className="flex flex-col md:flex-row items-start  justify-between w-full py-10 md:py-16 md:gap-8 gap-7 sm:px-7 md:px-12 px-5 max-w">
       <div className="w-full relative max-w-[200px]">
         <CustomImage priority={true} alt={logo.alt} src={getUrl(logo.url)} />
       </div>
