@@ -43,7 +43,8 @@
     "button": {
       "type": "component",
       "repeatable": false,
-      "component": "assets.button"
+      "component": "assets.button",
+      "required": true
     }
   }
 }

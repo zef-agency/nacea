@@ -1,5 +1,5 @@
-import { GetInstagramPosts, InstagramSectionType, Truncate } from "utils";
 import Image from "next/image";
+import { GetInstagramPosts, InstagramSectionType, Truncate } from "utils";
 
 import { Button, Text, TitleContainer } from "../components";
 import { Arrow } from "../svg";
