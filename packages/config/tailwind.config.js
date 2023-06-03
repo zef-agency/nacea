@@ -78,6 +78,8 @@ module.exports = {
       40: "2.5rem",
       50: "3.125rem",
       60: "3.725rem",
+      65: "4rem",
+      70: "4.5rem",
     },
   },
   plugins: [],

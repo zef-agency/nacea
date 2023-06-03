@@ -42,7 +42,7 @@ export function HeroEventSection({ data }: HeroMainProps) {
         )}
       </Wrapper>
 
-      <div className="sm:min-w-[400px] md:min-w-[550px] md:min-w-[30%] h-[480px] sm:h-[580px]">
+      <div className="h-[480px] sm:min-w-[400px] sm:h-[580px] md:min-w-[550px] md:min-w-[30%]  lg:min-w-[45%] lg:h-[680px]">
         <CustomImage priority={true} alt={image.alt} src={getUrl(image.url)} />
       </div>
     </div>

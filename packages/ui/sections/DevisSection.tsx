@@ -19,7 +19,7 @@ export function DevisSection({ data }: DevisSectionProps) {
           imageLeft ? "sm:flex-row-reverse" : "sm:flex-row"
         } `}
       >
-        <div className="w-[250px] sm:w-[275px] sm:max-w-[302px]">
+        <div className="w-[250px] relative sm:w-[275px] sm:max-w-[302px]">
           <CustomImage
             classes="rounded-xl"
             priority={true}

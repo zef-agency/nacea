@@ -16,7 +16,7 @@ export function Footer({ data }: FooterProps) {
 
   return (
     <div className="flex flex-col md:flex-row items-start  justify-between w-full py-5 md:gap-8 gap-7 sm:px-7 md:px-12 px-5 max-w">
-      <div className="w-full max-w-[200px]">
+      <div className="w-full relative max-w-[200px]">
         <CustomImage priority={true} alt={logo.alt} src={getUrl(logo.url)} />
       </div>
       <div className="flex flex-col gap-2 w-full md:max-w-[400px]">

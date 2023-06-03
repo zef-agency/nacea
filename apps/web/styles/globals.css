@@ -10,7 +10,7 @@ body {
 
 @layer components {
    .max-w {
-     @apply max-w-[1500px] my-0 mx-auto;
+     @apply max-w-[1800px] my-0 mx-auto;
    }
  }
 
