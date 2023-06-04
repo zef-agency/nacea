@@ -3,7 +3,7 @@ services:
     name: strapi
     env: node
     plan: free
-    buildCommand: cd apps/cms && npm run build
+    buildCommand: cd apps/cms && npm run build-cms
     startCommand: cd apps/cms && npm run start
     healthCheckPath: /_health
     autoDeploy: false
