@@ -15,6 +15,10 @@ export function useSendMessage() {
     const templateID: any = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE;
     const key: any = process.env.NEXT_PUBLIC_EMAILJS_TOKEN_PUBLIC;
 
+    if (res) {
+      res = { ...res, boissons: res.boissons ? "Oui" : "Non" };
+    }
+
     emailjs.send(serviceID, templateID, res, key).then(
       () => {
         handleAlert({

@@ -126,6 +126,7 @@ export interface BannerSectionType {
   id: number;
   section: SectionType;
   title: string;
+  icon: string;
   subtitle: string;
   imageLeft: boolean;
   image: ImageType;

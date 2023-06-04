@@ -104,13 +104,13 @@ const RenderPosts = ({ object }: any) => {
       {object.map((postInsta: any, i: number) => (
         <div
           key={i}
-          className={`keen-slider__slide number-slide${i} sm:hidden flex items-center justify-center relative  w-fit w-[300px] cursor-pointer`}
+          className={`keen-slider__slide number-slide${i} sm:hidden flex items-center justify-center relative px-6  max-w-[300px] cursor-pointer`}
         >
-          <div className="brightness-40  w-[300px] h-[280px] md:w-[320px] md:h-[280px]">
+          <div className="brightness-50 w-full h-[280px] md:w-[320px] md:h-[280px]">
             <Image
               alt={postInsta.caption}
               fill={true}
-              className="object-cover w-full h-full rounded-xl"
+              className="object-cover rounded-xl "
               src={postInsta.media_url}
             />
           </div>

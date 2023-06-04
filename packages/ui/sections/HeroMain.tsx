@@ -41,7 +41,7 @@ export function HeroMain({ data }: HeroMainProps) {
         <span className="absolute hidden sm:block top-4 right-4 md:top-10 md:right-24">
           <Truck />
         </span>
-        <div className="absolute -bottom-10 hidden sm:block sm:-left-28 md:-left-40 lg:-left-44 -z-20 max-w-4">
+        <div className="absolute -bottom-10 hidden sm:block sm:-left-28 md:-left-32 lg:-left-44 -z-20 max-w-4">
           <Image
             priority={true}
             width={200}
