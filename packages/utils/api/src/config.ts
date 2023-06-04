@@ -2,7 +2,7 @@ export const root = {
   API_URL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:1337"
-      : "https://sea-lion-app-ng2ys.ondigitalocean.app",
+      : "https://oyster-app-5m6fg.ondigitalocean.app",
   FRONT_URL:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
