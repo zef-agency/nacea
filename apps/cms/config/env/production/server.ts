@@ -6,8 +6,3 @@ export default ({ env }) => ({
     keys: env.array("APP_KEYS"),
   },
 });
-
-// eslint-disable-next-line import/no-anonymous-default-export
-/* export default ({ env }) => ({
-  url: env("RENDER_EXTERNAL_URL"),
-}); */
