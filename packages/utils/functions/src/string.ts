@@ -80,3 +80,27 @@ export const yupify = (jsonString: string) => {
   }
   return transformedObj;
 };
+
+export function darkenColor(hex: string, percentage: number) {
+  // Convertir la valeur hexadécimale en une valeur décimale
+  const rgb = parseInt(hex.slice(1), 16);
+
+  // Extraire les composantes de couleur (rouge, vert, bleu)
+  const red = (rgb >> 16) & 0xff;
+  const green = (rgb >> 8) & 0xff;
+  const blue = rgb & 0xff;
+
+  // Calculer les nouvelles valeurs de composantes assombries
+  const darkenedRed = Math.round(red * (1 - percentage / 100));
+  const darkenedGreen = Math.round(green * (1 - percentage / 100));
+  const darkenedBlue = Math.round(blue * (1 - percentage / 100));
+
+  // Convertir les valeurs de composantes en une valeur hexadécimale
+  const darkenedHex =
+    "#" +
+    ((darkenedRed << 16) | (darkenedGreen << 8) | darkenedBlue)
+      .toString(16)
+      .padStart(6, "0");
+
+  return darkenedHex;
+}

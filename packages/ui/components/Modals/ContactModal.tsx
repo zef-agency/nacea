@@ -47,14 +47,14 @@ export function ContactModal({ data }: ContactModalProps) {
     >
       <div
         ref={layer}
-        className={` flex flex-col gap-6 h-screen p-8 overflow-y-scroll border-l border-stroke-blue w-[90%] md:w-[50%] bg-[#FFFCF8]`}
+        className={` flex flex-col gap-6 h-screen p-3 sm:p-6 md:p-8 overflow-y-scroll border-l border-stroke-blue w-[100%] sm:w-[75%] md:w-[50%] bg-[#FFFCF8]`}
       >
-        <div onClick={() => closeModal()} className="cursor-pointer">
-          <Close />
+        <div className="flex entrance_animation items-center gap-2 sm:gap-4">
+          <div onClick={() => closeModal()} className="cursor-pointer">
+            <Close />
+          </div>
+          <Title size="semiBig">{title}</Title>
         </div>
-        <Title className="entrance_animation" size="semiBig">
-          {title}
-        </Title>
         {forms &&
           forms.map((form: any, k: number) => (
             <CustomForm

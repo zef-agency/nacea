@@ -1,11 +1,10 @@
 // @ts-nocheck
 import "keen-slider/keen-slider.min.css";
 
-import { useKeenSlider } from "keen-slider/react";
-import { useState } from "react";
-import { CarousselSectionType, getUrl, Truncate } from "utils";
+import { CarousselSectionType, getUrl, Truncate, useSlider } from "utils";
 
 import {
+  ArrowCommand,
   Button,
   CustomImage,
   Text,
@@ -22,19 +21,10 @@ interface CarousselSectionProps {
 
 export function CarousselSection({ data }: CarousselSectionProps) {
   const { title, subtitle, button, attributes } = data;
-  const [currentSlide, setCurrentSlide] = useState<any>(0);
-  const [loaded, setLoaded] = useState(false);
-
   const items = attributes[0].events
     ? attributes[0].events
     : attributes[0].products;
-  const [sliderRef, instanceRef] = useKeenSlider({
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
-    },
-    created() {
-      setLoaded(true);
-    },
+  const config = {
     slides: {
       origin: 0,
       perView: items.length >= 4 ? 4 : items.length,
@@ -63,12 +53,13 @@ export function CarousselSection({ data }: CarousselSectionProps) {
         },
       },
     },
-  });
+  };
+  const { sliderRef, instanceRef, currentSlide, loaded } = useSlider(config);
 
   return (
     <div className="py-5 md:py-12">
       <TitleContainer title={title} subtitle={subtitle} />
-      <Wrapper classes="flex flex-col sm:mt-8 gap-8 items-center">
+      <Wrapper classes="flex flex-col mt-6 sm:mt-8 gap-8 items-center">
         <div ref={sliderRef} className="keen-slider">
           <RenderCards object={items} />
         </div>
@@ -117,8 +108,8 @@ const RenderCards = ({ object }: any) => {
           key={i}
           className={`keen-slider__slide number-slide${i} flex items-center justify-center`}
         >
-          <div className="flex flex-col justify-start items-center w-[270px] md:max-w-[275px] mx-0 my-auto">
-            <div className="mb-2 w-[270px] md:max-w-[275px] h-[207px]">
+          <div className="flex flex-col justify-start items-center w-[270px] sm:w-[250px] md:max-w-[275px] mx-0 my-auto">
+            <div className="mb-2 w-[270px] sm:w-[250px] md:max-w-[275px] h-[207px]">
               <CustomImage
                 classes=" rounded-xl"
                 priority={true}
@@ -127,7 +118,7 @@ const RenderCards = ({ object }: any) => {
               />
             </div>
             <div className="w-full">
-              <Title className="mb-1" size="regular" HTMLtag="h3">
+              <Title className="mb-1" size="regular" weight="bold" TMLtag="h3">
                 {card.label}
               </Title>
               <Text> {Truncate(card.intro, 80)} </Text>
@@ -150,26 +141,3 @@ const RenderCards = ({ object }: any) => {
     </>
   );
 };
-
-function ArrowCommand(props: {
-  left?: boolean;
-  disabled?: boolean;
-  // eslint-disable-next-line no-unused-vars
-  onClick: (e: any) => void;
-}) {
-  return (
-    <div
-      style={{
-        transform: props.left ? "rotate(180deg)" : "rotate(0deg)",
-        backgroundColor: props.disabled ? "#F4E7C4" : "#FFD874",
-      }}
-      className={`px-4 py-2  rounded-xs   ${
-        props.disabled ? "cursor-not-allowed" : "cursor-pointer"
-      }`}
-      // eslint-disable-next-line no-empty-function
-      onClick={!props.disabled ? props.onClick : () => {}}
-    >
-      {props.left ? <Arrow color="black" /> : <Arrow color="black" />}
-    </div>
-  );
-}

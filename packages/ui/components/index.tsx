@@ -1,3 +1,4 @@
+export { ArrowCommand } from "./Buttons/ArrowCommand";
 export { Button } from "./Buttons/Button";
 export { Page } from "./Container/Page";
 export { TitleContainer } from "./Container/TitleContainer";

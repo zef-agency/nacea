@@ -9,6 +9,7 @@ export {
 export {
   capitalizeFirstLetter,
   checkRegexs,
+  darkenColor,
   getInitialValues,
   makePlural,
   stringToSlug,
