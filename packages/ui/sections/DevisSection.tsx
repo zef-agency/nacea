@@ -1,5 +1,5 @@
 import React from "react";
-import { DevisSectionType, getUrl, useModal } from "utils";
+import { darkenColor, DevisSectionType, getUrl, useModal } from "utils";
 
 import { CustomForm, CustomImage, Title, Wrapper } from "../components";
 import { ModalNames } from "../components/Modals/ModalNames";
@@ -10,7 +10,10 @@ interface DevisSectionProps {
 
 export function DevisSection({ data }: DevisSectionProps) {
   const { title, subtitle, form, image, backgroundColor, imageLeft } = data;
+  const darkenedColor = darkenColor(backgroundColor, 20);
   const { handleModal, modalData } = useModal();
+
+  console.log(darkenedColor);
 
   return (
     <div className=" py-8" style={{ backgroundColor }}>
@@ -19,7 +22,11 @@ export function DevisSection({ data }: DevisSectionProps) {
           imageLeft ? "sm:flex-row-reverse" : "sm:flex-row"
         } `}
       >
-        <div className="w-[250px] relative sm:w-[275px] sm:max-w-[302px]">
+        <div className="w-[250px] z-10 relative sm:w-[275px] sm:max-w-[302px]">
+          <div
+            style={{ backgroundColor: darkenedColor }}
+            className="absolute -z-10 top-[-15px] left-[-15px] w-full h-full rounded-xl"
+          ></div>
           <CustomImage
             classes="rounded-xl"
             priority={true}

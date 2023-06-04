@@ -97,7 +97,7 @@ export function Input(
                   )
                 )}
               </Field>
-              <span className="absolute top-[50%] translate-y-[-50%] right-2">
+              <span className="absolute top-[50%] transform -scale-y-100 translate-y-[-50%] right-2">
                 <ArrowSelect />
               </span>
             </div>
