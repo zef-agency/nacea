@@ -29,7 +29,7 @@ export function Footer({ data }: FooterProps) {
 
       <div className="flex flex-col items-start w-full md:w-fit justify-between gap-5">
         <div className="flex flex-row items-center justify-between gap-2">
-          <Text> Suivez moi : </Text>
+          <Text> Suivez-moi : </Text>
           {socials &&
             socials.map((social, k) => (
               <a

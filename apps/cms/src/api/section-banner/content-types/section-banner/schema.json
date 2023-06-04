@@ -69,6 +69,14 @@
       "relation": "manyToMany",
       "target": "api::page.page",
       "inversedBy": "section_banners"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Fleurs",
+        "Caravane"
+      ],
+      "default": "Caravane"
     }
   }
 }

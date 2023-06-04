@@ -512,7 +512,7 @@ export const SectionBannerConfig = {
   name: "section-banner",
   api: "api::section-banner.section-banner",
   populate: {
-    fields: ["title", "subtitle", "id", "imageLeft"],
+    fields: ["title", "subtitle", "id", "imageLeft", "icon"],
     populate: {
       button: ButtonConfig.populate,
       section: SectionConfig.populate,
@@ -522,6 +522,7 @@ export const SectionBannerConfig = {
   },
   reorder: (res: any): BannerSectionType => ({
     id: res.id,
+    icon: res.icon,
     title: res.title,
     subtitle: res.subtitle,
     imageLeft: res.imageLeft,
