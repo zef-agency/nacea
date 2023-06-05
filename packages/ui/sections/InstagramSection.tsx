@@ -27,6 +27,8 @@ export function InstagramSection({ data }: InstagramSectionProps) {
   const { sliderRef, instanceRef, currentSlide, loaded } = useSlider(config);
 
   if (isPostsError) {
+    console.log(isPostsError);
+
     return <> Erreur lors du chargement des posts ... </>;
   }
 
@@ -111,11 +113,14 @@ const RenderPosts = ({ object }: any) => {
           key={i}
           className={`keen-slider__slide number-slide${i} sm:hidden flex items-center justify-center relative px-6  max-w-[300px] cursor-pointer`}
         >
-          <div className="brightness-50 w-full h-[280px] md:w-[320px] md:h-[280px]">
+          <div className="w-[300px] h-[250px]">
             <Image
               alt={postInsta.caption}
-              fill={true}
-              className="object-cover rounded-xl "
+              priority={true}
+              width={500}
+              height={500}
+              quality={75}
+              className="brightness-75 w-full h-full object-cover rounded-xl"
               src={postInsta.media_url}
             />
           </div>
