@@ -22,7 +22,7 @@ export function HeroMain({ data }: HeroMainProps) {
             {title}
           </Title>
 
-          <Title size="small" weight="normal" HTMLtag="h3">
+          <Title size="small" weight="normal" HTMLtag="h2">
             {subtitle}
           </Title>
         </div>
