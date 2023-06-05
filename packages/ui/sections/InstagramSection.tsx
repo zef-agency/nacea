@@ -90,7 +90,12 @@ export function InstagramSection({ data }: InstagramSectionProps) {
       )}
 
       {button && (
-        <Button icon={<Arrow />} color={button.color} href={button.link}>
+        <Button
+          icon={<Arrow />}
+          newTab={button.newWindow}
+          color={button.color}
+          href={button.link}
+        >
           {button.label}
         </Button>
       )}
