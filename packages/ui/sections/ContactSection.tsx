@@ -34,11 +34,11 @@ export function ContactSection({ data }: ContactSectionProps) {
         <div className="flex flex-col gap-2.5 md:gap-4">
           <div className="flex flex-row justify-between gap-4">
             <Title className="text-center" size="big">
-              <span dangerouslySetInnerHTML={{ __html: title }} />
+              {title}
             </Title>
           </div>
-          <Title size="small" HTMLtag="h3">
-            <span dangerouslySetInnerHTML={{ __html: subtitle }} />
+          <Title size="small" HTMLtag="h2">
+            {subtitle}
           </Title>
         </div>
         {form && (
