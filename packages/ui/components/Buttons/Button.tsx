@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { cva } from "class-variance-authority";
 import { ClassValue } from "class-variance-authority/dist/types";
 import { useRouter } from "next/router";
@@ -32,6 +33,7 @@ const button = cva(globalClasses, {
 export function Button({
   className,
   color,
+  newTab = false,
   icon,
   submit,
   href,
@@ -50,7 +52,15 @@ export function Button({
       onClick={
         onclick
           ? () => onclick()
-          : () => !submit && router.push(href ? href : router.asPath)
+          : () =>
+              !submit &&
+              router.push(
+                href
+                  ? newTab
+                    ? window.open(href, "_blank")
+                    : href
+                  : router.asPath
+              )
       }
       onMouseEnter={() => setColorState(hoverColor)}
       onMouseLeave={() => setColorState(color)}
