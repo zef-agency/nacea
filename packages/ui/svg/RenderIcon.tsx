@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-import { Truck } from "./Truck";
-
 export function RenderIcon({ icon }: { icon: string }) {
   const size = 400;
 
@@ -27,6 +25,6 @@ export function RenderIcon({ icon }: { icon: string }) {
         />
       );
     default:
-      return <Truck />;
+      return <></>;
   }
 }
