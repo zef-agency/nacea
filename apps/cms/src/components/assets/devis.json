@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_assets_devis",
+  "info": {
+    "displayName": "devis",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "event": {
+      "type": "string"
+    },
+    "invite": {
+      "type": "string"
+    },
+    "boissons": {
+      "type": "string"
+    }
+  }
+}

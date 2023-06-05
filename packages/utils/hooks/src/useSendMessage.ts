@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
+import { postMessage } from "../../api";
 import { getEmailTemplate } from "../../functions";
 import { useModal } from "../../stores";
 import { useAlert } from "./../../stores/src/useAlert";
@@ -21,7 +22,7 @@ export function useSendMessage(type = "devis") {
     }
 
     emailjs.send(serviceID, templateID, res, key).then(
-      () => {
+      async () => {
         handleAlert({
           active: true,
           message: "L'email a bien été envoyé",
@@ -32,6 +33,7 @@ export function useSendMessage(type = "devis") {
         setTimeout(() => {
           closeModal();
         }, 1000);
+        postMessage(type, res);
       },
       () => {
         setLoading(false);

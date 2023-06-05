@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_assets_users",
+  "info": {
+    "displayName": "user"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

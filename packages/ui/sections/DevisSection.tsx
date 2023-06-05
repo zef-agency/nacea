@@ -13,8 +13,6 @@ export function DevisSection({ data }: DevisSectionProps) {
   const darkenedColor = darkenColor(backgroundColor, 20);
   const { handleModal, modalData } = useModal();
 
-  console.log(darkenedColor);
-
   return (
     <div className=" py-8" style={{ backgroundColor }}>
       <Wrapper

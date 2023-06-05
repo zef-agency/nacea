@@ -18,11 +18,9 @@ export async function fetcher(
   try {
     const response = await fetch(url, {
       headers: {
-        "Access-Control-Allow-Origin": root.API_URL,
         "content-type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      mode: "cors",
       ...options,
     });
 
