@@ -94,7 +94,7 @@ export function Header({ data }: HeaderProps) {
                 className="sm:hidden"
                 size="base"
                 weight="medium"
-                href={getUrl(telephone.link, true)}
+                href={`tel:${telephone.link}`}
                 color={telephone.color}
               >
                 {telephone.label}
@@ -104,8 +104,13 @@ export function Header({ data }: HeaderProps) {
             {button && (
               <Button
                 className="sm:hidden"
-                href={getUrl(button.link, true)}
                 color={button.color}
+                onclick={() =>
+                  handleModal({
+                    isOpen: ModalNames.CONTACT_MODAL,
+                    modalData,
+                  })
+                }
               >
                 {button.label}
               </Button>

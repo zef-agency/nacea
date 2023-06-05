@@ -22,7 +22,7 @@ const formClass = cva(globalClasses, {
       devis: [
         "flex flex-col sm:grid-cols-2 sm:grid sm:items-stretch sm:justify-items-start gap-4 items-start w-full",
       ],
-      contact: ["grid gap-3 grid-cols-1 sm:grid-cols-2x"],
+      contact: ["grid gap-3 grid-cols-1 sm:grid-cols-2"],
     },
   },
   defaultVariants: {
