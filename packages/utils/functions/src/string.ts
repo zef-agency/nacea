@@ -104,3 +104,14 @@ export function darkenColor(hex: string, percentage: number) {
 
   return darkenedHex;
 }
+
+export function getEmailTemplate(type: string) {
+  switch (type) {
+    case "devis":
+      return process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE;
+    case "contact":
+      return process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT;
+    default:
+      return process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devis",
+  "info": {
+    "singularName": "devi",
+    "pluralName": "devis",
+    "displayName": "💬 Demande de devis",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "read": {
+      "type": "boolean",
+      "default": false
+    },
+    "user": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.user"
+    },
+    "devis": {
+      "type": "component",
+      "repeatable": false,
+      "component": "assets.devis"
+    }
+  }
+}

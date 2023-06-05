@@ -10,6 +10,7 @@ export {
   capitalizeFirstLetter,
   checkRegexs,
   darkenColor,
+  getEmailTemplate,
   getInitialValues,
   makePlural,
   stringToSlug,
