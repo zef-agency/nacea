@@ -34,7 +34,7 @@ export function EventSection({ data }: EventSectionProps) {
         <div className="flex flex-col gap-2.5 md:gap-4">
           <div className="flex flex-row justify-between gap-4">
             <Title size="semiBig" HTMLtag="h2">
-              <span dangerouslySetInnerHTML={{ __html: event.label }} />
+              {event.label}
             </Title>
             <div className="w-24"></div>
           </div>

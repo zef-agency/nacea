@@ -122,7 +122,7 @@ const RenderCards = ({ object }: any) => {
               />
             </div>
             <div className="w-full">
-              <Title className="mb-1" size="regular" weight="bold" TMLtag="h3">
+              <Title className="mb-1" size="regular" weight="bold" HTMLtag="h2">
                 {card.label}
               </Title>
               <Text> {Truncate(card.intro, 80)} </Text>

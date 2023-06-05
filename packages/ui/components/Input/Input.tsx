@@ -59,7 +59,7 @@ export function Input(
         {/* Input TEXT, EMAIL, PASSWORD */}
         {["text", "email", "password"].includes(attribute.type) && (
           <div className="relative w-full">
-            <Title HTMLtag="h3" size="Xsmall" className="mb-1.5">
+            <Title HTMLtag="h4" size="Xsmall" className="mb-1.5">
               {attribute.label}
             </Title>
             <Field
@@ -75,7 +75,7 @@ export function Input(
         {/* Input SELECT */}
         {attribute.type === "select" && (
           <div className="relative w-full">
-            <Title HTMLtag="h3" size="Xsmall" className="mb-1.5">
+            <Title HTMLtag="h4" size="Xsmall" className="mb-1.5">
               {attribute.label}
             </Title>
             <div className="w-full relative">
@@ -106,7 +106,7 @@ export function Input(
         {/* Input TEXTAREA */}
         {attribute.type === "textarea" && (
           <div className="relative w-full">
-            <Title HTMLtag="h3" size="Xsmall" className="mb-1.5">
+            <Title HTMLtag="h4" size="Xsmall" className="mb-1.5">
               {attribute.label}
             </Title>
             <Field
@@ -126,7 +126,7 @@ export function Input(
 
         {attribute.type === "checkbox" && (
           <div className="relative  flex flex-row-reverse gap-2">
-            <Title HTMLtag="h3" size="Xsmall" className="mb-2">
+            <Title HTMLtag="h4" size="Xsmall" className="mb-2">
               {attribute.label}
             </Title>
             <label>
