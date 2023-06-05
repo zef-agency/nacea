@@ -14,9 +14,13 @@ export default function index(props: PageProps) {
 
 export async function getStaticProps() {
   const { success, error } = await fetcher(getUrl("/api/page-contact"));
+  console.log("contact");
   const header = await fetcher(getUrl("/api/layout-header"));
+  console.log("header");
   const footer = await fetcher(getUrl("/api/layout-footer"));
+  console.log("footer");
   const modal = await fetcher(getUrl("/api/layout-modal"));
+  console.log("modal");
 
   if (error || !success || footer.error || header.error) {
     return { props: {} };
