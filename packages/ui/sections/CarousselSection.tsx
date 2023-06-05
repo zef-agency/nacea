@@ -1,5 +1,6 @@
 // @ts-nocheck
 import "keen-slider/keen-slider.min.css";
+import { useRouter } from "next/router";
 
 import { CarousselSectionType, getUrl, Truncate, useSlider } from "utils";
 
@@ -101,12 +102,15 @@ export function CarousselSection({ data }: CarousselSectionProps) {
 }
 
 const RenderCards = ({ object }: any) => {
+  const router = useRouter();
+
   return (
     <>
       {object.map((card: any, i: number) => (
         <div
           key={i}
-          className={`keen-slider__slide number-slide${i} flex items-center justify-center`}
+          onClick={() => router.push(card.button.link)}
+          className={`keen-slider__slide number-slide${i} group cursor-pointer flex items-center justify-center`}
         >
           <div className="flex flex-col justify-start items-center w-[270px] sm:w-[250px] md:max-w-[275px] mx-0 my-auto">
             <div className="mb-2 w-[270px] sm:w-[250px] md:max-w-[275px] h-[207px]">
