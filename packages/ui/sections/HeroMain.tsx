@@ -44,7 +44,7 @@ export function HeroMain({ data }: HeroMainProps) {
           <CustomImage alt="flowers" src="/flowers_pnh.png" />
         </div>
       </Wrapper>
-      <div className="w-[100vw]  sm:min-w-[400px] relative md:w-[60vw] md:min-w-[600px] md:max-w-[50%] entrance_opacity_3  h-[300px] sm:h-[450px] md:h-[600px]">
+      <div className="w-[100vw]  sm:min-w-[400px] relative md:w-[60vw] md:min-w-[600px] md:max-w-[50%] h-[300px] sm:h-[450px] md:h-[600px]">
         <CustomImage priority={true} alt={image.alt} src={getUrl(image.url)} />
       </div>
     </div>
