@@ -14,7 +14,7 @@ interface InstagramSectionProps {
   data: InstagramSectionType;
 }
 
-export function InstagramSection({ data }: InstagramSectionProps) {
+export default function InstagramSection({ data }: InstagramSectionProps) {
   const { title, subtitle, button } = data;
   const { posts, isPostsLoading, isPostsError } = GetInstagramPosts();
   const config = {

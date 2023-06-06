@@ -39,6 +39,7 @@ const link = cva(globalClasses, {
 export function Links({
   className,
   color,
+  label = "Link",
   href,
   icon,
   leftIcon = false,
@@ -70,7 +71,9 @@ export function Links({
           {icon}
         </span>
       )}
-      <Link href={href}>{children}</Link>
+      <Link aria-label={label} href={href}>
+        {children}
+      </Link>
     </p>
   );
 }
@@ -83,6 +86,7 @@ interface ButtonProps extends PropsWithChildren<any> {
   family?: "monserrat";
   color: ButtonType["color"];
   href: string;
+  label?: string;
 }
 
 Links.defaultProps = {

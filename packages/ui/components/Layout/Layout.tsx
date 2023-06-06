@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { ContactModalType, useAlert, useHasHydrated, useModal } from "utils";
 
 import { Alert } from "../Alert/Alert";

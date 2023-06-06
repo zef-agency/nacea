@@ -8,7 +8,7 @@ interface BannerSectionProps {
   data: BannerSectionType;
 }
 
-export function BannerSection({ data }: BannerSectionProps) {
+export default function BannerSection({ data }: BannerSectionProps) {
   const { title, subtitle, imageLeft, image, backgroundColor, button, icon } =
     data;
   const { handleModal, modalData } = useModal();

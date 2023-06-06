@@ -3,7 +3,7 @@ import React from "react";
 import { Button, Title } from "../components";
 import { Arrow, Flowers } from "../svg";
 
-export function Section404() {
+export default function Section404() {
   return (
     <div className="w-full relative">
       <div className=" h-[70vh] md:h-[80vh] flex flex-col gap-10 justify-center items-center mx-[10%]">

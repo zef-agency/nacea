@@ -37,6 +37,7 @@ export function Header({ data }: HeaderProps) {
           {links &&
             links.map((link, k) => (
               <Links
+                label={link.label}
                 key={k}
                 current={router.pathname === link.link}
                 href={getUrl(link.link, true)}
@@ -49,6 +50,7 @@ export function Header({ data }: HeaderProps) {
         <div className="hidden sm:flex flex-row items-center gap-4">
           {telephone && (
             <Links
+              label={telephone.label}
               icon={<Telephone />}
               weight="medium"
               href={`tel:${telephone.link}`}
@@ -59,6 +61,7 @@ export function Header({ data }: HeaderProps) {
           )}
           {button && (
             <Button
+              label={button.label}
               color={button.color}
               onclick={() =>
                 handleModal({
@@ -78,6 +81,7 @@ export function Header({ data }: HeaderProps) {
                 links.map((link, k) => (
                   <Menu.Item key={k}>
                     <Links
+                      label={link.label}
                       size="base"
                       href={getUrl(link.link, true)}
                       color={link.color}
@@ -90,6 +94,7 @@ export function Header({ data }: HeaderProps) {
             </div>
             {telephone && (
               <Links
+                label={telephone.label}
                 icon={<Telephone />}
                 className="sm:hidden"
                 size="base"
@@ -103,6 +108,7 @@ export function Header({ data }: HeaderProps) {
 
             {button && (
               <Button
+                label={button.label}
                 className="sm:hidden"
                 color={button.color}
                 onclick={() =>

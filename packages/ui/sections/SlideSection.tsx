@@ -7,7 +7,7 @@ interface SlideSectionProps {
   data: SlideSectionType;
 }
 
-export function SlideSection({ data }: SlideSectionProps) {
+export default function SlideSection({ data }: SlideSectionProps) {
   const { events, backgroundColor } = data;
 
   return (
