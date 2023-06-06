@@ -1,4 +1,3 @@
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 import { postMessage } from "../../api";
@@ -11,11 +10,12 @@ export function useSendMessage(type = "devis") {
   const { closeModal } = useModal();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const sendInformationModal = (res: any) => {
+  const sendInformationModal = async (res: any) => {
     setLoading(true);
     const serviceID: any = process.env.NEXT_PUBLIC_EMAILJS_SERVICE;
     const templateID: any = getEmailTemplate(type);
     const key: any = process.env.NEXT_PUBLIC_EMAILJS_TOKEN_PUBLIC;
+    const emailjs = (await import("@emailjs/browser")).default;
 
     if (res) {
       res = { ...res, boissons: res.boissons ? "Oui" : "Non" };
