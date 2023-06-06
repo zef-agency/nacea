@@ -7,9 +7,9 @@ export function RenderIcon({ icon }: { icon: string }) {
     case "Fleurs":
       return (
         <Image
-          priority={true}
           width={size}
           height={size}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 12vw"
           alt="ble"
           src="/ble.png"
         />
@@ -17,9 +17,9 @@ export function RenderIcon({ icon }: { icon: string }) {
     case "Caravane":
       return (
         <Image
-          priority={true}
           width={size}
           height={size}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 12vw"
           alt="caravane"
           src="/trucks.png"
         />

@@ -6,7 +6,7 @@ interface ContactSectionProps {
   data: ContactSectionType;
 }
 
-export default function ContactSection({ data }: ContactSectionProps) {
+export function ContactSection({ data }: ContactSectionProps) {
   const { title, subtitle, form, image, backgroundColor } = data;
   const { sendInformationModal, loading } = useSendMessage("contact");
 

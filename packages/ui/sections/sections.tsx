@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import {
   BannerSectionType,
   CarousselSectionType,
@@ -15,8 +14,8 @@ import {
   SlideSectionType,
 } from "utils";
 
-//import { BannerSection } from "./BannerSection";
-/* import { CarousselSection } from "./CarousselSection";
+import { BannerSection } from "./BannerSection";
+import { CarousselSection } from "./CarousselSection";
 import { ContactSection } from "./ContactSection";
 import { DevisSection } from "./DevisSection";
 import { EventSection } from "./EventSection";
@@ -27,50 +26,7 @@ import { InstagramSection } from "./InstagramSection";
 import { MentionsLegalesSection } from "./MentionsLegalesSection";
 import { RelanceSection } from "./RelanceSection";
 import { Section404 } from "./Section404";
-import { SlideSection } from "./SlideSection"; */
-const BannerSection = dynamic(() => import("./BannerSection"), {
-  loading: () => <p> Loading </p>,
-});
-const ContactSection = dynamic(() => import("./ContactSection"), {
-  loading: () => <p> Loading </p>,
-});
-const DevisSection = dynamic(() => import("./DevisSection"), {
-  loading: () => <p> Loading </p>,
-});
-const EventSection = dynamic(() => import("./EventSection"), {
-  loading: () => <p> Loading </p>,
-});
-const HeroConceptSection = dynamic(() => import("./HeroConceptSection"), {
-  loading: () => <p> Loading </p>,
-});
-const HeroEventSection = dynamic(() => import("./HeroEventSection"), {
-  loading: () => <p> Loading </p>,
-});
-const HeroMain = dynamic(() => import("./HeroMain"), {
-  loading: () => <p> Loading </p>,
-});
-const Section404 = dynamic(() => import("./Section404"), {
-  loading: () => <p> Loading </p>,
-});
-const InstagramSection = dynamic(() => import("./InstagramSection"), {
-  loading: () => <p> Loading </p>,
-});
-const MentionsLegalesSection = dynamic(
-  () => import("./MentionsLegalesSection"),
-  {
-    loading: () => <p> Loading </p>,
-  }
-);
-
-const RelanceSection = dynamic(() => import("./RelanceSection"), {
-  loading: () => <p> Loading </p>,
-});
-const SlideSection = dynamic(() => import("./SlideSection"), {
-  loading: () => <p> Loading </p>,
-});
-const CarousselSection = dynamic(() => import("./CarousselSection"), {
-  loading: () => <p> Loading </p>,
-});
+import { SlideSection } from "./SlideSection";
 
 export function renderSection(section: SectionsType) {
   if (!section || !section.section) {

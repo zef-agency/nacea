@@ -2,7 +2,7 @@
 
 import { Text, Title } from "../components";
 
-export default function MentionsLegalesSection() {
+export function MentionsLegalesSection() {
   return (
     <div className="mx-[5%] py-4">
       <Title className="mb-3" size="semiBig">

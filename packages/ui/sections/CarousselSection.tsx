@@ -1,7 +1,7 @@
 // @ts-nocheck
 import "keen-slider/keen-slider.min.css";
-import { useRouter } from "next/router";
 
+import { useRouter } from "next/router";
 import { CarousselSectionType, getUrl, Truncate, useSlider } from "utils";
 
 import {
@@ -20,7 +20,7 @@ interface CarousselSectionProps {
   data: CarousselSectionType;
 }
 
-export default function CarousselSection({ data }: CarousselSectionProps) {
+export function CarousselSection({ data }: CarousselSectionProps) {
   const { title, subtitle, button, attributes } = data;
   const items = attributes[0].events
     ? attributes[0].events
