@@ -40,11 +40,11 @@ export function HeroMain({ data }: HeroMainProps) {
         <span className="absolute hidden sm:block top-4 right-4 md:top-10 md:right-24">
           <Truck />
         </span>
-        <div className="absolute h-auto -bottom-10 hidden sm:block sm:-left-28 md:-left-32 lg:-left-44 -z-20 max-w-4">
+        <div className="absolute h-auto -bottom-10 hidden sm:block sm:-left-28 md:-left-20 lg:-left-44 -z-20 max-w-4">
           <CustomImage alt="flowers" src="/flowers_pnh.png" />
         </div>
       </Wrapper>
-      <div className="sm:min-w-[400px] relative md:max-w-[50%] entrance_opacity_3 md:min-w-[600px] h-[300px] sm:h-[450px] md:h-[600px]">
+      <div className="w-[100vw]  sm:min-w-[400px] relative md:w-[60vw] md:min-w-[600px] md:max-w-[50%] entrance_opacity_3  h-[300px] sm:h-[450px] md:h-[600px]">
         <CustomImage priority={true} alt={image.alt} src={getUrl(image.url)} />
       </div>
     </div>
