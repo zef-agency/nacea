@@ -14,7 +14,7 @@ export function SlideSection({ data }: SlideSectionProps) {
     <div className="py-6 flex whitespace-nowrap  overflow-hidden border border-y-whiteGray">
       <div className="animate-slider items-center flex gap-8">
         {events.map((event: any, k: number) => (
-          <>
+          <div key={k}>
             <div
               style={{ backgroundColor }}
               className="rounded-full w-5 h-5"
@@ -22,10 +22,10 @@ export function SlideSection({ data }: SlideSectionProps) {
             <Title size="semiBig" key={k} HTMLtag="h3">
               {event.label}
             </Title>
-          </>
+          </div>
         ))}
         {events.map((event: any, k: number) => (
-          <>
+          <div key={k}>
             <div
               style={{ backgroundColor }}
               className="rounded-full w-5 h-5"
@@ -33,10 +33,10 @@ export function SlideSection({ data }: SlideSectionProps) {
             <Title size="semiBig" key={k} HTMLtag="h3">
               {event.label}
             </Title>
-          </>
+          </div>
         ))}
         {events.map((event: any, k: number) => (
-          <>
+          <div key={k}>
             <div
               style={{ backgroundColor }}
               className="rounded-full w-5 h-5"
@@ -44,7 +44,7 @@ export function SlideSection({ data }: SlideSectionProps) {
             <Title size="semiBig" key={k} HTMLtag="h3">
               {event.label}
             </Title>
-          </>
+          </div>
         ))}
       </div>
     </div>

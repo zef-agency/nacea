@@ -25,7 +25,7 @@ export function EventSection({ data }: EventSectionProps) {
     >
       <div className="p-4 sm:py-5 md:py-10 max-w-[600px] flex flex-col justify-center gap-8">
         <div
-          className={`absolute ${
+          className={`absolute h-auto ${
             imageLeft ? "transform -scale-x-100 -right-28" : "-left-36"
           }  -bottom-10 hidden sm:block  z-20`}
         >
@@ -60,7 +60,7 @@ export function EventSection({ data }: EventSectionProps) {
           </Button>
         )}
       </div>
-      <div className="relative w-full md:max-w-[45%] sm:h-[500px]">
+      <div className="relative h-full md:max-w-[45%] sm:h-[500px]">
         <CustomImage
           classes="brightness-40"
           priority={true}
@@ -68,11 +68,11 @@ export function EventSection({ data }: EventSectionProps) {
           src={getUrl(event.image.url)}
         />
         <div
-          className={`absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] ${
+          className={`absolute h-auto w-auto left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] ${
             imageLeft
               ? " md:translate-x-[-20%] md2:translate-x-[0%] lg:translate-x-[10%]"
               : " md:translate-x-[-80%] md2:translate-x-[-105%] lg:translate-x-[-115%]"
-          } md:w-[350px] w-full  sm:w-[300px]`}
+          } md:w-[350px]  sm:w-[300px]`}
         >
           <CustomImage
             priority={true}
