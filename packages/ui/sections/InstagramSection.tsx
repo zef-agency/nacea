@@ -50,7 +50,10 @@ export function InstagramSection({ data }: InstagramSectionProps) {
               <div className="group-hover:brightness-40 transition-all w-[300px] h-[280px] md:w-[320px] md:h-[280px]">
                 <Image
                   alt={postInsta.caption}
-                  fill={true}
+                  priority={true}
+                  width={500}
+                  height={500}
+                  quality={75}
                   className="object-cover w-full h-full rounded-xl"
                   src={postInsta.media_url}
                 />

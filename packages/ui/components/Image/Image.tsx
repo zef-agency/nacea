@@ -13,7 +13,7 @@ const imageLoader = ({ src, width }: any) => {
 };
 
 export function CustomImage(props: ImageProps): JSX.Element {
-  const { classes, priority, src, alt, ...imageProps } = props;
+  const { classes, priority = true, src, alt, ...imageProps } = props;
 
   return (
     <Image

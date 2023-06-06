@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BannerSectionType, getUrl, useModal } from "utils";
 
 import { Button, CustomImage, Title, Wrapper } from "../components";
@@ -27,17 +26,11 @@ export function BannerSection({ data }: BannerSectionProps) {
           }`}
         >
           <div
-            className={`absolute ${
+            className={`absolute h-auto ${
               imageLeft ? "transform -scale-x-100 -right-36" : "-left-44"
             }  -bottom-10 hidden sm:block  z-20`}
           >
-            <Image
-              priority={true}
-              width={200}
-              height={200}
-              alt="flowers"
-              src="/flowers_pnh.png"
-            />{" "}
+            <CustomImage alt="flowers" src="/flowers_pnh.png" />
           </div>
 
           <div className="flex flex-col gap-2.5 md:gap-4">
