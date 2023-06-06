@@ -21,7 +21,7 @@ export function HeroEventSection({ data }: HeroMainProps) {
               {title}
             </Title>
           </div>
-          <Title size="small" HTMLtag="h3">
+          <Title size="small" HTMLtag="h2">
             {subtitle}
           </Title>
         </div>
