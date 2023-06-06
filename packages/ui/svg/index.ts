@@ -1,12 +1,9 @@
 export { Arrow } from "./Arrow";
 export { ArrowLittle } from "./ArrowLittle";
 export { ArrowSelect } from "./ArrowSelect";
-export { Ble } from "./Ble";
 export { Burger } from "./Burger";
 export { Close } from "./Close";
 export { Facebook } from "./Facebook";
-export { Flowers } from "./Flowers";
 export { Instagram } from "./Instagram";
 export { RenderIcon } from "./RenderIcon";
 export { Telephone } from "./Telephone";
-export { Truck } from "./Truck";

@@ -3,7 +3,7 @@ import { getUrl, HeroMainSectionType, useModal } from "utils";
 
 import { Button, CustomImage, Title, Wrapper } from "../components";
 import { ModalNames } from "../components/Modals/ModalNames";
-import { Arrow, Truck } from "../svg";
+import { Arrow, RenderIcon } from "../svg";
 
 interface HeroMainProps {
   data: HeroMainSectionType;
@@ -37,8 +37,8 @@ export function HeroMain({ data }: HeroMainProps) {
         >
           {button.label}
         </Button>
-        <span className="absolute hidden sm:block top-4 right-4 md:top-10 md:right-24">
-          <Truck />
+        <span className="absolute max-w-[80px] w-[80px] hidden sm:block top-4 right-4 md:top-10 md:right-24">
+          <RenderIcon icon="Caravane" />
         </span>
         <div className="absolute h-auto -bottom-10 hidden sm:block sm:-left-28 md:-left-20 lg:-left-44 -z-20 max-w-4">
           <CustomImage alt="flowers" src="/flowers_pnh.png" />

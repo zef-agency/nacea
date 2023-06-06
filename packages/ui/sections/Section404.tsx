@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button, Title } from "../components";
-import { Arrow, Flowers } from "../svg";
+import { Arrow } from "../svg";
 
 export function Section404() {
   return (
@@ -14,9 +14,7 @@ export function Section404() {
         <Button icon={<Arrow />} href="/" color="#3F5931">
           Revenir à l&apos;accueil
         </Button>
-        <div className="absolute bottom-0 -left-28 sm:-left-20 max-w-4">
-          <Flowers width="270" height="270" />
-        </div>
+        <div className="absolute bottom-0 -left-28 sm:-left-20 max-w-4"></div>
       </div>
     </div>
   );
