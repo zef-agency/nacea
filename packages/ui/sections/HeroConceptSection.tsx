@@ -19,7 +19,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
         <Title className="text-center md:max-w-[900px]" size="big">
           {title}
         </Title>
-        <Title className="text-center" size="small" HTMLtag="h3">
+        <Title className="text-center" size="small" HTMLtag="h2">
           {subtitle}
         </Title>
       </Wrapper>
