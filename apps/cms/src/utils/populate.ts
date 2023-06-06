@@ -388,8 +388,8 @@ export const HeroConceptConfig = {
     subtitle: res.subtitle,
     images: res.images.map((image) => ImageConfig.reorder(image)),
     cards: res.cards.map((card) => CardConfig.reorder(card)),
-    section: { type: "hero-concept" },
     definition: DefinitionConfig.reorder(res.definition),
+    section: { type: "hero-concept" },
   }),
 };
 

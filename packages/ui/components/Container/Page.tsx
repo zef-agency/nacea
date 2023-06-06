@@ -13,13 +13,11 @@ export function Page({ data }: PageProps) {
   const { header, footer, sections, hero } = data;
 
   return (
-    <>
+    <main>
       {header ? <Header data={header} /> : <></>}
       {hero && renderSection(hero)}
-      <>
-        {sections ? sections.map((section) => renderSection(section)) : <></>}
-      </>
+      {sections?.map((section) => renderSection(section))}
       {footer ? <Footer data={footer} /> : <> </>}
-    </>
+    </main>
   );
 }

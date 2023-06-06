@@ -9,10 +9,11 @@ import { ModalNames } from "../Modals/ModalNames";
 interface LayoutProps extends PropsWithChildren<any> {
   title: string;
   description: string;
+  LCPUrl?: string;
   modal?: any;
 }
 export function Layout(props: LayoutProps) {
-  const { title, children, description, modal } = props;
+  const { title, children, description, modal, LCPUrl = "" } = props;
   const { isOpen } = useModal();
   const hasHydrated = useHasHydrated();
   const visible: any = hasHydrated ? isOpen : [];
@@ -24,6 +25,7 @@ export function Layout(props: LayoutProps) {
         <title> {title} </title>
         <meta name="description" content={description} />
         <meta property="og:title" content={title} key="title" />
+        {LCPUrl !== "" && <link rel="preload" href={LCPUrl} as="image" />}
       </Head>
       {children}
 

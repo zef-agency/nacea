@@ -18,7 +18,7 @@ export function ContactModal({ data }: ContactModalProps) {
   return (
     <div
       style={{ backgroundColor: "rgba(0, 0, 0, 0.35)" }}
-      className="fixed flex justify-end h-screen w-screen top-0 z-40"
+      className="fixed flex justify-end h-screen w-screen top-0 z-[999999]"
     >
       <div
         ref={layer}
