@@ -9,7 +9,7 @@ interface RelanceSectionProps {
   data: RelanceSectionType;
 }
 
-export default function RelanceSection({ data }: RelanceSectionProps) {
+export function RelanceSection({ data }: RelanceSectionProps) {
   const { title, subtitle, backgroundColor, button } = data;
   const { handleModal, modalData } = useModal();
 

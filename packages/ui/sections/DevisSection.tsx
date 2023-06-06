@@ -8,7 +8,7 @@ interface DevisSectionProps {
   data: DevisSectionType;
 }
 
-export default function DevisSection({ data }: DevisSectionProps) {
+export function DevisSection({ data }: DevisSectionProps) {
   const { title, subtitle, form, image, backgroundColor, imageLeft } = data;
   const darkenedColor = darkenColor(backgroundColor, 20);
   const { handleModal, modalData } = useModal();

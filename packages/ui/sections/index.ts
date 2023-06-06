@@ -1,1 +1,11 @@
-
+export { BannerSection } from "./BannerSection";
+export { CarousselSection } from "./CarousselSection";
+export { ContactSection } from "./ContactSection";
+export { DevisSection } from "./DevisSection";
+export { EventSection } from "./EventSection";
+export { HeroMain } from "./HeroMain";
+export { InstagramSection } from "./InstagramSection";
+export { MentionsLegalesSection } from "./MentionsLegalesSection";
+export { RelanceSection } from "./RelanceSection";
+export { Section404 } from "./Section404";
+export { SlideSection } from "./SlideSection";
