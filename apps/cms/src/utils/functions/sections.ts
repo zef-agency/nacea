@@ -17,17 +17,7 @@ async function getSection(
 ) {
   let res = await strapi.entityService.findOne(config.api, id, config.populate);
 
-  /*   Promise.all(
-    await strapi.entityService.update(config.api, res.id, {
-      data: {
-        pages: 1,
-      },
-    })
-  ); */
-
-  if (!res) {
-    return null;
-  }
+  !res && null;
 
   res = config.reorder(res);
   deleteProps(res, ["slug", "publishedAt", "createdAt", "updatedAt"]);
@@ -38,7 +28,7 @@ async function getSection(
 export function getAllSections(entries: { sections: any[] }) {
   return Promise.all(
     entries.sections.map(async (section: SectionType) => {
-      if (!section.section) return null;
+      !section.section && null;
 
       const sectionName = section.section.section.name;
       const sectionId = section.section.id;

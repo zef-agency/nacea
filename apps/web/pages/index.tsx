@@ -5,7 +5,12 @@ export default function index(props: PageProps) {
   const { seo, modal, ...rest } = props;
 
   return (
-    <Layout title={seo?.title} description={seo?.description} modal={modal}>
+    <Layout
+      title={seo?.title}
+      description={seo?.description}
+      modal={modal}
+      LCPUrl={getUrl(rest.hero.image.url)}
+    >
       <Page data={rest} />
     </Layout>
   );
