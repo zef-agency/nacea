@@ -2,6 +2,7 @@ module.exports = {
   reactStrictMode: true,
   transpilePackages: ["ui", "utils"],
   images: {
+    formats: ["image/webp"],
     domains: [
       "localhost",
       "res.cloudinary.com",

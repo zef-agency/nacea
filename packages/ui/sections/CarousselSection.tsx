@@ -116,7 +116,6 @@ const RenderCards = ({ object }: any) => {
             <div className="mb-2 w-[270px] sm:w-[250px] md:max-w-[275px] h-[207px]">
               <CustomImage
                 classes="rounded-xl"
-                priority={true}
                 alt={card.image.alt}
                 src={getUrl(card.image.url)}
               />
