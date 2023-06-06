@@ -27,7 +27,7 @@ export function BannerSection({ data }: BannerSectionProps) {
         >
           <div
             className={`absolute h-auto ${
-              imageLeft ? "transform -scale-x-100 -right-36" : "-left-44"
+              imageLeft ? "transform -scale-x-100 -right-28" : "-left-28"
             }  -bottom-10 hidden sm:block  z-20`}
           >
             <CustomImage alt="flowers" src="/flowers_pnh.png" />
