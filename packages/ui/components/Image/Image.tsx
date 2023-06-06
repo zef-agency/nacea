@@ -22,7 +22,7 @@ export function CustomImage(props: ImageProps): JSX.Element {
       height={500}
       quality={75}
       loading={!priority ? "lazy" : "eager"}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
       priority={priority}
       src={src}
       className={`w-full h-full object-cover ${classes}`}
