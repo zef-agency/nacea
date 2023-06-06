@@ -1,4 +1,7 @@
-module.exports = {
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   transpilePackages: ["ui", "utils"],
   images: {
@@ -11,4 +14,4 @@ module.exports = {
       "scontent-cdg4-2.cdninstagram.com",
     ],
   },
-};
+});

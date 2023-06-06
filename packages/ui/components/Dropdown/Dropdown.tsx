@@ -11,7 +11,7 @@ export function Dropdown({
 }: DropdownProps & PropsWithChildren<any>) {
   return (
     <Menu as="div" className="relative h-fit">
-      <Menu.Button> {trigger} </Menu.Button>
+      <Menu.Button aria-label="open-menu">{trigger}</Menu.Button>
       <Transition
         as={Fragment}
         enter="transition duration-100 ease-out"

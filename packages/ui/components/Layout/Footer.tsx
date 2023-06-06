@@ -33,6 +33,7 @@ export function Footer({ data }: FooterProps) {
           {socials &&
             socials.map((social, k) => (
               <a
+                aria-label={social.label}
                 target="_blank"
                 href={getUrl(social.link)}
                 key={k}
@@ -51,6 +52,7 @@ export function Footer({ data }: FooterProps) {
           {links &&
             links.map((link, k) => (
               <Links
+                label={link.label}
                 size="base"
                 href={getUrl(link.link, true)}
                 color={link.color}

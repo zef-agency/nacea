@@ -33,6 +33,7 @@ const button = cva(globalClasses, {
 export function Button({
   className,
   color,
+  label = "button",
   newTab = false,
   icon,
   submit,
@@ -49,6 +50,7 @@ export function Button({
   return (
     <button
       {...props}
+      aria-label={label}
       onClick={
         onclick
           ? () => onclick()
@@ -92,4 +94,5 @@ interface ButtonProps extends PropsWithChildren<any> {
   href?: ButtonType["link"];
   submit?: boolean;
   onclick?: Function;
+  label?: string;
 }

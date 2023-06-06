@@ -30,12 +30,14 @@
 		"zustand": "^4.3.7"
 	},
 	"devDependencies": {
+		"@next/bundle-analyzer": "^13.4.4",
 		"@types/node": "^17.0.12",
 		"@types/react": "^18.2.6",
 		"@types/react-dom": "^18.2.4",
 		"@types/scrollreveal": "^0.0.8",
 		"autoprefixer": "^10.4.14",
 		"config": "*",
+		"cross-env": "^7.0.3",
 		"eslint-config-next": "^13.3.1",
 		"postcss": "^8.4.23",
 		"tailwindcss": "^3.3.2",

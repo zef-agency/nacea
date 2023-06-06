@@ -9,7 +9,7 @@ interface HeroMainProps {
   data: HeroMainSectionType;
 }
 
-export function HeroMain({ data }: HeroMainProps) {
+export default function HeroMain({ data }: HeroMainProps) {
   const { title, subtitle, button, image } = data;
   const { handleModal, modalData } = useModal();
 

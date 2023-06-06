@@ -20,7 +20,7 @@ interface CarousselSectionProps {
   data: CarousselSectionType;
 }
 
-export function CarousselSection({ data }: CarousselSectionProps) {
+export default function CarousselSection({ data }: CarousselSectionProps) {
   const { title, subtitle, button, attributes } = data;
   const items = attributes[0].events
     ? attributes[0].events

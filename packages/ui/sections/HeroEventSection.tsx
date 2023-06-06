@@ -8,7 +8,7 @@ interface HeroMainProps {
   data: HeroEventSectionType;
 }
 
-export function HeroEventSection({ data }: HeroMainProps) {
+export default function HeroEventSection({ data }: HeroMainProps) {
   const { title, subtitle, form, image } = data;
   const { handleModal, modalData } = useModal();
 

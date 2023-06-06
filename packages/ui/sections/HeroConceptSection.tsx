@@ -7,7 +7,7 @@ interface HeroConceptProps {
   data: HeroConceptSectionType;
 }
 
-export function HeroConceptSection({ data }: HeroConceptProps) {
+export default function HeroConceptSection({ data }: HeroConceptProps) {
   const { title, subtitle, images, definition, cards } = data;
 
   return (

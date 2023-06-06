@@ -9,7 +9,7 @@ interface EventSectionProps {
   data: EventSectionType;
 }
 
-export function EventSection({ data }: EventSectionProps) {
+export default function EventSection({ data }: EventSectionProps) {
   const { imageLeft, event, button } = data;
   const { handleModal, modalData } = useModal();
 
