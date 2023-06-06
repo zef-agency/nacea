@@ -13,7 +13,7 @@ const imageLoader = ({ src, width }: any) => {
 };
 
 export function CustomImage(props: ImageProps): JSX.Element {
-  const { classes, priority = true, src, alt, ...imageProps } = props;
+  const { classes, priority, src, alt, ...imageProps } = props;
 
   return (
     <Image
@@ -21,6 +21,8 @@ export function CustomImage(props: ImageProps): JSX.Element {
       width={500}
       height={500}
       quality={75}
+      loading={!priority ? "lazy" : "eager"}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       priority={priority}
       src={src}
       className={`w-full h-full object-cover ${classes}`}

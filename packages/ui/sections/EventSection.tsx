@@ -63,7 +63,6 @@ export function EventSection({ data }: EventSectionProps) {
       <div className="relative h-full md:max-w-[45%] sm:h-[500px]">
         <CustomImage
           classes="brightness-40"
-          priority={true}
           alt={event.image.alt}
           src={getUrl(event.image.url)}
         />
@@ -75,7 +74,6 @@ export function EventSection({ data }: EventSectionProps) {
           } md:w-[350px]  sm:w-[300px]`}
         >
           <CustomImage
-            priority={true}
             alt={event.image.alt}
             src={getUrl(event.image.url)}
             classes="rounded-xl"
