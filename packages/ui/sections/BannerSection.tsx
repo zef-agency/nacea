@@ -21,16 +21,16 @@ export function BannerSection({ data }: BannerSectionProps) {
         }`}
       >
         <Wrapper
-          classes={`relative py-6 flex flex-col justify-center gap-6 md:gap-8 md:w-[55%] py-12  ${
+          classes={`relative py-6 flex flex-col justify-center gap-6 md:gap-8 md:w-[55%] py-12 z-10  ${
             imageLeft ? "sm:mr-12 sm:ml-6" : "sm:ml-12"
           }`}
         >
           <div
             className={`absolute h-auto ${
               imageLeft ? "transform -scale-x-100 -right-28" : "-left-28"
-            }  -bottom-10 hidden sm:block  z-20`}
+            }  -bottom-24 hidden sm:block  -z-10`}
           >
-            <CustomImage alt="flowers" src="/flowers_pnh.png" />
+            <CustomImage alt="flowers" src="/flowers.webp" />
           </div>
 
           <div className="flex flex-col gap-2.5 md:gap-4">

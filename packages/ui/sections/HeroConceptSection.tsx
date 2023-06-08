@@ -13,7 +13,7 @@ export function HeroConceptSection({ data }: HeroConceptProps) {
   return (
     <div className="relative">
       <div className="absolute md:top-10 sm:top-4 hidden sm:block sm:-left-32 md:-left-20 h-auto  max-w-4">
-        <CustomImage alt="flowers" src="/flowers_pnh.png" />
+        <CustomImage alt="flowers" src="/flowers.webp" />
       </div>
       <Wrapper classes="flex entrance_animation flex-col items-center gap-4 sm:px-16 md:max-w-[1200px]">
         <Title className="text-center md:max-w-[900px]" size="big">

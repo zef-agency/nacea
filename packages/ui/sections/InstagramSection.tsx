@@ -27,8 +27,6 @@ export function InstagramSection({ data }: InstagramSectionProps) {
   const { sliderRef, instanceRef, currentSlide, loaded } = useSlider(config);
 
   if (isPostsError) {
-    console.log(isPostsError);
-
     return <> Erreur lors du chargement des posts ... </>;
   }
 
@@ -55,7 +53,11 @@ export function InstagramSection({ data }: InstagramSectionProps) {
                   height={500}
                   quality={75}
                   className="object-cover w-full h-full rounded-xl"
-                  src={postInsta.media_url}
+                  src={
+                    postInsta.media_type === "VIDEO"
+                      ? postInsta.thumbnail_url
+                      : postInsta.media_url
+                  }
                 />
               </div>
               <Text
@@ -124,7 +126,11 @@ const RenderPosts = ({ object }: any) => {
               quality={75}
               priority={true}
               className="brightness-75 w-full h-full object-cover rounded-xl"
-              src={postInsta.media_url}
+              src={
+                postInsta.media_type === "VIDEO"
+                  ? postInsta.thumbnail_url
+                  : postInsta.media_url
+              }
             />
           </div>
           <Text

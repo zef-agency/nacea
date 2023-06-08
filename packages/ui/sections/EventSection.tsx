@@ -26,10 +26,10 @@ export function EventSection({ data }: EventSectionProps) {
       <div className="p-4 sm:py-5 md:py-10 max-w-[600px] flex flex-col justify-center gap-8">
         <div
           className={`absolute h-auto ${
-            imageLeft ? "transform -scale-x-100 -right-28" : "-left-36"
+            imageLeft ? "transform -scale-x-100 -right-24" : "-left-24"
           }  -bottom-10 hidden sm:block  z-20`}
         >
-          <CustomImage priority={true} alt="flowers" src="/flowers_pnh.png" />
+          <CustomImage priority={true} alt="flowers" src="/flowers.webp" />
         </div>
         <div className="flex flex-col gap-2.5 md:gap-4">
           <div className="flex flex-row justify-between gap-4">

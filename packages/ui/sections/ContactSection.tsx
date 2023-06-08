@@ -50,7 +50,7 @@ export function ContactSection({ data }: ContactSectionProps) {
         )}
       </div>
       <div className="absolute h-auto w-auto transform -scale-x-100 -bottom-10 hidden sm:block sm:-right-28 md:-right-24 -z-20 max-w-4">
-        <CustomImage priority={true} alt="flowers" src="/flowers_pnh.png" />
+        <CustomImage priority={true} alt="flowers" src="/flowers.webp" />
       </div>
     </div>
   );
