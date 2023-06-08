@@ -41,7 +41,7 @@ export function HeroMain({ data }: HeroMainProps) {
           <RenderIcon icon="Caravane" />
         </span>
         <div className="absolute h-auto -bottom-10 hidden sm:block sm:-left-28 md:-left-20 lg:-left-44 -z-20 max-w-4">
-          <CustomImage alt="flowers" src="/flowers_pnh.png" />
+          <CustomImage alt="flowers" src="/flowers.webp" />
         </div>
       </Wrapper>
       <div className="w-[100vw]  sm:min-w-[400px] relative md:w-[60vw] md:min-w-[600px] md:max-w-[50%] h-[300px] sm:h-[450px] md:h-[600px]">
