@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 // @ts-nocheck
-import Image from "next/image";
+//import Image from "next/image";
 import {
   GetInstagramPosts,
   InstagramSectionType,
@@ -46,13 +47,22 @@ export function InstagramSection({ data }: InstagramSectionProps) {
               className="relative group transition-all w-fit w-[300px] cursor-pointer"
             >
               <div className="group-hover:brightness-40 transition-all w-[300px] h-[280px] md:w-[320px] md:h-[280px]">
-                <Image
+                {/*                 <Image
                   alt={postInsta.caption}
                   priority={true}
                   width={500}
                   height={500}
                   quality={75}
                   className="object-cover w-full h-full rounded-xl"
+                  src={
+                    postInsta.media_type === "VIDEO"
+                      ? postInsta.thumbnail_url
+                      : postInsta.media_url
+                  }
+                /> */}
+                <img
+                  className="w-full h-full rounded-xl object-cover"
+                  alt="insta-post"
                   src={
                     postInsta.media_type === "VIDEO"
                       ? postInsta.thumbnail_url
@@ -119,13 +129,22 @@ const RenderPosts = ({ object }: any) => {
           className={`keen-slider__slide number-slide${i} sm:hidden flex items-center justify-center relative px-6  max-w-[300px] cursor-pointer`}
         >
           <div className="w-[300px] h-[250px]">
-            <Image
+            {/*             <Image
               alt={postInsta.caption}
               width={500}
               height={500}
               quality={75}
               priority={true}
               className="brightness-75 w-full h-full object-cover rounded-xl"
+              src={
+                postInsta.media_type === "VIDEO"
+                  ? postInsta.thumbnail_url
+                  : postInsta.media_url
+              }
+            /> */}
+            <img
+              className="w-full h-full rounded-xl object-cover"
+              alt="insta-post"
               src={
                 postInsta.media_type === "VIDEO"
                   ? postInsta.thumbnail_url
