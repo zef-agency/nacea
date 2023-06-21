@@ -9,7 +9,7 @@ export interface ImageProps {
 }
 
 const imageLoader = ({ src, width }: any) => {
-  return `${src}?w=${width}&q=${50}`;
+  return `${src}?w=${width}&q=${90}`;
 };
 
 export function CustomImage(props: ImageProps): JSX.Element {
@@ -20,7 +20,7 @@ export function CustomImage(props: ImageProps): JSX.Element {
       alt={alt ? alt : src}
       width={500}
       height={500}
-      quality={75}
+      quality={100}
       loading={!priority ? "lazy" : "eager"}
       sizes="(max-width: 320px) 320px, (max-width: 400px) 400px, (max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
       priority={priority}

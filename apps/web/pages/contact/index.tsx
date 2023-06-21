@@ -6,7 +6,12 @@ export default function index(props: PageProps) {
   const { seo, modal, ...rest } = props;
 
   return (
-    <Layout title={seo?.title} description={seo?.description} modal={modal}>
+    <Layout
+      url="/contact"
+      title={seo?.title}
+      description={seo?.description}
+      modal={modal}
+    >
       <Page data={rest} />
     </Layout>
   );

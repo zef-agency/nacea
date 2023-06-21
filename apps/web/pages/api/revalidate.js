@@ -6,10 +6,11 @@ export default async function handler(req, res) {
   try {
     const urls = [
       "/",
-      "/event",
-      "/contact",
       "/concept-galettes-bretonnes",
       "/privatisation-creperie",
+      "/contact",
+      "/mentions-legales",
+      "/404",
     ];
 
     await Promise.all(urls.map(async (url) => await res.revalidate(url)));

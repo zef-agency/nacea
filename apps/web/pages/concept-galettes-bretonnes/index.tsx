@@ -6,7 +6,13 @@ export default function index(props: PageProps) {
   const { seo, modal, ...rest } = props;
 
   return (
-    <Layout title={seo?.title} description={seo?.description} modal={modal}>
+    <Layout
+      url="/concept-galettes-bretonnes"
+      title={seo?.title}
+      description={seo?.description}
+      modal={modal}
+      LCPUrl={getUrl(rest.hero.images[0].url)}
+    >
       <Page data={rest} />
     </Layout>
   );

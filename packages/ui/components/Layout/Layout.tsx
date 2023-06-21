@@ -1,6 +1,12 @@
 import Head from "next/head";
 import { PropsWithChildren } from "react";
-import { ContactModalType, useAlert, useHasHydrated, useModal } from "utils";
+import {
+  ContactModalType,
+  root,
+  useAlert,
+  useHasHydrated,
+  useModal,
+} from "utils";
 
 import { Alert } from "../Alert/Alert";
 import { ContactModal } from "../Modals/ContactModal";
@@ -10,10 +16,11 @@ interface LayoutProps extends PropsWithChildren<any> {
   title: string;
   description: string;
   LCPUrl?: string;
+  url?: string;
   modal?: any;
 }
 export function Layout(props: LayoutProps) {
-  const { title, children, description, modal, LCPUrl = "" } = props;
+  const { title, children, description, modal, url = "/", LCPUrl = "" } = props;
   const { isOpen } = useModal();
   const hasHydrated = useHasHydrated();
   const visible: any = hasHydrated ? isOpen : [];
@@ -25,6 +32,11 @@ export function Layout(props: LayoutProps) {
         <title> {title} </title>
         <meta name="description" content={description} />
         <meta property="og:title" content={title} key="title" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`${root.FRONT_URL}${url}`} />
+        <meta property="og:image:type" content="image/jpg" />
+        <meta property="og:image" content={LCPUrl !== "" ? LCPUrl : ""} />
+        <meta property="og:description" content={description} />
         {LCPUrl !== "" && <link rel="preload" href={LCPUrl} as="image" />}
       </Head>
       {children}
