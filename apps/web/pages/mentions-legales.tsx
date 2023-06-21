@@ -7,6 +7,7 @@ export default function MentionsLegales(props: any) {
 
   return (
     <Layout
+      url="/mention-legales"
       title="Page mentions légales"
       description="Vous êtes sur la page mentions légales"
     >

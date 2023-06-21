@@ -9,6 +9,7 @@ export default function index(props: PageProps) {
       title={seo?.title}
       description={seo?.description}
       modal={modal}
+      url="/"
       LCPUrl={getUrl(rest.hero.image.url)}
     >
       <Page data={rest} />

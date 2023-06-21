@@ -6,7 +6,7 @@ export default function Page404(props: any) {
   const { ...rest } = props;
 
   return (
-    <Layout title="Page 404" description="Vous êtes sur la page 404">
+    <Layout url="/404" title="Page 404" description="Vous êtes sur la page 404">
       <Page data={rest} />
     </Layout>
   );
