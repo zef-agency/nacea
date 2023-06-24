@@ -61,7 +61,7 @@ export function CarousselSection({ data }: CarousselSectionProps) {
     <div className="py-5 md:py-12">
       <TitleContainer title={title} subtitle={subtitle} />
       <Wrapper classes="flex flex-col mt-6 sm:mt-8 gap-8 items-center">
-        <div ref={sliderRef} className="keen-slider">
+        <div ref={sliderRef} className="keen-slider items-start">
           <RenderCards object={items} />
         </div>
         {loaded && instanceRef.current && (
@@ -124,7 +124,7 @@ const RenderCards = ({ object }: any) => {
               <Title className="mb-1" size="regular" weight="bold" HTMLtag="h2">
                 {card.label}
               </Title>
-              <Text> {Truncate(card.intro, 80)} </Text>
+              <Text> {Truncate(card.intro, 135)} </Text>
               {card.button && (
                 <Links
                   className="w-full sm:w-fit"
