@@ -37,6 +37,10 @@ export function Layout(props: LayoutProps) {
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image" content={LCPUrl !== "" ? LCPUrl : ""} />
         <meta property="og:description" content={description} />
+        <meta
+          name="google-site-verification"
+          content="7uIHFurHR4xH-Jjch0elUd6bTvTXEQ_kTxymOvmVDLE"
+        />
         {LCPUrl !== "" && <link rel="preload" href={LCPUrl} as="image" />}
       </Head>
       {children}

@@ -12,7 +12,7 @@ export function ContactSection({ data }: ContactSectionProps) {
 
   return (
     <div
-      className={`flex flex-col md:flex-row max-w gap-6 md:gap-28 relative md:h-full`}
+      className={`flex overflow-hidden flex-col md:flex-row max-w gap-6 md:gap-28 relative md:h-full`}
     >
       <div
         style={{ backgroundColor }}

@@ -11,19 +11,19 @@ export function MentionsLegalesSection() {
       <div className="flex flex-col gap-4">
         <div>
           <Text weight="bold"> Editeur du site : </Text>
-          <Text> Editeur du site : </Text>
+          <Text> Tatiana Borie</Text>
         </div>
         <div>
           <Text weight="bold"> Email: </Text>
-          <Text> contact@nacea.fr </Text>
+          <Text> contact.nacea@gmail.com </Text>
         </div>
         <div>
           <Text weight="bold"> Directeur de la publication : </Text>
           <Text> Tatiana Borie </Text>
         </div>
         <div>
-          <Text weight="bold"> Numéro de SIRET : </Text>
-          <Text>en attente </Text>
+          <Text weight="bold"> Numéro de SIREN : </Text>
+          <Text> 951 376 599 </Text>
         </div>
         <div>
           <Text weight="bold"> Hébergeur du site : </Text>
@@ -32,15 +32,16 @@ export function MentionsLegalesSection() {
         <div>
           <Text weight="bold"> Conseils d'utilisation : </Text>
           <Text>
-            Le site accessible par l'URL suivante : www.nacea.fr est exploité
-            dans le respect de la législation française. L'utilisation de ce
-            site est régie par les présentes conditions générales. En utilisant
-            le site, vous reconnaissez avoir pris connaissance de ces conditions
-            et les avoir acceptées. Celles-ci pourront être modifiées à tout
-            moment et sans préavis par Nacea. Nacea ne saurait être tenue pour
-            responsable en aucune manière d’une mauvaise utilisation du service.
-            L'éditeur ne pourra être tenu responsable en cas de force majeure,
-            de problèmes techniques ou de défaillance du réseau Internet.
+            Le site accessible par l'URL suivante : www.nacea-creperie.fr est
+            exploité dans le respect de la législation française. L'utilisation
+            de ce site est régie par les présentes conditions générales. En
+            utilisant le site, vous reconnaissez avoir pris connaissance de ces
+            conditions et les avoir acceptées. Celles-ci pourront être modifiées
+            à tout moment et sans préavis par Nacea. Nacea ne saurait être tenue
+            pour responsable en aucune manière d’une mauvaise utilisation du
+            service. L'éditeur ne pourra être tenu responsable en cas de force
+            majeure, de problèmes techniques ou de défaillance du réseau
+            Internet.
           </Text>
         </div>
         <div>
@@ -60,17 +61,17 @@ export function MentionsLegalesSection() {
         <div>
           <Text weight="bold"> Propriété intellectuelle : </Text>
           <Text>
-            Tous les contenus présents sur le site www.nacea.fr, incluant, de
-            manière non limitative, les graphismes, images, textes, vidéos,
-            logos, gifs et icônes ainsi que leur mise en forme sont la propriété
-            exclusive de l'éditeur, à l'exception des marques, logos ou contenus
-            appartenant à d'autres sociétés partenaires ou auteurs. Toute
-            reproduction, distribution, modification, adaptation, retransmission
-            ou publication, même partielle, de ces différents éléments est
-            strictement interdite sans l'accord exprès par écrit de Nacea. Cette
-            représentation ou reproduction, par quelque procédé que ce soit,
-            constitue une contrefaçon sanctionnée par les articles L.335-2 et
-            suivants du Code de la propriété intellectuelle.
+            Tous les contenus présents sur le site www.nacea-creperie.fr,
+            incluant, de manière non limitative, les graphismes, images, textes,
+            vidéos, logos, gifs et icônes ainsi que leur mise en forme sont la
+            propriété exclusive de l'éditeur, à l'exception des marques, logos
+            ou contenus appartenant à d'autres sociétés partenaires ou auteurs.
+            Toute reproduction, distribution, modification, adaptation,
+            retransmission ou publication, même partielle, de ces différents
+            éléments est strictement interdite sans l'accord exprès par écrit de
+            Nacea. Cette représentation ou reproduction, par quelque procédé que
+            ce soit, constitue une contrefaçon sanctionnée par les articles
+            L.335-2 et suivants du Code de la propriété intellectuelle.
           </Text>
         </div>
         <div>
@@ -78,21 +79,21 @@ export function MentionsLegalesSection() {
           <Text>
             Le site Nacea.fr peut contenir des liens hypertextes vers d’autres
             sites présents sur le réseau Internet. Les liens vers ces autres
-            ressources vous font quitter le site www.nacea.fr. Il est possible
-            de créer un lien vers la page de présentation de ce site sans
-            autorisation expresse de l'éditeur. Aucune autorisation ou demande
-            d'information préalable ne peut être exigée par l'éditeur à l'égard
-            d'un site qui souhaite établir un lien vers le site de l'éditeur.
-            Lors de la navigation sur le site www.nacea.fr, des cookies peuvent
-            être installés sur l'ordinateur de l'utilisateur. Ces fichiers de
-            petite taille ne permettent pas l'identification de l'utilisateur,
-            mais enregistrent des informations sur sa navigation sur le site.
-            Les données collectées facilitent la navigation ultérieure sur le
-            site et permettent également de mesurer la fréquentation. Le refus
-            d'installation d'un cookie peut empêcher l'accès à certains
-            services. L'utilisateur peut cependant configurer son ordinateur
-            pour refuser l'installation des cookies en suivant les étapes
-            suivantes :
+            ressources vous font quitter le site www.nacea-creperie.fr. Il est
+            possible de créer un lien vers la page de présentation de ce site
+            sans autorisation expresse de l'éditeur. Aucune autorisation ou
+            demande d'information préalable ne peut être exigée par l'éditeur à
+            l'égard d'un site qui souhaite établir un lien vers le site de
+            l'éditeur. Lors de la navigation sur le site www.nacea-creperie.fr,
+            des cookies peuvent être installés sur l'ordinateur de
+            l'utilisateur. Ces fichiers de petite taille ne permettent pas
+            l'identification de l'utilisateur, mais enregistrent des
+            informations sur sa navigation sur le site. Les données collectées
+            facilitent la navigation ultérieure sur le site et permettent
+            également de mesurer la fréquentation. Le refus d'installation d'un
+            cookie peut empêcher l'accès à certains services. L'utilisateur peut
+            cependant configurer son ordinateur pour refuser l'installation des
+            cookies en suivant les étapes suivantes :
           </Text>
           <ul>
             <li>
@@ -131,9 +132,10 @@ export function MentionsLegalesSection() {
             DROIT APPLICABLE ET ATTRIBUTION DE JURIDICTION :{" "}
           </Text>
           <Text>
-            Tout litige en relation avec l’utilisation du site www.nacea.fr est
-            soumis au droit français. Il est fait attribution exclusive de
-            juridiction aux tribunaux compétents de Bordeaux.
+            Tout litige en relation avec l’utilisation du site
+            www.nacea-creperie.fr est soumis au droit français. Il est fait
+            attribution exclusive de juridiction aux tribunaux compétents de
+            Bordeaux.
           </Text>
         </div>
         <div>
