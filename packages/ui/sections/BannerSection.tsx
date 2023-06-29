@@ -26,8 +26,8 @@ export function BannerSection({ data }: BannerSectionProps) {
           }`}
         >
           <div
-            className={`absolute h-auto ${
-              imageLeft ? "transform -scale-x-100 -right-28" : "-left-28"
+            className={`absolute h-auto opacity-50 ${
+              imageLeft ? "transform -scale-x-100 -right-28" : "-left-36"
             }  -bottom-24 hidden sm:block  -z-10`}
           >
             <CustomImage alt="flowers" src="/flowers.webp" />
