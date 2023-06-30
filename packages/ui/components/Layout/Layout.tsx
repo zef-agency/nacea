@@ -41,6 +41,7 @@ export function Layout(props: LayoutProps) {
           name="google-site-verification"
           content="7uIHFurHR4xH-Jjch0elUd6bTvTXEQ_kTxymOvmVDLE"
         />
+        <link rel="shortcut icon" href="/favicon.png" />
         {LCPUrl !== "" && <link rel="preload" href={LCPUrl} as="image" />}
       </Head>
       {children}
