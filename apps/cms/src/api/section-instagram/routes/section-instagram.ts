@@ -2,6 +2,16 @@
  * section-instagram router
  */
 
-import { factories } from '@strapi/strapi';
+import { customRouter } from "../../../utils/functions";
 
-export default factories.createCoreRouter('api::section-instagram.section-instagram');
+const { createCoreRouter } = require("@strapi/strapi").factories;
+const coreRoutes = createCoreRouter("api::section-instagram.section-instagram");
+const customRoutes = [
+  {
+    method: "GET",
+    path: "/instagram-posts",
+    handler: "section-instagram.findPosts",
+  },
+];
+
+module.exports = customRouter(coreRoutes, customRoutes);
