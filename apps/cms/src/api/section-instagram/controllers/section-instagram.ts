@@ -4,9 +4,7 @@
 
 import { factories } from "@strapi/strapi";
 const axios = require("axios");
-
-let BaseToken =
-  "IGQWROMWw5cGZAZAX2JzSjhZAbVp3d3EwMjJSX1lJaUNZAckZAlSEFTSEh6QmxQNElROThLbE9ScjBmcTVCaFlFQlhIY3JkMXBoNUZAncE9NY2pHeEZAtQzBWNkRMdXp4bFlqX2psUWFTOWY0ZAkRaZA3Rxb1VmNWNoSWcyWWMZD";
+let BaseToken = process.env.STRAPI_BASE_TOKEN;
 
 export default factories.createCoreController(
   "api::section-instagram.section-instagram",
@@ -19,11 +17,10 @@ export default factories.createCoreController(
 
         if (response) {
           BaseToken = NewToken;
-          console.log(BaseToken);
           ctx.body = response.data.data;
         }
       } catch (error) {
-        ctx.body = { error: error };
+        ctx.body = null;
       }
     },
   })
