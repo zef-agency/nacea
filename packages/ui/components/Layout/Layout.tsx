@@ -11,6 +11,8 @@ import {
 import { Alert } from "../Alert/Alert";
 import { ContactModal } from "../Modals/ContactModal";
 import { ModalNames } from "../Modals/ModalNames";
+import { CookieAccept } from "./CookieConsent";
+import { GoogleAnalytics } from "./GoogleAnalytics";
 
 interface LayoutProps extends PropsWithChildren<any> {
   title: string;
@@ -44,6 +46,7 @@ export function Layout(props: LayoutProps) {
         <link rel="shortcut icon" href="/favicon.png" />
         {LCPUrl !== "" && <link rel="preload" href={LCPUrl} as="image" />}
       </Head>
+      <GoogleAnalytics />
       {children}
 
       <Alert setAlert={handleAlert} alert={AlertProps} />
@@ -53,6 +56,7 @@ export function Layout(props: LayoutProps) {
           data={modal as ContactModalType}
         />
       )}
+      <CookieAccept />
     </>
   );
 }
