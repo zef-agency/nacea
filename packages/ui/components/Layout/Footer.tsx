@@ -45,7 +45,15 @@ export function Footer({ data }: FooterProps) {
             ))}
         </div>
 
-        <Text size="base"> {signature} </Text>
+        <Text size="base">
+          <a
+            className="hover:underline"
+            href="https://www.agence-zef.fr/"
+            target="_blank"
+          >
+            {signature}
+          </a>
+        </Text>
 
         <div className="flex flex-col md:flex-row items-start justify-between gap-1">
           <Text size="base"> Nacea 2023 </Text>
