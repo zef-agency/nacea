@@ -35,6 +35,8 @@ export function InstagramSection({ data }: InstagramSectionProps) {
     return <> Chargement des posts ... </>;
   }
 
+  console.log(posts);
+
   return (
     <div className="py-5 md:py-12 flex flex-col items-center">
       <TitleContainer title={title} subtitle={subtitle} />
@@ -49,8 +51,8 @@ export function InstagramSection({ data }: InstagramSectionProps) {
               <div className="group-hover:brightness-40 transition-all w-[300px] h-[280px] md:w-[320px] md:h-[280px]">
                 <Image
                   alt={postInsta.caption}
-                  width={500}
-                  height={500}
+                  width={300}
+                  height={300}
                   quality={30}
                   className="object-cover w-full h-full rounded-xl"
                   src={

@@ -10,7 +10,7 @@ body {
 
 @layer components {
    .max-w {
-     @apply max-w-[1800px] my-0 mx-auto;
+     @apply max-w-[1800px] lg:max-w-full my-0 mx-auto;
    }
    .accept-button{
     @apply text-15  px-4 py-3 justify-center flex  items-center  w-fit h-fit bg-[#3F5931] hover:bg-[#A4B8A8] text-white

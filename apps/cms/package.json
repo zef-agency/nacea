@@ -21,6 +21,7 @@
     "better-sqlite3": "^8.3.0",
     "mysql": "2.18.1",
     "pg": "^8.10.0",
+    "sharp": "^0.32.6",
     "util": "^0.12.5"
   },
   "devDependencies": {
