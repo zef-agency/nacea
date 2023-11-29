@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 // @ts-nocheck
-//import Image from "next/image";
+import Image from "next/image";
 import {
   GetInstagramPosts,
   InstagramSectionType,
@@ -47,20 +47,19 @@ export function InstagramSection({ data }: InstagramSectionProps) {
               className="relative group transition-all w-fit w-[300px] cursor-pointer"
             >
               <div className="group-hover:brightness-40 transition-all w-[300px] h-[280px] md:w-[320px] md:h-[280px]">
-                {/*                 <Image
+                <Image
                   alt={postInsta.caption}
-                  priority={true}
                   width={500}
                   height={500}
-                  quality={75}
+                  quality={30}
                   className="object-cover w-full h-full rounded-xl"
                   src={
                     postInsta.media_type === "VIDEO"
                       ? postInsta.thumbnail_url
                       : postInsta.media_url
                   }
-                /> */}
-                <img
+                />
+                {/*                 <img
                   className="w-full h-full rounded-xl object-cover"
                   alt="insta-post"
                   src={
@@ -68,7 +67,7 @@ export function InstagramSection({ data }: InstagramSectionProps) {
                       ? postInsta.thumbnail_url
                       : postInsta.media_url
                   }
-                />
+                /> */}
               </div>
               <Text
                 variations="white"
