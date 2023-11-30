@@ -29,7 +29,7 @@ export function Layout(props: LayoutProps) {
   const { handleAlert, ...AlertProps } = useAlert();
 
   return (
-    <>
+    <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -39,11 +39,17 @@ export function Layout(props: LayoutProps) {
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image" content={LCPUrl !== "" ? LCPUrl : ""} />
         <meta property="og:description" content={description} />
+        <meta name="robots" content="all" />
         <meta
           name="google-site-verification"
           content="7uIHFurHR4xH-Jjch0elUd6bTvTXEQ_kTxymOvmVDLE"
         />
         <link rel="shortcut icon" href="/favicon.png" />
+        <link
+          rel="canonical"
+          href={`${root.FRONT_URL}${url}`}
+          key="canonical"
+        />
         {LCPUrl !== "" && <link rel="preload" href={LCPUrl} as="image" />}
       </Head>
       <GoogleAnalytics />
@@ -57,6 +63,6 @@ export function Layout(props: LayoutProps) {
         />
       )}
       <CookieAccept />
-    </>
+    </div>
   );
 }
